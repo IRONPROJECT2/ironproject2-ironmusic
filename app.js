@@ -12,6 +12,8 @@ const app = express();
 app.set("view engine", "hbs");
 app.set("views", `${__dirname}/views`);
 
+app.use(express.urlencoded());
+
 const routes = require("./configs/routes.config");
 
 app.use("/", routes);

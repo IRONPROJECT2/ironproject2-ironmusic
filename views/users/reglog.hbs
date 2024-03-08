@@ -1,0 +1,150 @@
+{{!-- LOGIN --}}
+<form action="/login" method="post">
+  <div class="form-group mb-2">
+    <label for="userName">Nombre de usuario</label>
+    <input type="text" name="userName" id="userName">
+  </div>
+
+  <div class="form-group mb-2">
+    <label for="password">Contraseña</label>
+    <input type="password" name="password" id="password">
+  </div>
+
+  <button type="submit">Vamos allá</button>
+</form>
+
+{{!-- REGISTER --}}
+<form action="/register" method="post">
+  <div class="form-group mb-2">
+    <label for="userName">Nombre de usuario</label>
+    <input type="text" name="userName" id="userName">
+  </div>
+  
+  <div class="form-group mb-2">
+    <label for="name">Nombre completo</label>
+    <input type="text" name="name" id="name">
+  </div>
+
+  <div class="form-group mb-2">
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email">
+  </div>
+
+  <div class="form-group mb-2">
+    <label for="password">Contraseña</label>
+    <input type="password" name="password" id="password">
+  </div>
+
+  <div class="form-group mb-2">
+    <label for="gender">Género</label>
+    <select name="gender" id="gender">
+      <option value="male">Hombre</option>
+      <option value="female">Mujer</option>
+      <option value="other">Otro</option>
+      <option value="none">Prefiero no decirlo</option>
+    </select>
+  </div>
+
+  <div class="form-group mb-2">
+    <label for="photo">Foto avatar</label>
+    <input type="text" name="photo" id="photo">
+
+  </div>
+
+  <div class="form-group mb-2">
+    <label for="instruments">Instrumentos</label>
+    <select id="instruments" multiple>
+      <option value="guitarra">Guitarra</option>
+      <option value="bateria">Batería</option>
+      <option value="bajo">Bajo</option>
+      <option value="teclado">Teclado</option>
+      <option value="violin">Violín</option>
+      <option value="saxofon">Saxofón</option>
+      <option value="trompeta">Trompeta</option>
+      <option value="flauta">Flauta</option>
+      <option value="piano">Piano</option>
+      <option value="trombon">Trombón</option>
+      <option value="oboe">Oboe</option>
+      <option value="clarinete">Clarinete</option>
+      <option value="arpa">Arpa</option>  
+      <option value="Contrabajo">Contrabajo</option>
+      <option value="Cello">Cello</option>
+      <option value="Djembe">Djembe</option>
+      <option value="Congas">Congas</option>
+      <option value="Xilófono">Xilófono</option>
+      <option value="Tuba">Tuba</option>
+      <option value="Banjo">Banjo</option>
+      <option value="Harmónica">Harmónica</option>
+      <option value="Acordeón">Acordeón</option>
+      <option value="Ukelele">Ukelele</option>
+      <option value="Viola">Viola</option>
+      <option value="Sitar">Sitar</option>
+      <option value="Cuerno Francés">Cuerno Francés</option>
+      <option value="Cítara">Cítara</option>
+      <option value="Steel Drum">Steel Drum</option>
+      <option value="Theremin">Theremin</option>
+      <option value="Kalimba">Kalimba</option>
+      <option value="Didgeridoo">Didgeridoo</option>
+      <option value="Bagpipes">Bagpipes</option>
+      <option value="Marimba">Marimba</option>
+      <option value="Erhu">Erhu</option>
+      <option value="Zampoña">Zampoña</option>
+      <option value="Melódica">Melódica</option>
+      <option value="Charango">Charango</option>
+      <option value="Mandolina">Mandolina</option>
+      <option value="Gaita">Gaita</option>
+      <option value="Dulcémele">Dulcémele</option>
+      <option value="Shakuhachi">Shakuhachi</option>
+      <option value="Koto">Koto</option>
+      <option value="Pandereta">Pandereta</option>
+      <option value="gong">Gong</option>
+  </select>
+</div>
+
+  <div class="form-group mb-2">
+    <label for="description">Biografía</label>
+    <input type="text" name="description" id="description">
+  </div>
+
+  <div class="form-group mb-2">
+    <label for="location">Localización</label>
+    <input type="text" name="location" id="location">
+  </div>
+
+  {{!-- <div class="form-group mb-2">
+    <label for="bands">Banda/s</label>
+    <input type="text" name="bands" id="bands">
+  </div> --}}
+
+  <div class="form-group mb-2">
+    <label for="socialMedia">Redes Sociales</label>
+    <input type="text" name="socialMedia" id="socialMedia">
+  </div>
+
+  {{!-- <div class="form-group mb-2">
+    <label for="bandRequest">Petición de acceso a banda/s</label>
+    <input type="text" name="bandRequest" id="bandRequest">
+  </div>
+
+  <div class="form-group mb-2">
+    <label for="status">Estado de la petición</label>
+    <input type="text" name="status" id="status">
+  </div> --}}
+  
+  <button type="submit">Regístrame</button>
+  
+</form>
+
+  {{!-- {
+, '
+    bandRequest: [{
+      bandId: {
+        type: Schema.Types.ObjectId,
+        ref: "Bandas"
+      },
+      status: {
+        type: String,
+        enum: ["pending", "accepted", "rejected"],
+        default: "pending" 
+      }
+    }] --}}

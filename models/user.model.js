@@ -24,9 +24,9 @@ const userSchema = new Schema(
     },
     gender: {
       type: String,
-      enum: [male, female, other, none]
+      enum: ["male", "female", "other", "none"]
     },
-    foto: {
+    photo: {
       type: String,
       //PREGUNTAR COMO VER SI ES HOMBRE MUJER U OTRO
     },
@@ -47,26 +47,51 @@ const userSchema = new Schema(
       required: [true, 'Description is required'],
       minLength: [10, 'Description needs at least 10 chars']
     },
-    bands: [{
-      type: Schema.Types.ObjectId,
-      ref: "Banda"
-    }],
+    location: {
+      type: String,
+      required: true
+    },
+    // bands: [{
+    //   type: Schema.Types.ObjectId,
+    //   ref: "Banda"
+    // }],
     socialMedia: {
       type: String
     },
-    bandaRequest: [{
-      bandaId: {
-        type: Schema.Types.ObjectId,
-        ref: "Bandas"
-      },
-      status: {
-        type: String,
-        enum: ["pending", "accepted", "rejected"],
-        default: "pending" 
-      }
-    }]
+    // bandRequest: [{
+    //   bandId: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: "Bandas"
+    //   },
+    //   status: {
+    //     type: String,
+    //     enum: ["pending", "accepted", "rejected"],
+    //     default: "pending" 
+    //   }
+    // }]
   },
   { timestamps: true}
 );
 
-// FALTA EXPORTAR EL USUARIO
+// Hashing the password
+userSchema.pre('save', function (next) {
+  if (this.isModified('password')) {
+    bcrypt
+      .hash(this.password, 10)
+      .then((hash) => {
+        this.password = hash;
+        next();
+      })
+      .catch(next);
+  } else {
+    next();
+  }
+});
+
+// Checking the password
+userSchema.method.checkPassword = function(passwordToCheck) {
+  return bcrypt.compare(passwordToCheck, this.password);
+};
+
+const User = mongoose.model('User', userSchema);
+module.exports = User;
