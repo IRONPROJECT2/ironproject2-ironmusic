@@ -6,11 +6,10 @@ module.exports.reglog = (req, res, next) => {
 }
 
 module.exports.doRegister = (req, res, next) => {
-  console.debug(req.body)
   User.findOne({userName: req.body.userName, email: req.body.email})
     .then((user) => {
       if (user) {
-        res.status(409).render("users/reglog", { user: req.body, errors: { userName: "Already exists", email: "Already exists"}});
+        res.status(409).render("users/reglog", { user: req.body, errors: { userName: "Ya existe", email: "Ya existe"}});
       } else {
         const userOk = {
           userName: req.body.userName, 
@@ -36,3 +35,24 @@ module.exports.doRegister = (req, res, next) => {
       }
     });
 };
+
+module.exports.doLogin = (req, res, next) => {
+  User.findOne({userName: req.body.userName, password: req.body.password})
+  .then((user) => {
+    if (!user) {
+      res.status(401).render("users/reglog", { user: req.body, errors: { password: "Nombre de usuario o contraseña inválidos", userName: "Nombre de usuario o contraseña inválidos"} })
+    } else {
+      return user.checkPassword(req.body.password)
+        .then((match) => {
+          if (match) {
+            req.session.userId = user.id;
+            res.redirect("/");    /// DUUUUUUUUUUUUUUUUDAAAAAAAAAAAAAAAAA: carlos pone /issues
+          } else {
+            res.status(401).render("users/reglog", { user: req.body, errors: { password: "Nombre de usuario o contraseña inválidos", userName: "Nombre de usuario o contraseña inválidos"} })
+          }
+        })
+    }
+  })
+  .catch(next);
+};
+
