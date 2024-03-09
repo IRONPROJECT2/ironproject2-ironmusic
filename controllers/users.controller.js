@@ -1,5 +1,7 @@
 const User = require('../models/user.model');
 const mongoose = require('mongoose');
+const { sessions } = require("../middlewares/auth.middleware");
+
 
 module.exports.reglog = (req, res, next) => {
   res.render('users/reglog');
@@ -37,22 +39,32 @@ module.exports.doRegister = (req, res, next) => {
 };
 
 module.exports.doLogin = (req, res, next) => {
-  User.findOne({userName: req.body.userName, password: req.body.password})
-  .then((user) => {
-    if (!user) {
-      res.status(401).render("users/reglog", { user: req.body, errors: { password: "Nombre de usuario o contraseña inválidos", userName: "Nombre de usuario o contraseña inválidos"} })
-    } else {
-      return user.checkPassword(req.body.password)
-        .then((match) => {
-          if (match) {
-            req.session.userId = user.id;
-            res.redirect("/");    /// DUUUUUUUUUUUUUUUUDAAAAAAAAAAAAAAAAA: carlos pone /issues
-          } else {
-            res.status(401).render("users/reglog", { user: req.body, errors: { password: "Nombre de usuario o contraseña inválidos", userName: "Nombre de usuario o contraseña inválidos"} })
-          }
-        })
-    }
-  })
-  .catch(next);
+  User.findOne({userName: req.body.userName})
+    .then((user) => {
+      if (!user) {
+        res.status(401).render("users/reglog", { user: req.body, errors: { password: "Nombre de usuario o contraseña inválidos", userName: "Nombre de usuario o contraseña inválidos"} })
+      } else {
+        return user.checkPassword(req.body.password)
+          .then((match) => {
+            if (match) {
+              req.session.userId = user.id;
+              res.redirect("/");    
+            } else {
+              res.status(401).render("users/reglog", { user: req.body, errors: { password: "Nombre de usuario o contraseña inválidos", userName: "Nombre de usuario o contraseña inválidos"} })
+            }
+          })
+      }
+    })
+    .catch(next);
 };
 
+module.exports.logout = (req, res, next) => {
+  req.session.destroy();
+  req.session = null;
+  res.clearCookie("connect.sid");
+  res.redirect("/");
+}
+
+module.exports.profile = (req, res, next) => {
+  res.render("users/profile");
+}

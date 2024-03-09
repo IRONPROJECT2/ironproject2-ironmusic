@@ -21,17 +21,29 @@
 
 
         {{!-- PARA CUANDO INICIE SESION EL USUARIO --}}
-        {{!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li> --}}
+        {{#if currentUser}}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Crea un post
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Band-jam</a></li>
+              <li><a class="dropdown-item" href="#">Formar banda</a></li>
+              <li><a class="dropdown-item" href="#">Anuncia tu concierto</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Banda
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Unirme a banda</a></li>
+              <li><a class="dropdown-item" href="#">Crear banda</a></li>
+
+            </ul>
+          </li>
+        {{/if}}
 
       </ul>
       <form class="d-flex" role="search">
@@ -39,7 +51,28 @@
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
 
-      <a class="navbar-brand ms-3" href="/reglog">login/logout</a>
+
+      {{#if currentUser}}
+      <div class="collapse navbar-collapse" id="main-navbar">
+        {{!-- <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link {{navActive currentPath '/profile'}}" aria-current="page" href="/profile">{{currentUser.userName}}</a></li>
+          <li class="nav-item"><a class="nav-link" aria-current="page" href="/logout">LOGOUT</a></li>
+        </ul> --}}
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{currentUser.userName}}
+            </a>
+            <ul class="dropdown-menu">
+              <li class="nav-item"><a class="nav-link" aria-current="page" href="/profile">Profile</a></li>
+              <li class="nav-item"><a class="nav-link" aria-current="page" href="/logout">Logout</a></li>
+            </ul>
+        </li>
+      </div>
+      {{else}}
+        <a class="navbar-brand ms-3" href="/reglog">login</a>
+      {{/if}}
+      
     </div>
   </div>
 </nav>
