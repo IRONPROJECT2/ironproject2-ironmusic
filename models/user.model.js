@@ -20,7 +20,7 @@ const userSchema = new Schema(
     password: {
       type: String,
       required: true,
-      minLength: [8, 'Password needs at least 8 chars']
+      minLength: [8, "La contraseña necesita al menos 8 caracteres"]
     },
     gender: {
       type: String,
@@ -44,8 +44,8 @@ const userSchema = new Schema(
     }],
     description: {
       type: String,
-      required: [true, 'Description is required'],
-      minLength: [10, 'Description needs at least 10 chars']
+      required: [true, "La descripción es obligatoria"],
+      minLength: [10, "La descripción necesita al menos 10 caracteres"]
     },
     location: {
       type: String,
