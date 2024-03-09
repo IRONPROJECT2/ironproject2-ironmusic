@@ -32,15 +32,15 @@ const userSchema = new Schema(
     },
     instruments: [{
       type: String,
-      enum: ['Guitarra', 'Batería', 'Bajo', 'Teclado', 'Violín',
-      'Saxofón', 'Trompeta', 'Flauta', 'Piano', 'Trombón',
-      'Oboe', 'Clarinete', 'Arpa', 'Contrabajo', 'Cello',
-      'Djembe', 'Congas', 'Xilófono', 'Tuba', 'Banjo',
-      'Harmónica', 'Acordeón', 'Ukelele', 'Viola', 'Sitar',
-      'Cuerno Francés', 'Cítara', 'Steel Drum', 'Theremin',
-      'Kalimba', 'Didgeridoo', 'Bagpipes', 'Marimba', 'Erhu',
-      'Zampoña', 'Melódica', 'Charango', 'Mandolina', 'Gaita',
-      'Dulcémele', 'Shakuhachi', 'Koto', 'Pandereta', 'Gong']
+      enum: ["Guitarra", "Batería", "Bajo", "Teclado", "Violín",
+      "Saxofón", "Trompeta", "Flauta", "Piano", "Trombón",
+      'Oboe', 'Clarinete', "Arpa", 'Contrabajo', "Cello",
+      "Djembe", "Congas", "Xilófono", "Tuba", "Banjo",
+      'Harmónica', "Acordeón", "Ukelele", "Viola", "Sitar",
+      "Cuerno Francés", "Cítara", "Steel Drum", "Theremin",
+      "Kalimba", "Didgeridoo", "Bagpipes", "Marimba", "Erhu",
+      "Zampoña", "Melódica", "Charango", "Mandolina", "Gaita",
+      "Dulcémele", "Shakuhachi", "Koto", "Pandereta", "Gong"]
     }],
     description: {
       type: String,

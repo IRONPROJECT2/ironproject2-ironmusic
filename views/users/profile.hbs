@@ -1,1 +1,22 @@
-<h2>estoy en el perfil</h2>
+<h1>Mi perfil</h1>
+
+<p></p>
+{{currentUser.userName}}
+{{currentUser.name}}
+{{currentUser.email}}
+{{currentUser.gender}}
+{{currentUser.photo}}
+<ul>
+{{#each currentUser.instruments}}
+  <li>{{this}}</li>
+{{/each}}
+</ul>
+{{currentUser.description}}
+{{currentUser.location}}
+{{currentUser.socialMedia}}
+
+
+<a href="/user/{{currentUser.id}}/edit" class="btn btn-primary">Editar perfil</a>
+<form action="/user/{{currentUser.id}}/delete" method="post">
+  <button type="submit" class="btn btn-danger">Eliminar perfil</button>
+</form>

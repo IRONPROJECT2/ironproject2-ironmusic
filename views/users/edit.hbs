@@ -1,39 +1,21 @@
-{{!-- LOGIN --}}
-<form action="/login" method="post">
+<h2>Editar mi perfil</h2>
+
+<form action="/user/{{currentUser.id}}/edit" method="post">
   <div class="form-group mb-2">
     <label for="userName">Nombre de usuario</label>
-    <input type="text" name="userName" id="userName">
-  </div>
-
-  <div class="form-group mb-2">
-    <label for="password">Contraseña</label>
-    <input type="password" name="password" id="password">
-  </div>
-
-  <button type="submit">Vamos allá</button>
-</form>
-
-{{!-- REGISTER --}}
-<form action="/register" method="post">
-  <div class="form-group mb-2">
-    <label for="userName">Nombre de usuario</label>
-    <input type="text" name="userName" id="userName">
+    <input type="text" name="userName" id="userName"  value="{{currentUser.userName}}">
   </div>
   
   <div class="form-group mb-2">
     <label for="name">Nombre completo</label>
-    <input type="text" name="name" id="name">
+    <input type="text" name="name" id="name" value="{{currentUser.name}}">
   </div>
 
   <div class="form-group mb-2">
     <label for="email">Email</label>
-    <input type="email" name="email" id="email">
+    <input type="email" name="email" id="email"  value="{{currentUser.email}}">
   </div>
 
-  <div class="form-group mb-2">
-    <label for="password">Contraseña</label>
-    <input type="password" name="password" id="password">
-  </div>
 
   <div class="form-group mb-2">
     <label for="gender">Género</label>
@@ -47,7 +29,7 @@
 
   <div class="form-group mb-2">
     <label for="photo">Foto avatar</label>
-    <input type="text" name="photo" id="photo">
+    <input type="text" name="photo" id="photo" value="{{currentUser.photo}}">
 
   </div>
 
@@ -103,12 +85,12 @@
 
   <div class="form-group mb-2">
     <label for="description">Biografía</label>
-    <input type="text" name="description" id="description">
+    <input type="text" name="description" id="description" value="{{currentUser.description}}">
   </div>
 
   <div class="form-group mb-2">
     <label for="location">Localización</label>
-    <input type="text" name="location" id="location">
+    <input type="text" name="location" id="location" value="{{currentUser.location}}">
   </div>
 
   {{!-- <div class="form-group mb-2">
@@ -118,7 +100,7 @@
 
   <div class="form-group mb-2">
     <label for="socialMedia">Redes Sociales</label>
-    <input type="text" name="socialMedia" id="socialMedia">
+    <input type="text" name="socialMedia" id="socialMedia" value="{{currentUser.socialMedia}}">
   </div>
 
   {{!-- <div class="form-group mb-2">
@@ -131,20 +113,6 @@
     <input type="text" name="status" id="status">
   </div> --}}
   
-  <button type="submit">Regístrame</button>
+  <button type="submit">Actualizar mis cambios</button>
   
 </form>
-
-  {{!-- {
-, '
-    bandRequest: [{
-      bandId: {
-        type: Schema.Types.ObjectId,
-        ref: "Bandas"
-      },
-      status: {
-        type: String,
-        enum: ["pending", "accepted", "rejected"],
-        default: "pending" 
-      }
-    }] --}}

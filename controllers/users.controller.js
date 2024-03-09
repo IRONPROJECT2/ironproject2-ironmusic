@@ -1,6 +1,8 @@
 const User = require('../models/user.model');
 const mongoose = require('mongoose');
 const { sessions } = require("../middlewares/auth.middleware");
+const createError = require("http-errors");
+
 
 
 module.exports.reglog = (req, res, next) => {
@@ -13,6 +15,7 @@ module.exports.doRegister = (req, res, next) => {
       if (user) {
         res.status(409).render("users/reglog", { user: req.body, errors: { userName: "Ya existe", email: "Ya existe"}});
       } else {
+       
         const userOk = {
           userName: req.body.userName, 
           name: req.body.name, 
@@ -67,4 +70,49 @@ module.exports.logout = (req, res, next) => {
 
 module.exports.profile = (req, res, next) => {
   res.render("users/profile");
+}
+
+module.exports.edit = (req, res, next) => {
+  User.findById(req.params.id)
+    .then((user) => {
+      if (!user) {
+        next(createError(404, "Usuario no encontrado"));
+      } else {
+        res.render("users/edit", { user });
+      }
+    })
+    .catch(next);
+};
+
+module.exports.doEdit = (req, res, next) => {
+  const user = req.body;
+  user.id = req.params.id;
+
+  User.findByIdAndUpdate(req.params.id, req.body, { runValidators: true})
+    .then((user) => {
+      if (!user) {
+        next(createError(404, "Usuario no encontrado"));
+      } else {
+        res.redirect("/profile");
+      }
+    })
+    .catch((error) => {
+      if (error instanceof mongoose.Error.ValidationError) {
+        res.status(400).render("users/edit", { user: req.body, errors: error.errors});
+      } else {
+        next(error);
+      }
+    });
+};
+
+module.exports.delete = (req, res, next) => {
+  User.findByIdAndDelete(req.params.id)
+    .then((user) => {
+      if (!user) {
+        next(createError(404, "Usuario no encontrado"));
+      } else {
+        res.redirect("/");
+      }
+    })
+    .catch((error) => next(error));
 }
