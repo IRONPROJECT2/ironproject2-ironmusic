@@ -1,0 +1,28 @@
+
+.card1 {
+  background-image: url("https://d1rs3px2gf3dlr.cloudfront.net/media/blog/featured/RockBand4-KeyArt-1080p.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.card1B {
+  background-color: white;
+}
+
+.card2 {
+  background-image: url("https://www.ansa.it/webimages/news_base/2023/6/30/8f0696df4fc75fa005931836c62d9697.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.card3 {
+  background-image: url("https://www.timeoutdubai.com/cloud/timeoutdubai/2023/05/22/gigs-in-dubai-1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.card1 > h5, .card1 > p,
+.card2 > h5, .card2 > p,
+.card3 > h5, .card3 > p {
+  text-shadow: 1px 1px 1px #000000;
+}

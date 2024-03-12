@@ -32,7 +32,7 @@ const userSchema = new Schema(
     },
     instruments: [{
       type: String,
-      enum: ["Guitarra", "Batería", "Bajo", "Teclado", "Violín",
+      enum: ["Voz", "Coros", "Guitarra", "Batería", "Bajo", "Teclado", "Violín",
       "Saxofón", "Trompeta", "Flauta", "Piano", "Trombón",
       'Oboe', 'Clarinete', "Arpa", 'Contrabajo', "Cello",
       "Djembe", "Congas", "Xilófono", "Tuba", "Banjo",
@@ -58,17 +58,15 @@ const userSchema = new Schema(
     socialMedia: [{
       type: String
     }],
-    // bandRequest: [{
-    //   bandId: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: "Bandas"
-    //   },
-    //   status: {
-    //     type: String,
-    //     enum: ["pending", "accepted", "rejected"],
-    //     default: "pending" 
-    //   }
-    // }]
+    posts: [{
+      type: Schema.Types.ObjectId,
+      refPath: 'postType'
+    }],
+    postType: {
+      type: String,
+      required: true,
+      enum: ["Bandjam", "Formarbanda", "Anunciatuconcierto"]
+    }
   },
   { timestamps: true}
 );

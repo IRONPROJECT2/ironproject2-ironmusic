@@ -3,7 +3,6 @@ const Band = require("../models/band.model");
 const mongoose = require('mongoose');
 const { sessions } = require("../middlewares/auth.middleware");
 const createError = require("http-errors");
-const Swal = require("sweetalert2");
 
 
 
@@ -136,37 +135,6 @@ module.exports.delete = (req, res, next) => {
     })
     .catch((error) => next(error));
 }
-
-// module.exports.delete = (req, res, next) => {
-//   Swal.fire({
-//     title: "Are you sure?",
-//     text: "You won't be able to revert this!",
-//     icon: "warning",
-//     showCancelButton: true,
-//     confirmButtonColor: "#3085d6",
-//     cancelButtonColor: "#d33",
-//     confirmButtonText: "Yes, delete it!"
-//   })
-//   .then((result) => {
-//     if (result.isConfirmed) {
-//       User.findByIdAndDelete(req.params.id)
-//         .then((user) => {
-//           if (!user) {
-//             next(createError(404, "Usuario no encontrado"));
-//           } else {
-//             Swal.fire({
-//               title: "Deleted!",
-//               text: "Your file has been deleted.",
-//               icon: "success"
-//             });
-//             res.redirect("/");
-//           }
-//         })
-//         .catch((error) => next(error));
-//     }
-//   });
-// }
-
 
 module.exports.acceptNewMember = (req, res, next) => {
   const userId = req.params.id;

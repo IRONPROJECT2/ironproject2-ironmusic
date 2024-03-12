@@ -14,6 +14,7 @@ app.set("views", `${__dirname}/views`);
 app.use(logger("dev"));
 
 app.use(express.urlencoded());
+app.use(express.static(`${__dirname}/public`));
 
 const { session, loadUserSession } = require('./configs/session.config');
 app.use(session);

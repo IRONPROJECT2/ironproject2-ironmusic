@@ -40,8 +40,21 @@ const bandSchema = new Schema(
       type: Schema.Types.ObjectId, 
       ref: "User"
     }],
+    // "polimorfismo de referencia" (Reference Model Polymorphism)
+    posts: [{
+        type: Schema.Types.ObjectId,
+        refPath: 'postType'
+      }],
+  
+    // Campo adicional que almacena el tipo de referencia para 'posts'
+    postType: {
+      type: String,
+      required: true,
+      enum: ["Bandjam", "Formarbanda", "Anunciatuconcierto"]
+    }
     //ranking
-  }
+  },
+  { timestamps: true }
 )
 
 const Band = mongoose.model('Band', bandSchema);
