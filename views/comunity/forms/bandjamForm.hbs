@@ -2,63 +2,110 @@
 
 <form action="/bandjamForm" method="post">
   <!-- 2 column grid layout with text inputs for the first and last names -->
-  <div class="row mb-4">
-    <div class="col">
-      <div data-mdb-input-init class="form-outline">
-        <input type="text" id="form6Example1" class="form-control" />
-        <label class="form-label" for="form6Example1">First name</label>
-      </div>
-    </div>
-    <div class="col">
-      <div data-mdb-input-init class="form-outline">
-        <input type="text" id="form6Example2" class="form-control" />
-        <label class="form-label" for="form6Example2">Last name</label>
-      </div>
-    </div>
+
+  <div data-mdb-input-init class="form-outline mb-4">
+    <input type="text" id="bandName" name="bandName" class="form-control" />
+    <label class="form-label" for="bandName">Nombre de la banda</label>
   </div>
 
-  <!-- Text input -->
-  <div data-mdb-input-init class="form-outline mb-4">
-    <input type="text" id="form6Example3" class="form-control" />
-    <label class="form-label" for="form6Example3">Company name</label>
+  <div class="form-group mb-2">
+    <label for="musicalGenre" class="form-label">Género</label>
+    <select name="musicalGenre" id="musicalGenre">
+      <option value="Rock">Rock</option>
+      <option value="Pop">Pop</option>
+      <option value="Indie">Indie</option>
+      <option value="Hip Hop">Hip Hop</option>
+      <option value="Jazz">Jazz</option>
+      <option value="Blues">Blues</option>
+      <option value="Reggae">Reggae</option>
+      <option value="R&B">R&B</option>
+      <option value="Country">Country</option>
+      <option value="Electrónica">Electrónica</option>
+      <option value="Folk">Folk</option>
+      <option value="Metal">Metal</option>
+      <option value="Punk">Punk</option>
+      <option value="Clásica">Clásica</option>
+      <option value="Soul">Soul</option>
+      <option value="Funk">Funk</option>
+      <option value="Gospel">Gospel</option>
+      <option value="Salsa">Salsa</option>
+      <option value="Reggaeton">Reggaeton</option>
+      <option value="Alternativa">Alternativa</option>
+    </select>
   </div>
 
-  <!-- Text input -->
   <div data-mdb-input-init class="form-outline mb-4">
-    <input type="text" id="form6Example4" class="form-control" />
-    <label class="form-label" for="form6Example4">Address</label>
+    <select class="form-select" multiple aria-label="Multiple select example">
+      <option value="Voz">Voz</option>
+      <option value="Coros">Coros</option>
+      <option value="Guitarra">Guitarra</option>
+      <option value="Bajo">Bajo</option>          
+      <option value="Teclado">Teclado</option>
+      <option value="Batería">Batería</option>
+      <option value="Piano">Piano</option>
+      <option value="Saxofón">Saxofón</option>
+      <option value="Arpa">Arpa</option>
+      <option value="Acordeón">Acordeón</option>
+      <option value="Bajo">Bajo</option>
+      <option value="Banjo">Banjo</option>
+      <option value="Bagpipes">Bagpipes</option>
+      <option value="Cello">Cello</option>
+      <option value="Charango">Charango</option>
+      <option value="Clarinete">Clarinete</option>
+      <option value="Contrabajo">Contrabajo</option>
+      <option value="Congas">Congas</option>
+      <option value="Cítara">Cítara</option>
+      <option value="Cuerno Francés">Cuerno Francés</option>
+      <option value="Djembe">Djembe</option>
+      <option value="Didgeridoo">Didgeridoo</option>
+      <option value="Dulcémele">Dulcémele</option>
+      <option value="Erhu">Erhu</option>
+      <option value="Flauta">Flauta</option>
+      <option value="Gaita">Gaita</option>
+      <option value="Gong">Gong</option>
+      <option value="Harmónica">Harmónica</option>
+      <option value="Kalimba">Kalimba</option>
+      <option value="Koto">Koto</option>
+      <option value="Mandolina">Mandolina</option>
+      <option value="Marimba">Marimba</option>
+      <option value="Melódica">Melódica</option>
+      <option value="Oboe">Oboe</option>
+      <option value="Pandereta">Pandereta</option>
+      <option value="Sitar">Sitar</option>
+      <option value="Shakuhachi">Shakuhachi</option>
+      <option value="Steel Drum">Steel Drum</option>
+      <option value="Trombón">Trombón</option>
+      <option value="Trompeta">Trompeta</option>
+      <option value="Theremin">Theremin</option>
+      <option value="Tuba">Tuba</option>
+      <option value="Ukelele">Ukelele</option>
+      <option value="Viola">Viola</option>
+      <option value="Violín">Violín</option>
+      <option value="Xilófono">Xilófono</option>
+      <option value="Zampoña">Zampoña</option>
+    </select>
+    <label class="form-label" for="instruments">Instrumentos</label>
   </div>
 
   <!-- Email input -->
   <div data-mdb-input-init class="form-outline mb-4">
-    <input type="email" id="form6Example5" class="form-control" />
-    <label class="form-label" for="form6Example5">Email</label>
+    <input type="number" id="Number" name="Number" class="form-control" />
+    <label class="form-label" for="Number">Número de integrantes</label>
   </div>
 
   <!-- Number input -->
   <div data-mdb-input-init class="form-outline mb-4">
-    <input type="number" id="form6Example6" class="form-control" />
-    <label class="form-label" for="form6Example6">Phone</label>
+    <input type="number" id="location" name="location" class="form-control" />
+    <label class="form-label" for="location">Ubicación</label>
   </div>
 
   <!-- Message input -->
   <div data-mdb-input-init class="form-outline mb-4">
-    <textarea class="form-control" id="form6Example7" rows="4"></textarea>
-    <label class="form-label" for="form6Example7">Additional information</label>
-  </div>
-
-  <!-- Checkbox -->
-  <div class="form-check d-flex justify-content-center mb-4">
-    <input
-      class="form-check-input me-2"
-      type="checkbox"
-      value=""
-      id="form6Example8"
-      checked
-    />
-    <label class="form-check-label" for="form6Example8"> Create an account? </label>
+    <textarea class="form-control" id="lookingfor" name="lookingfor" rows="4"></textarea>
+    <label class="form-label" for="lookingfor">Cuentanos, ¿qué estás buscando?</label>
   </div>
 
   <!-- Submit button -->
-  <button data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4">Place order</button>
+  <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Anunciar!<i class="bi bi-music-note"></i></button>
 </form>
+
