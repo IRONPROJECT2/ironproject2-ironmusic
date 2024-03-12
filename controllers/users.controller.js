@@ -1,7 +1,9 @@
-const User = require('../models/user.model');
+const User = require("../models/user.model");
+const Band = require("../models/band.model");
 const mongoose = require('mongoose');
 const { sessions } = require("../middlewares/auth.middleware");
 const createError = require("http-errors");
+const Swal = require("sweetalert2");
 
 
 
@@ -69,7 +71,25 @@ module.exports.logout = (req, res, next) => {
 }
 
 module.exports.profile = (req, res, next) => {
-  res.render("users/profile");
+  Band.find()
+    .populate('pendingMembers')
+    .populate('members')
+    .then((bands) => {
+      if (!bands) {
+        next(createError(404, "Banda no encontrada"));
+      } else {
+        const pendingMembersIds = bands.reduce((acc, band) => {
+          return acc.concat(band.pendingMembers);
+        }, []);
+
+        User.find({ _id: pendingMembersIds })
+          .then((pendingMembers) => {
+            res.render("users/profile", { pendingMembers, bands });
+          })
+          .catch((error) => next(error))
+      }
+    })
+    .catch((error) => next(error));
 }
 
 module.exports.edit = (req, res, next) => {
@@ -114,5 +134,68 @@ module.exports.delete = (req, res, next) => {
         res.redirect("/");
       }
     })
+    .catch((error) => next(error));
+}
+
+// module.exports.delete = (req, res, next) => {
+//   Swal.fire({
+//     title: "Are you sure?",
+//     text: "You won't be able to revert this!",
+//     icon: "warning",
+//     showCancelButton: true,
+//     confirmButtonColor: "#3085d6",
+//     cancelButtonColor: "#d33",
+//     confirmButtonText: "Yes, delete it!"
+//   })
+//   .then((result) => {
+//     if (result.isConfirmed) {
+//       User.findByIdAndDelete(req.params.id)
+//         .then((user) => {
+//           if (!user) {
+//             next(createError(404, "Usuario no encontrado"));
+//           } else {
+//             Swal.fire({
+//               title: "Deleted!",
+//               text: "Your file has been deleted.",
+//               icon: "success"
+//             });
+//             res.redirect("/");
+//           }
+//         })
+//         .catch((error) => next(error));
+//     }
+//   });
+// }
+
+
+module.exports.acceptNewMember = (req, res, next) => {
+  const userId = req.params.id;
+  const bandId = req.query.bandId;
+
+  const updateUser = User.findByIdAndUpdate(userId, { $push: { bands: bandId } });
+  const updateBand = Band.findByIdAndUpdate(bandId, { $push: { members: userId }, $pull: { pendingMembers: userId } });
+
+  Promise.all([updateUser, updateBand])
+    .then(() => {
+      res.redirect("/profile");
+    })
+    .catch((error) => next(error));
+}
+
+module.exports.removeNewMember = (req, res, next) => {
+  const userId = req.params.id;
+  const bandId = req.query.bandId;
+  
+  Band.findByIdAndUpdate(bandId, { $pull: { pendingMembers: userId} })
+    .then(() => res.redirect("/profile"))
+    .catch((error) => next(error));
+} 
+
+module.exports.removeMember = (req, res, next) => {
+  const userId = req.params.id;
+  const bandId = req.query.bandId;
+
+  Band.findByIdAndUpdate(bandId, { $pull: { members: userId } })
+    .then(() => res.redirect("/profile"))
     .catch((error) => next(error));
 }

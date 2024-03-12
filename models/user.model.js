@@ -51,13 +51,13 @@ const userSchema = new Schema(
       type: String,
       required: true
     },
-    // bands: [{
-    //   type: Schema.Types.ObjectId,
-    //   ref: "Banda"
-    // }],
-    socialMedia: {
+    bands: [{
+      type: Schema.Types.ObjectId,
+      ref: "Band"
+    }],
+    socialMedia: [{
       type: String
-    },
+    }],
     // bandRequest: [{
     //   bandId: {
     //     type: Schema.Types.ObjectId,

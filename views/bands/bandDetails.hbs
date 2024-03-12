@@ -1,0 +1,27 @@
+
+<img src="{{band.photo}}" alt="band image">
+<h2>{{band.name}}</h2>
+<h4>Biografía:</h4>
+<p>{{band.biography}}</p>
+
+<h4>Integrantes:</h4>
+<ul>
+  {{#each band.members}}
+    <li>{{this.name}}</li>
+    <li>{{this.description}}</li>
+  {{/each}}
+</ul>
+
+{{#if currentUser}}
+  {{#userIsInTheBand currentUser band}}
+    <p>Estas en la banda</p>
+  {{else}}
+    {{#registerPending currentUser band}}
+      <p>Solicitud enviada</p>
+    {{else}}
+      <form action="/joinBand/{{band.id}}" method="post">
+        <button class="btn btn-primary">Unirme a banda</button>
+      </form>
+    {{/registerPending}}
+  {{/userIsInTheBand}}
+{{/if}}

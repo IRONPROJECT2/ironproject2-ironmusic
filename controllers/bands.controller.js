@@ -10,6 +10,10 @@ module.exports.doCreate = (req, res, next) => {
   bandUser.administrator = req.user.id;
 
   Band.create(bandUser)
+    .then((band) => {
+      band.members.push(req.user.id);
+      return band.save();
+    })
     .then(() => res.redirect("/bands"))
     .catch((error) => {
       if (error instanceof mongoose.Error.ValidationError) {
@@ -21,11 +25,42 @@ module.exports.doCreate = (req, res, next) => {
 };
 
 module.exports.listBands = (req, res, next) => {
+  const genre = ["Rock", "Pop", "Indie", "Hip Hop",
+      "Jazz", "Blues", "Reggae", "R&B", "Country",
+      "Electrónica", "Folk", "Metal", "Punk", "Clásica",
+      "Soul", "Funk","Gospel", "Salsa", "Reggaeton", "Alternativa"];
   Band.find()
     .then((bands) => {
-      console.debug(bands)
-      res.render("bands/bands", { bands })
+      res.render("bands/bands", { bands, genre });
     })
     .catch((error) => next(error));
-    };
+};
+
+module.exports.details = (req, res, next) => {
+  Band.findById(req.params.id)
+    .populate("members")
+    .then((band) => {
+      if (!band) {
+        next(createError(404, "Banda no encontrada"));
+      } else {
+        res.render("bands/bandDetails", { band });
+      }
+    })
+    .catch((error) => next(error));
+}
+
+module.exports.joinBand = (req, res, next) => {
+  Band.findByIdAndUpdate(req.params.id)
+    .then((band) => {
+      band.pendingMembers.push(req.user.id);
+      return band.save();
+    })
+    .then(() => {
+      // Obtener la URL anterior desde el encabezado Referer
+      const referer = req.get('Referer');
+      // Redirigir de nuevo a la misma página
+      res.redirect(referer || '/');
+    })
+    .catch((error) => next(error));
+}
   

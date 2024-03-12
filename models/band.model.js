@@ -21,19 +21,25 @@ const bandSchema = new Schema(
       required: [true, "La biografía es obligatoria"],
       minLength: [10, "La biografía necesita al menos 10 caracteres"]     
     },
-    //members
-    //pendingMembers
     photo: {
       type: String
     },
-    socialMedia: {
+    socialMedia: [{
       type: String
-    },
+    }],
     administrator: {
       type: Schema.Types.ObjectId, 
       ref: "User",
       required: true
     },
+    members: [{
+      type: Schema.Types.ObjectId, 
+      ref: "User"
+    }],
+    pendingMembers: [{
+      type: Schema.Types.ObjectId, 
+      ref: "User"
+    }],
     //ranking
   }
 )

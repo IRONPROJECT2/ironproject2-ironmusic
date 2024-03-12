@@ -1,24 +1,19 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/"><img src="https://i.postimg.cc/6QjpfvMs/08d1795e-e999-4981-a058-5674d00c7138.jpg" alt="ironmusic logo" style="height: 60px;"></a>
-    <p>IRONMUSIC</p>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <a class="navbar-brand" href="/"><img src="https://i.postimg.cc/6QjpfvMs/08d1795e-e999-4981-a058-5674d00c7138.jpg" alt="ironmusic logo" style="height: 60px;"> IRONMUSIC</a>
 
+    <div class="navbar navbar-expand-lg">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Menu
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Bandas</a></li>
+            <li><a class="dropdown-item" href="/bands">Bandas</a></li>
             <li><a class="dropdown-item" href="#">Comunidad</a></li>
           </ul>
         </li>
-
 
         {{!-- PARA CUANDO INICIE SESION EL USUARIO --}}
         {{#if currentUser}}
@@ -44,30 +39,31 @@
             </ul>
           </li>
         {{/if}}
-
       </ul>
+
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
 
-
       {{#if currentUser}}
-      <div class="collapse navbar-collapse" id="main-navbar">
-        {{!-- <ul class="navbar-nav mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link {{navActive currentPath '/profile'}}" aria-current="page" href="/profile">{{currentUser.userName}}</a></li>
-          <li class="nav-item"><a class="nav-link" aria-current="page" href="/logout">LOGOUT</a></li>
-        </ul> --}}
+      <div class="collapse navbar-collapse text-decoration-none" id="main-navbar">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-decoration-none">
+          {{!-- <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link {{navActive currentPath '/profile'}}" aria-current="page" href="/profile">{{currentUser.userName}}</a></li>
+            <li class="nav-item"><a class="nav-link" aria-current="page" href="/logout">LOGOUT</a></li>
+          </ul> --}}
 
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              {{currentUser.userName}}
-            </a>
-            <ul class="dropdown-menu">
-              <li class="nav-item"><a class="nav-link" aria-current="page" href="/profile">Perfil</a></li>
-              <li class="nav-item"><a class="nav-link" aria-current="page" href="/logout">Cerrar sesion</a></li>
-            </ul>
-        </li>
+          <li class="nav-item dropdown ">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{currentUser.userName}}
+              </a>
+              <ul class="dropdown-menu">
+                <li class="nav-item"><a class="nav-link" aria-current="page" href="/profile">Perfil</a></li>
+                <li class="nav-item"><a class="nav-link" aria-current="page" href="/logout">Cerrar sesion</a></li>
+              </ul>
+          </li>
+        </ul>
       </div>
       {{else}}
         <a class="navbar-brand ms-3" href="/reglog">login</a>
@@ -76,3 +72,4 @@
     </div>
   </div>
 </nav>
+
