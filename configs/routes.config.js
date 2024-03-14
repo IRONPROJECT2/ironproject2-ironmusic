@@ -33,11 +33,11 @@ router.get("/formarbanda", comunity.formarbanda);
 router.get("/anunciatuconcierto", comunity.anunciatuconcierto);
 
 router.get("/bandjamForm", comunity.bandjamForm);
-// router.post("/bandjamForm", comunity.doBandjamForm);
+router.post("/bandjamForm", comunity.doBandjamForm);
 router.get("/formarBandaForm", comunity.formarBandaForm);
-// router.post("/formarBandaForm", comunity.doFormarBandaForm);
+router.post("/formarBandaForm", comunity.doFormarBandaForm);
 router.get("/anunciaTuConciertoForm", comunity.anunciaTuConciertoForm);
-// router.post("/anunciaTuConciertoForm", comunity.doAnunciaTuConciertoForm);
+router.post("/anunciaTuConciertoForm", comunity.doAnunciaTuConciertoForm);
 
 router.get("/", (req, res, next) => res.render("index"));
 module.exports = router;

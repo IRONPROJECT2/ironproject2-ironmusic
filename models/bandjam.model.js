@@ -6,7 +6,6 @@ const bandjamSchema = new Schema(
     bandName: {
       type: String,
       required: [true, "Es necesario rellenar este campo"],
-      unique: true,
     },
     musicalGenre: {
     type: String,
@@ -16,18 +15,16 @@ const bandjamSchema = new Schema(
       "Soul", "Funk","Gospel", "Salsa", "Reggaeton", "Alternativa"],
       required: [true, "Es necesario rellenar este campo"]  
     },
-    instruments: {
+    instruments: [{
       type: String,
-      enum: ["Voz", "Coros", "Guitarra", "Batería", "Bajo", "Teclado", "Violín",
-      "Saxofón", "Trompeta", "Flauta", "Piano", "Trombón",
-      'Oboe', 'Clarinete', "Arpa", 'Contrabajo', "Cello",
-      "Djembe", "Congas", "Xilófono", "Tuba", "Banjo",
-      'Harmónica', "Acordeón", "Ukelele", "Viola", "Sitar",
-      "Cuerno Francés", "Cítara", "Steel Drum", "Theremin",
-      "Kalimba", "Didgeridoo", "Bagpipes", "Marimba", "Erhu",
-      "Zampoña", "Melódica", "Charango", "Mandolina", "Gaita",
-      "Dulcémele", "Shakuhachi", "Koto", "Pandereta", "Gong"]
-    },
+      enum: ["Voz", "Coros", "Guitarra", "Bajo", "Teclado", "Batería", "Piano",
+      "Saxofón", "Arpa", "Acordeón", "Banjo", "Bagpipes", "Cello", "Charango",
+      "Clarinete", "Contrabajo", "Congas" ,"Cítara", "Cuerno Francés", "Djembe",
+      "Didgeridoo", "Dulcémele", "Erhu", "Flauta", "Gaita", "Gong", "Harmónica",
+      "Kalimba", "Koto", "Mandolina", "Marimba", "Melódica", "Oboe", "Pandereta",
+      "Sitar", "Shakuhachi", "Steel Drum", "Trombón" ,"Trompeta", "Theremin", "Tuba", 
+      "Ukelele", "Viola", "Violín", "Xilófono", "Zampoña"]
+    }],
     numberOfMembers: {
       type: Number,
       required: [true, "Es obligatorio indicar el número de miembros de tu banda"]

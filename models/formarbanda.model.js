@@ -6,7 +6,6 @@ const formarbandaSchema = new Schema(
     name: {
       type: String,
       required: [true, "Es necesario rellenar este campo"],
-      unique: true
     },
     musicalGenre: {
       type: String,
@@ -16,19 +15,16 @@ const formarbandaSchema = new Schema(
       "Soul", "Funk","Gospel", "Salsa", "Reggaeton", "Alternativa"],
       required: [true, "Es necesario rellenar este campo"]
     },
-    instruments: {
+    instruments: [{
       type: String,
-      enum: ["Voz", "Coros", "Guitarra", "Batería", "Bajo", "Teclado", "Violín",
-      "Saxofón", "Trompeta", "Flauta", "Piano", "Trombón",
-      'Oboe', 'Clarinete', "Arpa", 'Contrabajo', "Cello",
-      "Djembe", "Congas", "Xilófono", "Tuba", "Banjo",
-      'Harmónica', "Acordeón", "Ukelele", "Viola", "Sitar",
-      "Cuerno Francés", "Cítara", "Steel Drum", "Theremin",
-      "Kalimba", "Didgeridoo", "Bagpipes", "Marimba", "Erhu",
-      "Zampoña", "Melódica", "Charango", "Mandolina", "Gaita",
-      "Dulcémele", "Shakuhachi", "Koto", "Pandereta", "Gong"],
-      required: [true, "Es necesario rellenar este campo"]
-    },
+      enum: ["Voz", "Coros", "Guitarra", "Bajo", "Teclado", "Batería", "Piano",
+      "Saxofón", "Arpa", "Acordeón", "Banjo", "Bagpipes", "Cello", "Charango",
+      "Clarinete", "Contrabajo", "Congas" ,"Cítara", "Cuerno Francés", "Djembe",
+      "Didgeridoo", "Dulcémele", "Erhu", "Flauta", "Gaita", "Gong", "Harmónica",
+      "Kalimba", "Koto", "Mandolina", "Marimba", "Melódica", "Oboe", "Pandereta",
+      "Sitar", "Shakuhachi", "Steel Drum", "Trombón" ,"Trompeta", "Theremin", "Tuba", 
+      "Ukelele", "Viola", "Violín", "Xilófono", "Zampoña"]
+    }],
     location: {
       type: String,
       required: [true, "Es necesario rellenar este campo"]
@@ -39,8 +35,9 @@ const formarbandaSchema = new Schema(
       minLength: [10, "La descripción necesita al menos 10 caracteres"]
     },
     creator: {
-      type: String,
-      required: [true, "Es necesario rellenar este campo"]
+      type: Schema.Types.ObjectId, 
+      ref: "User",
+      required: true
     }
   },
   { timestamps: true }
