@@ -12,3 +12,12 @@
       </form>
     {{/theUserIsTheCreator}}
   {{/each}}
+
+<form action="/messages" method="post">
+  <input type="hidden" name="postType" value="Bandjam">
+  <input type="hidden" name="post" value="{{postBand.id}}">
+</form>
+
+
+
+

@@ -12,10 +12,10 @@ const messageSchema = new Schema (
       type: String,
       required: [true, 'Message text is required']
     },
-    posts: [{
+    post: {
       type: Schema.Types.ObjectId,
       refPath: 'postType'
-    }],
+    },
     postType: {
       type: String,
       enum: ["Bandjam", "Formarbanda", "Anunciatuconcierto"]

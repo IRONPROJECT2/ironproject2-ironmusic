@@ -20,13 +20,13 @@ const anunciatuconciertoSchema = new Schema(
       required: [true, "Es necesario rellenar este campo"]
     },
     date: {
-      type: String,
+      type: Date,
       required: [true, "Es necesario rellenar este campo"]
     },
-    time: {
-      type: String,
-      required: [true, "Es necesario rellenar este campo"]
-    },
+    // time: {
+    //   type: String,
+    //   required: [true, "Es necesario rellenar este campo"]
+    // },
     creator: {
       type: Schema.Types.ObjectId, 
       ref: "User",

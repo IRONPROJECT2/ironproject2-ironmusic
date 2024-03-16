@@ -1,17 +1,17 @@
-.bg-image {
+/* .bg-image {
   background-image: url("../images/bg-crawd/free-music-graphic-design-music-d95cd2bfac9a14916f62f6d3c7944028.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-}
+} */
 
 
 
 /* https://d1rs3px2gf3dlr.cloudfront.net/media/blog/featured/RockBand4-KeyArt-1080p.png */
 .card1 {
-  /* background-image: url("https://i.postimg.cc/BbktYVbg/Rock-Band4-Key-Art-1080p-2.jpg");
+  background-image: url("https://d1rs3px2gf3dlr.cloudfront.net/media/blog/featured/RockBand4-KeyArt-1080p.png");
   background-size: cover;
-  background-repeat: no-repeat; */
+  background-repeat: no-repeat;
   background-color: rgba(255, 255, 255, 0.6);
 }
 
@@ -21,17 +21,17 @@
 
 /* https://www.ansa.it/webimages/news_base/2023/6/30/8f0696df4fc75fa005931836c62d9697.jpg */
 .card2 {
-  /* background-image: url("https://i.postimg.cc/0jRy7JBW/8f0696df4fc75fa005931836c62d9697-1.jpg");
+  background-image: url("https://www.ansa.it/webimages/news_base/2023/6/30/8f0696df4fc75fa005931836c62d9697.jpg");
   background-size: cover;
-  background-repeat: no-repeat; */
+  background-repeat: no-repeat;
   background-color: rgba(255, 255, 255, 0.6);
 }
 
 /* https://www.timeoutdubai.com/cloud/timeoutdubai/2023/05/22/gigs-in-dubai-1.png */
 .card3 {
-  /* background-image: url("https://i.postimg.cc/G2nWQJby/gigs-in-dubai-1.jpg");
+  background-image: url("https://www.timeoutdubai.com/cloud/timeoutdubai/2023/05/22/gigs-in-dubai-1.png");
   background-size: cover;
-  background-repeat: no-repeat; */
+  background-repeat: no-repeat;
   background-color: rgba(255, 255, 255, 0.6);
 }
 
