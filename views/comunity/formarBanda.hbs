@@ -1,3 +1,17 @@
 <h1 class="my-5">Formar banda</h1>
 <a class="btn btn-success" href="/formarBandaForm">Crea un post</a>
 
+{{#each postBand}}
+  <h1>{{name}}</h1>
+  <h5>género: {{musicalGenre}}</h5>
+  <h5>instrumentos: {{instruments}}</h5>
+  <p>localización: {{location}}</p>
+  <p>descripción: {{lookingfor}}</p>
+  {{#theUserIsTheCreator ../currentUser creator}}
+    <a href="/formarbanda/{{id}}/edit">Editar</a>
+    <form action="/formarbanda/{{id}}/delete" method="post">
+      <button type="submit" class="btn btn-primary btn-block mb-4">Eliminar</button>
+    </form>
+  {{/theUserIsTheCreator}}
+
+{{/each}}

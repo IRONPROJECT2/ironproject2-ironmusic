@@ -21,6 +21,7 @@ module.exports.bandjam = (req, res, next) => {
 module.exports.formarbanda = (req, res, next) => {
   FormBand.find()
   .then((postBand) => {
+    console.debug(postBand)
     res.render("comunity/formarbanda", { postBand })  
   })
   .catch((error) => next(error));
@@ -89,6 +90,139 @@ module.exports.doAnunciaTuConciertoForm = (req, res, next) => {
     })
     .then(() => res.redirect("/anunciatuconcierto"))
     .catch((error) => next(error));
-    
 }
+
+module.exports.bandjamEdit = (req, res, next) => {
+  const genre = ["Rock", "Pop", "Indie", "Hip Hop",
+  "Jazz", "Blues", "Reggae", "R&B", "Country",
+  "Electrónica", "Folk", "Metal", "Punk", "Clásica",
+  "Soul", "Funk","Gospel", "Salsa", "Reggaeton", "Alternativa"]
+
+  const inst = ["Voz", "Coros", "Guitarra", "Bajo", "Teclado", "Batería", "Piano",
+  "Saxofón", "Arpa", "Acordeón", "Banjo", "Bagpipes", "Cello", "Charango",
+  "Clarinete", "Contrabajo", "Congas" ,"Cítara", "Cuerno Francés", "Djembe",
+  "Didgeridoo", "Dulcémele", "Erhu", "Flauta", "Gaita", "Gong", "Harmónica",
+  "Kalimba", "Koto", "Mandolina", "Marimba", "Melódica", "Oboe", "Pandereta",
+  "Sitar", "Shakuhachi", "Steel Drum", "Trombón" ,"Trompeta", "Theremin", "Tuba", 
+  "Ukelele", "Viola", "Violín", "Xilófono", "Zampoña"]
+  Bandjam.findById(req.params.id)
+  .then((bandjam) => {
+    if (!bandjam) {
+      next(createError(404, "Banda no encontrada"));
+    } else {
+      res.render("comunity/edits/bandjamEdit", { bandjam, genre, inst })
+    }
+  })
+  .catch((error) => next(error))
+}
+
+module.exports.bandjamDoEdit = (req, res, next) => {
+  const { id } = req.params;
+
+  Bandjam.findByIdAndUpdate(id, req.body, { new: true })
+    .then((bandjam) => {
+      if (!bandjam) {
+        next(createError(404, "Banda no encontrada"));
+      } else {
+        res.redirect("/bandjam");
+      }
+    })
+    .catch((error) => {
+      if (error instanceof mongoose.Error.ValidationError) {
+        res.status(400).render("comunity/edits/bandjamDoEdit", { bandjam: req.body, errors: error.errors});
+      } else {
+        next(error);
+      }
+    });
+};
+
+module.exports.bandjamDelete = (req, res, next) => {
+
+  Bandjam.findByIdAndDelete(req.params.id)
+    .then(() => res.redirect("/bandjam"))
+    .catch((error) => next(error))
+}
+
+module.exports.formarBandaEdit = (req, res, next) => {
+  const genre = ["Rock", "Pop", "Indie", "Hip Hop",
+  "Jazz", "Blues", "Reggae", "R&B", "Country",
+  "Electrónica", "Folk", "Metal", "Punk", "Clásica",
+  "Soul", "Funk","Gospel", "Salsa", "Reggaeton", "Alternativa"]
+
+  const inst = ["Voz", "Coros", "Guitarra", "Bajo", "Teclado", "Batería", "Piano",
+  "Saxofón", "Arpa", "Acordeón", "Banjo", "Bagpipes", "Cello", "Charango",
+  "Clarinete", "Contrabajo", "Congas" ,"Cítara", "Cuerno Francés", "Djembe",
+  "Didgeridoo", "Dulcémele", "Erhu", "Flauta", "Gaita", "Gong", "Harmónica",
+  "Kalimba", "Koto", "Mandolina", "Marimba", "Melódica", "Oboe", "Pandereta",
+  "Sitar", "Shakuhachi", "Steel Drum", "Trombón" ,"Trompeta", "Theremin", "Tuba", 
+  "Ukelele", "Viola", "Violín", "Xilófono", "Zampoña"]
+
+  FormBand.findById(req.params.id)
+  .then((formarbanda) => {
+    if (!formarbanda) {
+      next(createError(404, "Banda no encontrada"));
+    } else {
+      res.render("comunity/edits/formarBandaEdit", { formarbanda, genre, inst })
+    }
+  })
+}
+
+module.exports.formarBandaDoEdit = (req, res, next) => {
+  const { id } = req.params;
+
+  FormBand.findByIdAndUpdate(id, req.body, { new: true })
+    .then((formarbanda) => {
+      if (!formarbanda) {
+        next(createError(404, "Banda no encontrada"));
+      } else {
+        res.redirect("/formarbanda");
+      }
+    })
+    .catch((error) => {
+      if (error instanceof mongoose.Error.ValidationError) {
+        res.status(400).render("comunity/edits/formarBandaForm", { formarbanda: req.body, errors: error.errors});
+      } else {
+        next(error);
+      }
+    });
+};
+
+module.exports.formarBandaDelete = (req, res, next) => {
+
+  FormBand.findByIdAndDelete(req.params.id)
+    .then(() => res.redirect("/formarbanda"))
+    .catch((error) => next(error))
+}
+
+/* ANUNCIA TU CONCIERTO */
+
+module.exports.anunciatuconciertoEdit = (req, res, next) => {
+  Atc.findById(req.params.id) 
+    .then((post) => res.render("comunity/edits/atcEdit", { post }))
+    .catch((error) => next(error)) 
+}
+
+module.exports.anunciatuconciertoDoEdit = (req, res, next) => {
+  const { id } = req.params
+  Atc.findByIdAndUpdate(id, req.body, { new: true })
+    .then((atcEdit) => {
+      if (!atcEdit) {
+        next(createError(404, "No se ha conseguido editar"))
+      } else {
+        res.redirect("/anunciatuconcierto")
+      }
+    })
+    .catch((error) => {
+      if (error instanceof mongoose.Error.ValidationError) {
+        res.status(400).render("comunity/edits/anunciaTuConciertoForm", { atcEdit, errors: error.errors })
+      }
+    })
+}
+
+module.exports.anunciatuconciertoDelete = (req, res, next) => {
+  Atc.findByIdAndDelete(req.params.id)
+    .then(() => res.redirect("/anunciatuconcierto"))
+    .catch((error) => next(error))
+}
+
 

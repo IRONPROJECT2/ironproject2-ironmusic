@@ -1,0 +1,41 @@
+<h1>Editar post de Formar Banda</h1>
+<form action="/formarbanda/{{formarbanda.id}}/edit" method="post">
+
+  <div data-mdb-input-init class="form-outline mb-4">
+    <input type="text" id="name" name="name" class="form-control" value="{{formarbanda.name}}" />
+    <label class="form-label" for="name">Nombre de la banda</label>
+  </div>
+
+  <div class="form-group mb-2">
+    <label for="musicalGenre" class="form-label">Género musical</label>
+    <select name="musicalGenre" id="musicalGenre" >
+
+      {{#each genre}}
+        <option value="{{this}}">{{this}}</option>
+      {{/each}}
+    </select>
+  </div>
+
+  <div data-mdb-input-init class="form-outline mb-4">
+    <select class="form-select" name="instruments" multiple aria-label="Multiple select example">
+      {{#each inst}}
+        <option value="{{this}}">{{this}}</option>
+      {{/each}}
+    </select>
+    <label class="form-label" for="instruments">Instrumentos</label>
+  </div>
+
+  <div data-mdb-input-init class="form-outline mb-4">
+    <input type="text" id="location" name="location" class="form-control" value="{{formarbanda.location}}" />
+    <label class="form-label" for="location">Ubicación</label>
+  </div>
+
+  <div data-mdb-input-init class="form-outline mb-4">
+    <textarea class="form-control" id="lookingfor" name="lookingfor" rows="4">{{formarbanda.lookingfor}}</textarea>
+    <label class="form-label" for="lookingfor">Cuéntanos, ¿qué estás buscando?</label>
+  </div>
+
+  <!-- Submit button -->
+  <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Editar <i class="bi bi-pencil"></i></button>
+</form>
+

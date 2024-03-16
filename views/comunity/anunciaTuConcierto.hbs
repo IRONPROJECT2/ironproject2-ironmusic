@@ -1,3 +1,15 @@
 <h1 class="my-5">Anuncia tu concierto</h1>
 <a class="btn btn-success" href="/anunciaTuConciertoForm">Crea un post</a>
 
+{{#each postBand}}
+  <h1>{{name}}</h1>
+  <h5>descripción: {{descriptionGenre}}</h5>
+  <p>locación: {{location}}</p>
+  {{#theUserIsTheCreator ../currentUser creator}}
+    <a href="/anunciatuconcierto/{{id}}/edit">Editar</a>
+    <form action="/anunciatuconcierto/{{id}}/delete" method="post">
+      <button type="submit" class="btn btn-primary btn-block mb-4">Eliminar</button>
+    </form>
+  {{/theUserIsTheCreator}}
+
+{{/each}}

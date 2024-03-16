@@ -15,173 +15,117 @@
 {{currentUser.location}}
 {{currentUser.socialMedia}}
 
+
 {{#each bands}}
-  {{#isAdministrator this ../currentUser}}
+  {{#userIsInTheBand ../currentUser this}}
     <div class="card" style="width: 18rem;">
       <div class="card-body">
+        <img src={{photo}} class="card-img-top" alt="band photo">
         <h5 class="card-title">{{name}}</h5>
+        <p>Genre: {{musicalGenre}}</p>
+        <p>Members:</p>
         <ul class="list-unstyled">
           {{#each members}}
-            {{#isAdministratorInTheBand ../administrator this}}
-              <div class="d-flex justify-content-between">
-                  <li class="text-decoration-none">{{this.name}}</li>
-              </div>
-            {{else}}
-              <div class="d-flex justify-content-between">
-                <li class="text-decoration-none">{{this.name}}</li>
-                <a href="/user/{{this.id}}/removeMember?bandId={{../_id}}"><i class="fas fa-user-xmark" style="color: red;"></i></a>
-              </div>
-            {{/isAdministratorInTheBand}}
+            <div class="d-flex justify-content-between">
+              <li class="text-decoration-none">{{this.name}}</li>
+              <ul class="list-unstyled">
+                {{#each this.instruments}}
+                  <li>{{this}}</li>
+                {{/each}}
+              </ul>
+              {{#thisIsTheUser ../../currentUser this}}
+                <a href="/user/{{this.id}}/removeMember?bandId={{../../_id}}"><i class="fas fa-user-times" style="color: red;"></i></a>
+              {{else}}
+                {{#isAdministratorInTheBand ../administrator ../../currentUser}}
+                  <a href="/user/{{this.id}}/removeMember?bandId={{../../_id}}"><i class="fas fa-user-times" style="color: red;"></i></a>
+                {{/isAdministratorInTheBand}}
+              {{/thisIsTheUser}}
+            </div>
           {{/each}}
         </ul>
-      {{#each pendingMembers}}
-        <h5 class="card-title">{{name}}</h5>
-        <h6 class="card-subtitle mb-2 text-body-secondary">{{email}}</h6>
-        <p class="card-text">{{this.description}}</p>
-        <form action="/pendingMembers/{{this.id}}/accept?bandId={{../_id}}" method="post"><button class="btn btn-primary" type="submit">Aceptar</button></form>
-        <form action="/pendingMembers/{{this.id}}/decline?bandId={{../_id}}" method="post"><button class="btn btn-danger" type="submit">No aceptar</button></form>
-      {{/each}}
       </div>
     </div>
-  {{/isAdministrator}}
+  {{/userIsInTheBand}}
 {{/each}}
 
-si es miembro de una banda
-si es administrador botón para borrar a otros miembros else pintame todos los integrantes de la banda
 
+{{!-- PARA HACER EL PENDINGMEMBERS --}}
+<section class="mt-5">
+  <div class="d-flex flex-column align-content-center align-items-center">
+    <h5>Solicitudes de miembros pendientes de aceptar en las bandas</h5>
+    <hr class="w-50">
+  </div>
 
+  <table class="table align-middle mb-0 bg-white mt-2 mb-5">
+    <thead class="bg-light">
+      <tr>
+        <th>Nombre</th>
+        <th>Instrumento/s</th>
+        <th>Banda</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
 
-{{!-- PARA HACER EL PENDINGMEMBERS
-<table class="table align-middle mb-0 bg-white">
-  <thead class="bg-light">
-    <tr>
-      <th>Name</th>
-      <th>Title</th>
-      <th>Status</th>
-      <th>Position</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <div class="d-flex align-items-center">
-          <img
-              src="https://mdbootstrap.com/img/new/avatars/8.jpg"
-              alt=""
-              style="width: 45px; height: 45px"
-              class="rounded-circle"
-              />
-          <div class="ms-3">
-            <p class="fw-bold mb-1">John Doe</p>
-            <p class="text-muted mb-0">john.doe@gmail.com</p>
-          </div>
-        </div>
-      </td>
-      <td>
-        <p class="fw-normal mb-1">Software engineer</p>
-        <p class="text-muted mb-0">IT department</p>
-      </td>
-      <td>
-        <span class="badge badge-success rounded-pill d-inline">Active</span>
-      </td>
-      <td>Senior</td>
-      <td>
-        <button type="button" class="btn btn-link btn-sm btn-rounded">
-          Edit
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <div class="d-flex align-items-center">
-          <img
-              src="https://mdbootstrap.com/img/new/avatars/6.jpg"
-              class="rounded-circle"
-              alt=""
-              style="width: 45px; height: 45px"
-              />
-          <div class="ms-3">
-            <p class="fw-bold mb-1">Alex Ray</p>
-            <p class="text-muted mb-0">alex.ray@gmail.com</p>
-          </div>
-        </div>
-      </td>
-      <td>
-        <p class="fw-normal mb-1">Consultant</p>
-        <p class="text-muted mb-0">Finance</p>
-      </td>
-      <td>
-        <span class="badge badge-primary rounded-pill d-inline"
-              >Onboarding</span
-          >
-      </td>
-      <td>Junior</td>
-      <td>
-        <button
-                type="button"
-                class="btn btn-link btn-rounded btn-sm fw-bold"
-                data-mdb-ripple-color="dark"
-                >
-          Edit
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <div class="d-flex align-items-center">
-          <img
-              src="https://mdbootstrap.com/img/new/avatars/7.jpg"
-              class="rounded-circle"
-              alt=""
-              style="width: 45px; height: 45px"
-              />
-          <div class="ms-3">
-            <p class="fw-bold mb-1">Kate Hunington</p>
-            <p class="text-muted mb-0">kate.hunington@gmail.com</p>
-          </div>
-        </div>
-      </td>
-      <td>
-        <p class="fw-normal mb-1">Designer</p>
-        <p class="text-muted mb-0">UI/UX</p>
-      </td>
-      <td>
-        <span class="badge badge-warning rounded-pill d-inline">Awaiting</span>
-      </td>
-      <td>Senior</td>
-      <td>
-        <button
-                type="button"
-                class="btn btn-link btn-rounded btn-sm fw-bold"
-                data-mdb-ripple-color="dark"
-                >
-          Edit
-        </button>
-      </td>
-    </tr>
-  </tbody>
-</table> --}}
+    <tbody>
+      {{#each bands}}
+        {{#each pendingMembers}}
+          <tr>
+            <td>
+              <div class="d-flex align-items-center">
+                <img
+                    src="{{photo}}"
+                    alt=""
+                    style="width: 45px; height: 45px"
+                    class="rounded-circle"
+                    />
+                <div class="ms-3">
+                  <p class="fw-bold mb-1">{{name}}</p>
+                  <p class="text-muted mb-0">{{email}}</p>
+                </div>
+              </div>
+            </td>
+            <td>
+              <ul class="list-unstyled d-flex flex-wrap justify-content-start align-content-center"> 
+                {{#each instruments}}
+                  <li class="me-2">{{this}}</li>
+                {{/each}}
+              </ul>
+            </td>
+            <td>{{../name}}</td>
+            <td>
+              <div class="d-flex justify-content-center align-content-center">
+                <form action="/pendingMembers/{{this.id}}/accept?bandId={{../_id}}" method="post"><button class="btn btn-primary me-2" type="submit"><i class="fas fa-check"></i></button></form>
+                <form action="/pendingMembers/{{this.id}}/decline?bandId={{../_id}}" method="post"><button class="btn btn-danger" type="submit"><i class="fas fa-xmark"></i></button></form>
+              </div>
+            </td>
+          </tr>
+        {{/each}}  
+      {{/each}}
+    </tbody>
+  </table>
+</section>     
 
-<a href="/user/{{currentUser.id}}/edit" class="btn btn-primary">Editar perfil</a>
-<form action="/user/{{currentUser.id}}/delete" method="post" id="deleteForm">
-  <button type="button" class="btn btn-danger" onclick="seguro()">Eliminar perfil</button>
-</form>
+<div class="d-flex justify-content-center align-content-center my-5">
+  <a href="/user/{{currentUser.id}}/edit" class="btn btn-success me-2">Editar perfil</a>
+  <form action="/user/{{currentUser.id}}/delete" method="post" id="deleteForm">
+    <button type="button" class="btn btn-danger" onclick="seguro()">Eliminar perfil</button>
+  </form>
+</div>
 
 <script>
   function seguro() {
     Swal.fire({
-    title: "¿Estas seguro/a?",
+    title: "¿Estás seguro/a?",
     text: "¡No serás capaz de revertir este cambio!",
     icon: "warning",
     showCancelButton: true,
     confirmButtonColor: "#3085d6",
     cancelButtonColor: "#d33",
-    confirmButtonText: "¡Si, borrar!"
+    confirmButtonText: "¡Sí, borrar!"
   }).then((result) => {
     if (result.isConfirmed) {
       Swal.fire({
-        title: "Usuario borrado!",
+        title: "¡Usuario borrado!",
         text: "El usuario ha sido eliminado",
         icon: "success"
       });

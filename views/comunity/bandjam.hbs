@@ -1,9 +1,15 @@
 <h1 class="my-5">Band-jam</h1>
-<a class="btn btn-success" href="/bandjamForm">Crea un post!</a>
+<a class="btn btn-success" href="/bandjamForm">Crea un post</a>
 
 {{#each postBand}}
   <h1>{{bandName}}</h1>
   <h5>género: {{musicalGenre}}</h5>
   <p>Integrantes: {{numberOfMembers}}</p>
+  {{#theUserIsTheCreator ../currentUser creator}}
+    <a href="/bandjam/{{id}}/edit">Editar</a>
+    <form action="/bandjam/{{id}}/delete" method="post">
+      <button type="submit" class="btn btn-primary btn-block mb-4">Eliminar</button>
+    </form>
+  {{/theUserIsTheCreator}}
 
 {{/each}}

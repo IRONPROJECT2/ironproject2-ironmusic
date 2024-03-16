@@ -1,0 +1,40 @@
+<form action="/anunciatuconcierto/{{post.id}}/edit" method="post">
+
+  <div data-mdb-input-init class="form-outline mb-4">
+    <input type="text" id="name" name="name" value="{{post.name}}" class="form-control"/>
+    <label class="form-label" for="name">Nombre</label>
+  </div>
+
+  <div data-mdb-input-init class="form-outline mb-4">
+    <textarea class="form-control" id="descriptionGenre" name="descriptionGenre" rows="4">{{post.descriptionGenre}}</textarea>
+    <label class="form-label" for="descriptionGenre">Descripción del evento</label>
+  </div>
+
+  <div data-mdb-input-init class="form-outline mb-4">
+    <input type="text" id="photo" name="photo" value="{{post.photo}}" class="form-control" placeholder="https://media.emisorasmusicales.net/wp-content/uploads/2023/12/13181114/MC24-POSTER-emisoras-musicales-2023-819x1024.webp"/>
+    <label class="form-label" for="photo">Flyer</label>
+  </div>
+
+  <div data-mdb-input-init class="form-outline mb-4">
+    <input type="text" id="location" name="location" value="{{post.location}}" class="form-control" />
+    <label class="form-label" for="location">Ubicación</label>
+  </div>
+
+  <div class="mb-4 d-flex justify-content-evenly">
+    <div class="d-flex flex-column">
+      <div data-mdb-input-init class="form-outline">
+        <input type="date" id="date" name="date" class="form-control"/>
+        <label class="form-label" for="date">Fecha del concierto</label>
+      </div>
+    </div>
+    <div class="d-flex flex-column">
+      <div data-mdb-input-init class="form-outline">
+        <input type="time" id="time" name="time" value="{{post.time}}" class="form-control" />
+        <label class="form-label" for="time">Hora del concierto</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Submit button -->
+  <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Editar <i class="bi bi-pencil"></i></button>
+</form>

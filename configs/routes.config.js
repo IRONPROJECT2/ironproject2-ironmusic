@@ -28,16 +28,28 @@ router.post("/joinBand/:id", band.joinBand);
 
 //Comunity
 router.get("/comunity", comunity.list);
-router.get("/bandjam", comunity.bandjam);
-router.get("/formarbanda", comunity.formarbanda);
-router.get("/anunciatuconcierto", comunity.anunciatuconcierto);
 
+router.get("/bandjam", comunity.bandjam);
 router.get("/bandjamForm", comunity.bandjamForm);
 router.post("/bandjamForm", comunity.doBandjamForm);
+router.get("/bandjam/:id/edit", comunity.bandjamEdit);
+router.post("/bandjam/:id/edit", comunity.bandjamDoEdit);
+router.post("/bandjam/:id/delete", comunity.bandjamDelete);
+
+router.get("/formarbanda", comunity.formarbanda);
 router.get("/formarBandaForm", comunity.formarBandaForm);
 router.post("/formarBandaForm", comunity.doFormarBandaForm);
+router.get("/formarBanda/:id/edit", comunity.formarBandaEdit);
+router.post("/formarBanda/:id/edit", comunity.formarBandaDoEdit);
+router.post("/formarBanda/:id/delete", comunity.formarBandaDelete);
+
+router.get("/anunciatuconcierto", comunity.anunciatuconcierto);
 router.get("/anunciaTuConciertoForm", comunity.anunciaTuConciertoForm);
 router.post("/anunciaTuConciertoForm", comunity.doAnunciaTuConciertoForm);
+router.get("/anunciatuconcierto/:id/edit", comunity.anunciatuconciertoEdit);
+router.post("/anunciatuconcierto/:id/edit", comunity.anunciatuconciertoDoEdit);
+router.post("/anunciatuconcierto/:id/delete", comunity.anunciatuconciertoDelete);
+
 
 router.get("/", (req, res, next) => res.render("index"));
 module.exports = router;
