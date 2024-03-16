@@ -1,0 +1,14 @@
+
+
+  <h1>{{postBand.name}}</h1>
+  <h5>descripción: {{ postBand.descriptionGenre}}</h5>
+  <p>locación: {{postBand.location}}</p>
+
+  {{#each postBand}}
+    {{#theUserIsTheCreator ../currentUser creator}}
+      <a href="/anunciatuconcierto/{{_id}}/edit">Editar</a>
+      <form action="/anunciatuconcierto/{{_id}}/delete" method="post">
+        <button type="submit" class="btn btn-primary btn-block mb-4">Eliminar</button>
+      </form>
+    {{/theUserIsTheCreator}}
+  {{/each}}

@@ -143,6 +143,13 @@ module.exports.bandjamDelete = (req, res, next) => {
     .catch((error) => next(error))
 }
 
+module.exports.bandjamDetails = (req, res, next) => {
+
+  Bandjam.findById(req.params.id)
+    .then((postBand) => res.render("comunity/details/bandjamDetails", { postBand }))
+    .catch((error) => next(error))
+}
+
 module.exports.formarBandaEdit = (req, res, next) => {
   const genre = ["Rock", "Pop", "Indie", "Hip Hop",
   "Jazz", "Blues", "Reggae", "R&B", "Country",
@@ -194,7 +201,13 @@ module.exports.formarBandaDelete = (req, res, next) => {
     .catch((error) => next(error))
 }
 
-/* ANUNCIA TU CONCIERTO */
+module.exports.formarBandaDetails = (req, res, next) => {
+
+  FormBand.findById(req.params.id)
+    .then((postBand) => res.render("comunity/details/formarBandaDetails", { postBand }))
+    .catch((error) => next(error))
+}
+
 
 module.exports.anunciatuconciertoEdit = (req, res, next) => {
   Atc.findById(req.params.id) 
@@ -222,6 +235,13 @@ module.exports.anunciatuconciertoDoEdit = (req, res, next) => {
 module.exports.anunciatuconciertoDelete = (req, res, next) => {
   Atc.findByIdAndDelete(req.params.id)
     .then(() => res.redirect("/anunciatuconcierto"))
+    .catch((error) => next(error))
+}
+
+module.exports.anunciatuconciertoDetails = (req, res, next) => {
+
+  Atc.findById(req.params.id)
+    .then((postBand) => res.render("comunity/details/atcDetails", { postBand }))
     .catch((error) => next(error))
 }
 

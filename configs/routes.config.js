@@ -3,6 +3,7 @@ const secure = require("../middlewares/auth.middleware");
 const user = require("../controllers/users.controller");
 const band = require("../controllers/bands.controller");
 const comunity = require("../controllers/comunity.controller");
+const message = require("../controllers/message.controller");
 
 const router = express.Router();
 
@@ -35,6 +36,7 @@ router.post("/bandjamForm", comunity.doBandjamForm);
 router.get("/bandjam/:id/edit", comunity.bandjamEdit);
 router.post("/bandjam/:id/edit", comunity.bandjamDoEdit);
 router.post("/bandjam/:id/delete", comunity.bandjamDelete);
+router.get("/bandjam/:id/details", comunity.bandjamDetails);
 
 router.get("/formarbanda", comunity.formarbanda);
 router.get("/formarBandaForm", comunity.formarBandaForm);
@@ -42,6 +44,7 @@ router.post("/formarBandaForm", comunity.doFormarBandaForm);
 router.get("/formarBanda/:id/edit", comunity.formarBandaEdit);
 router.post("/formarBanda/:id/edit", comunity.formarBandaDoEdit);
 router.post("/formarBanda/:id/delete", comunity.formarBandaDelete);
+router.get("/formarBanda/:id/details", comunity.formarBandaDetails);
 
 router.get("/anunciatuconcierto", comunity.anunciatuconcierto);
 router.get("/anunciaTuConciertoForm", comunity.anunciaTuConciertoForm);
@@ -49,6 +52,11 @@ router.post("/anunciaTuConciertoForm", comunity.doAnunciaTuConciertoForm);
 router.get("/anunciatuconcierto/:id/edit", comunity.anunciatuconciertoEdit);
 router.post("/anunciatuconcierto/:id/edit", comunity.anunciatuconciertoDoEdit);
 router.post("/anunciatuconcierto/:id/delete", comunity.anunciatuconciertoDelete);
+router.get("/anunciatuconcierto/:id/details", comunity.anunciatuconciertoDetails);
+
+
+//Message
+//router.post("/bandjam/:id/message", message.bandjamMessage);
 
 
 router.get("/", (req, res, next) => res.render("index"));

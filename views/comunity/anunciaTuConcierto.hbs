@@ -5,11 +5,5 @@
   <h1>{{name}}</h1>
   <h5>descripción: {{descriptionGenre}}</h5>
   <p>locación: {{location}}</p>
-  {{#theUserIsTheCreator ../currentUser creator}}
-    <a href="/anunciatuconcierto/{{id}}/edit">Editar</a>
-    <form action="/anunciatuconcierto/{{id}}/delete" method="post">
-      <button type="submit" class="btn btn-primary btn-block mb-4">Eliminar</button>
-    </form>
-  {{/theUserIsTheCreator}}
-
+  <a href="/anunciatuconcierto/{{id}}/details">Detalles</a>
 {{/each}}
