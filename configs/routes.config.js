@@ -54,9 +54,8 @@ router.post("/anunciatuconcierto/:id/edit", comunity.anunciatuconciertoDoEdit);
 router.post("/anunciatuconcierto/:id/delete", comunity.anunciatuconciertoDelete);
 router.get("/anunciatuconcierto/:id/details", comunity.anunciatuconciertoDetails);
 
-
 //Message
-//router.post("/bandjam/:id/message", message.bandjamMessage);
+router.post("/message/:id/message", message.doCreate);
 
 
 router.get("/", (req, res, next) => res.render("index"));

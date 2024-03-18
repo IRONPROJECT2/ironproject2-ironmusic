@@ -146,8 +146,18 @@ module.exports.bandjamDelete = (req, res, next) => {
 module.exports.bandjamDetails = (req, res, next) => {
 
   Bandjam.findById(req.params.id)
-    .then((postBand) => res.render("comunity/details/bandjamDetails", { postBand }))
-    .catch((error) => next(error))
+  .populate('creator') // Poblar el campo 'creator'
+  .populate({
+    path: 'messages', // Poblar el campo virtual 'messages'
+    populate: { // Poblar los campos 'owner' y 'text' dentro de 'messages'
+      path: "owner",
+      select: "text"
+    }
+  })
+  .then((postBand) => {
+    res.render("comunity/details/bandjamDetails", { postBand })
+  })
+  .catch((error) => next(error))
 }
 
 module.exports.formarBandaEdit = (req, res, next) => {

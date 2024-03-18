@@ -1,4 +1,4 @@
-
+<h1>ver los post de formar banda</h1>
 
   <h1>{{postBand.name}}</h1>
   <h5>género: {{postBand.musicalGenre}}</h5>
@@ -12,3 +12,21 @@
     </form>
   {{/theUserIsTheCreator}}
   {{/each}}
+
+
+
+  <form action="/message/{{postBand.id}}/message" method="post">
+  <input type="hidden" name="postType" value="Formarbanda">
+  <input type="hidden" name="post" value="{{postBand.id}}">
+  
+  <div class="mb-1 {{#if errors.description }}is-invalid{{/if}}">
+    <textarea name="text" id="description-md" class="{{#if errors.description }}is-invalid{{/if}}"></textarea>
+    {{#if errors.description }}<div class="invalid-feedback">{{errors.description}}</div>{{/if}}
+  </div>
+  
+  <div class="form-actions mt-2">
+    <button type="submit" class="btn btn-outline-primary">Enviar</button>
+  </div>
+</form>
+
+<script>window.addEventListener('load', () => new SimpleMDE({ element: document.getElementById('description-md') }))</script>

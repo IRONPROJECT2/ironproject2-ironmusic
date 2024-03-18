@@ -6,33 +6,139 @@
 } */
 
 
-
-/* https://d1rs3px2gf3dlr.cloudfront.net/media/blog/featured/RockBand4-KeyArt-1080p.png */
-.card1 {
+/* .card1 {
   background-image: url("https://d1rs3px2gf3dlr.cloudfront.net/media/blog/featured/RockBand4-KeyArt-1080p.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-color: rgba(255, 255, 255, 0.6);
-}
+} */
 
-.card1:hover {
-  background-color: rgb(255, 255, 255);
-}
-
-/* https://www.ansa.it/webimages/news_base/2023/6/30/8f0696df4fc75fa005931836c62d9697.jpg */
-.card2 {
+/* .card2 {
   background-image: url("https://www.ansa.it/webimages/news_base/2023/6/30/8f0696df4fc75fa005931836c62d9697.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-color: rgba(255, 255, 255, 0.6);
-}
+} */
 
-/* https://www.timeoutdubai.com/cloud/timeoutdubai/2023/05/22/gigs-in-dubai-1.png */
-.card3 {
+/* .card3 {
   background-image: url("https://www.timeoutdubai.com/cloud/timeoutdubai/2023/05/22/gigs-in-dubai-1.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-color: rgba(255, 255, 255, 0.6);
+} */
+
+
+/* .bg-image {
+  background-image: url("../images/bg-crawd/musical-note-musical-notation-stock-illustration-splash-music-decoration-pattern-388b1df52d8195d8fb17d93c34d0d3cc.png");
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+} */
+
+
+.card1 {
+  background: rgb(255,0,0);
+  background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(0,224,255,0) 100%);
 }
 
+.card2 {
+  background: rgb(0,142,255);
+  background: linear-gradient(90deg, rgba(0,142,255,1) 0%, rgba(253,183,29,0.6979166666666667) 50%, rgba(54,255,53,1) 100%);
+}
 
+.card3 {
+  background: rgb(0,207,38);
+  background: linear-gradient(0deg, rgba(0,207,38,1) 0%, rgba(0,224,255,0) 100%);
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.card-img {
+  position: absolute;
+  height: 140px;
+  width: 340px; 
+  top: -70px; 
+  left: -30px; 
+  right: 0px; 
+  bottom: -40px; 
+  object-fit: cover;
+  animation: moveUpDown 2s infinite;
+}
+
+/* .card1:hover {
+  box-shadow: 0px 0px 30px rgb(0, 132, 255) !important;
+}
+
+.card1:hover .card1-img {
+  box-shadow: 0px 0px 20px rgb(0, 132, 255) !important;
+} */
+
+.card1:hover {
+  box-shadow: 0px 0px 30px rgb(0, 0, 0) !important;
+}
+
+.card1:hover .shadow-img1 {
+  box-shadow: 0px 0px 20px rgb(0, 0, 0) !important;
+}
+
+.card2:hover {
+  box-shadow: 0px 0px 30px rgb(0, 0, 0) !important;
+}
+
+.card2:hover .shadow-img2 {
+  box-shadow: 0px 0px 20px rgb(0, 0, 0) !important;
+}
+
+.card3:hover {
+  box-shadow: 0px 0px 30px rgb(0, 0, 0) !important;
+}
+
+.card3:hover .shadow-img3 {
+  box-shadow: 0px 0px 20px rgb(0, 0, 0) !important;
+}
+
+.rating {
+  position: relative;
+  width: 180px;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .3em;
+  padding: 5px;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 0 2px #b3acac;
+}
+
+.rating__result {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-10px) translateX(-5px);
+  z-index: -9;
+  font: 3em Arial, Helvetica, sans-serif;
+  color: #ebebeb8e;
+  pointer-events: none;
+}
+
+.rating__star {
+  font-size: 1.3em;
+  cursor: pointer;
+  color: #dabd18b2;
+  transition: filter linear .3s;
+}
+
+.rating__star:hover {
+  filter: drop-shadow(1px 1px 4px gold);
+}

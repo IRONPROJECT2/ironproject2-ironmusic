@@ -1,12 +1,13 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm bg-body-tertiary rounded">
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="/"><img src="https://i.postimg.cc/6QjpfvMs/08d1795e-e999-4981-a058-5674d00c7138.jpg" alt="ironmusic logo" style="height: 60px;"> IRONMUSIC</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar navbar-expand-lg">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Menu
@@ -17,46 +18,49 @@
           </ul>
         </li>
 
-        {{!-- PARA CUANDO INICIE SESION EL USUARIO --}}
         {{#if currentUser}}
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Crea un post
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/bandjamForm">Band-jam</a></li>
-              <li><a class="dropdown-item" href="/formarBandaForm">Formar banda</a></li>
-              <li><a class="dropdown-item" href="/anunciaTuConciertoForm">Anuncia tu concierto</a></li>
-            </ul>
-          </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Crea un post
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/bandjamForm">Band-jam</a></li>
+                <li><a class="dropdown-item" href="/formarBandaForm">Formar banda</a></li>
+                <li><a class="dropdown-item" href="/anunciaTuConciertoForm">Anuncia tu concierto</a></li>
+              </ul>
+            </li>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Banda
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/bands">Unirme a banda</a></li>
-              <li><a class="dropdown-item" href="/createBand">Crear banda</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Banda
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/bands">Unirme a banda</a></li>
+                <li><a class="dropdown-item" href="/createBand">Crear banda</a></li>
 
-            </ul>
-          </li>
-        {{/if}}
+              </ul>
+            </li>
+          {{/if}}
       </ul>
+    </div>
 
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-
-      {{#if currentUser}}
-      <div class="collapse navbar-collapse text-decoration-none" id="main-navbar">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse text-decoration-none" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-decoration-none">
-          {{!-- <ul class="navbar-nav mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link {{navActive currentPath '/profile'}}" aria-current="page" href="/profile">{{currentUser.userName}}</a></li>
-            <li class="nav-item"><a class="nav-link" aria-current="page" href="/logout">LOGOUT</a></li>
-          </ul> --}}
+          <li class="nav-item dropdown">
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </li>
+          {{#if currentUser}}
+            
+            {{!-- <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item"><a class="nav-link {{navActive currentPath '/profile'}}" aria-current="page" href="/profile">{{currentUser.userName}}</a></li>
+              <li class="nav-item"><a class="nav-link" aria-current="page" href="/logout">LOGOUT</a></li>
+            </ul> --}}
 
-          <li class="nav-item dropdown ">
+            <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 {{currentUser.userName}}
               </a>
@@ -64,6 +68,18 @@
                 <li class="nav-item"><a class="nav-link" aria-current="page" href="/profile">Perfil</a></li>
                 <li class="nav-item"><a class="nav-link" aria-current="page" href="/logout">Cerrar sesion</a></li>
               </ul>
+            </li>
+              
+          {{else}}
+            <a class="navbar-brand ms-3" href="/reglog">login/register</a>
+          {{/if}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
 
 {{!-- en boostrap hay una option de botom que sale con un puntito rojo(tipo notificacion 
 en el boton de perfil, este es el codigo: SE PODRIA USAR PARA NUESTRO PERFIL
@@ -77,17 +93,3 @@ en el boton de perfil, este es el codigo: SE PODRIA USAR PARA NUESTRO PERFIL
 </button>
 
 ) --}}
-
-
-
-          </li>
-        </ul>
-      </div>
-      {{else}}
-        <a class="navbar-brand ms-3" href="/reglog">login</a>
-      {{/if}}
-      
-    </div>
-  </div>
-</nav>
-

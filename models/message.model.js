@@ -6,7 +6,7 @@ const messageSchema = new Schema (
     owner: {
       type: mongoose.Types.ObjectId,
       ref: 'User',
-      require: true
+      required: true
     },
     text: {
       type: String,
