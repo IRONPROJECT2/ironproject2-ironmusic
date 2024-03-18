@@ -4,6 +4,7 @@ const user = require("../controllers/users.controller");
 const band = require("../controllers/bands.controller");
 const comunity = require("../controllers/comunity.controller");
 const message = require("../controllers/message.controller");
+const index = require("../controllers/index.controller");
 
 const router = express.Router();
 
@@ -58,6 +59,6 @@ router.get("/anunciatuconcierto/:id/details", comunity.anunciatuconciertoDetails
 router.post("/message/:id/message", message.doCreate);
 
 
-router.get("/", (req, res, next) => res.render("index"));
+router.get("/", index.index);
 module.exports = router;
 

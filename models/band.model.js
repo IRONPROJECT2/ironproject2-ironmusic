@@ -39,6 +39,9 @@ const bandSchema = new Schema(
       type: Schema.Types.ObjectId, 
       ref: "User"
     }],
+    created: {
+      type: Date
+    }
   },
   { timestamps: true }
 )

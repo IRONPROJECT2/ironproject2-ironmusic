@@ -46,5 +46,15 @@
     <input type="text" name="socialMedia" id="socialMedia">
   </div>
 
+  <input type="hidden" name="created" id="created" value="">
+
   <button type="submit">Registrar la banda</button>
 </form>
+
+
+<script>
+const createdInput = document.getElementById("created");
+const currentDate = new Date();
+const formattedDate = currentDate.toISOString().split('T')[0];
+createdInput.value = formattedDate;
+</script>

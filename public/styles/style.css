@@ -38,17 +38,17 @@
 
 .card1 {
   background: rgb(255,0,0);
-  background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(0,224,255,0) 100%);
+  background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(253,149,29,0.6979166666666667) 50%, rgba(255,198,53,1) 100%);
 }
 
 .card2 {
-  background: rgb(0,142,255);
-  background: linear-gradient(90deg, rgba(0,142,255,1) 0%, rgba(253,183,29,0.6979166666666667) 50%, rgba(54,255,53,1) 100%);
+  background: rgb(0,255,218);
+  background: linear-gradient(0deg, rgba(0,255,218,1) 0%, rgba(29,253,119,0.6979166666666667) 50%, rgba(155,255,53,1) 100%);
 }
 
 .card3 {
-  background: rgb(0,207,38);
-  background: linear-gradient(0deg, rgba(0,207,38,1) 0%, rgba(0,224,255,0) 100%);
+  background: rgb(0,236,255);
+  background: linear-gradient(0deg, rgba(0,236,255,1) 0%, rgba(29,184,253,0.6979166666666667) 50%, rgba(53,81,255,1) 100%);
 }
 
 @keyframes moveUpDown {
@@ -73,6 +73,17 @@
   bottom: -40px; 
   object-fit: cover;
   animation: moveUpDown 2s infinite;
+}
+
+.card-imgNoMove {
+  position: absolute;
+  height: 140px;
+  width: 340px; 
+  top: -70px; 
+  left: -30px; 
+  right: 0px; 
+  bottom: -40px; 
+  object-fit: cover;
 }
 
 /* .card1:hover {
