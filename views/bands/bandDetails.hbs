@@ -12,6 +12,12 @@
   {{/each}}
 </ul>
 
+
+<a href="/band/{{band.id}}/edit" class="btn btn-primary">Editar</a>
+<form action="/band/{{band.id}}/delete" method="post" id="deleteForm">
+  <button type="button" class="btn btn-danger" onclick="seguro()">Eliminar</button>
+</form>
+
 {{#if currentUser}}
   {{#userIsInTheBand currentUser band}}
     <p>Estas en la banda</p>
@@ -26,6 +32,7 @@
   {{/userIsInTheBand}}
 {{/if}}
 
+<form action="" method="post"> {{!-- meter en un formulario --}}
   <div class="rating">
     <span class="rating__result"></span> 
     <i class="rating__star far fa-star"></i>
@@ -34,6 +41,9 @@
     <i class="rating__star far fa-star"></i>
     <i class="rating__star far fa-star"></i>
   </div>
+</form>
+
+//controlador de la accion y modelo rating id banda id usuario id rating
 
 <script>
   const ratingStars = [...document.getElementsByClassName("rating__star")];
@@ -66,5 +76,27 @@
   }
 
   executeRating(ratingStars, ratingResult);
+
+
+  function seguro() {
+    Swal.fire({
+    title: "¿Estás seguro/a?",
+    text: "¡No serás capaz de revertir este cambio!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "¡Sí, borrar!"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        title: "¡Post borrado!",
+        text: "El post ha sido eliminado",
+        icon: "success"
+      });
+      document.getElementById("deleteForm").submit();
+    }
+  });
+  }
 
 </script>

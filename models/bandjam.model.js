@@ -48,14 +48,12 @@ const bandjamSchema = new Schema(
 )
 
 
- // Campo virtual 'messages' que establece una relación con el modelo 'Message'
  bandjamSchema.virtual('messages', {
-  ref: 'Message', // Especifica el modelo al que está vinculado el campo virtual
-  localField: '_id', // Especifica el campo local del modelo 'Issue' para la relación
-  foreignField: 'postType', // Especifica el campo en el modelo 'Message' para la relación
-  justOne: false // Indica si la relación es de uno a uno o uno a muchos (en este caso es de uno a muchos)
+  ref: 'Message', 
+  localField: '_id', //Que voy a utilizar para identificarme en mi modelo
+  foreignField: 'postType', //Que voy a utilizar para identificarme en el modelo que aparezca en ref
+  justOne: false 
 })
-
 
 const Bandjam = mongoose.model("Bandjam", bandjamSchema);
 module.exports = Bandjam;

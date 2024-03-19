@@ -5,6 +5,7 @@ const FormBand = require("../models/formarbanda.model")
 const Atc = require("../models/anunciatuconcierto.model");
 const User = require("../models/user.model");
 const Band = require("../models/band.model");
+const Message = require("../models/message.model")
 
 
 
@@ -21,7 +22,6 @@ module.exports.bandjam = (req, res, next) => {
 module.exports.formarbanda = (req, res, next) => {
   FormBand.find()
   .then((postBand) => {
-    console.debug(postBand)
     res.render("comunity/formarbanda", { postBand })  
   })
   .catch((error) => next(error));
@@ -144,21 +144,25 @@ module.exports.bandjamDelete = (req, res, next) => {
 }
 
 module.exports.bandjamDetails = (req, res, next) => {
-
   Bandjam.findById(req.params.id)
-  .populate('creator') // Poblar el campo 'creator'
-  .populate({
-    path: 'messages', // Poblar el campo virtual 'messages'
-    populate: { // Poblar los campos 'owner' y 'text' dentro de 'messages'
-      path: "owner",
-      select: "text"
-    }
-  })
-  .then((postBand) => {
-    res.render("comunity/details/bandjamDetails", { postBand })
-  })
-  .catch((error) => next(error))
+    .populate('creator') // Poblar el campo 'creator'
+    .populate('messages')
+    .then((postBand) => {
+      if (!postBand) {
+        next(createError(404, 'Bandjam not found'));
+      }
+      // Poblar los mensajes asociados al Bandjam
+      Message.find({ post: postBand._id })
+        .populate('owner') // Poblar el campo 'owner' de los mensajes
+        .then((messages) => {
+          res.render("comunity/details/bandjamDetails", { postBand, messages });
+        })
+        .catch((error) => next(error));
+    })
+    .catch((error) => next(error));
 }
+
+
 
 module.exports.formarBandaEdit = (req, res, next) => {
   const genre = ["Rock", "Pop", "Indie", "Hip Hop",
@@ -214,7 +218,18 @@ module.exports.formarBandaDelete = (req, res, next) => {
 module.exports.formarBandaDetails = (req, res, next) => {
 
   FormBand.findById(req.params.id)
-    .then((postBand) => res.render("comunity/details/formarBandaDetails", { postBand }))
+    .populate("creator")
+    .then((postBand) => {
+      if (!postBand) {
+        next(createError(404, "no se ha encontrado ningún comentario"))
+      }
+      Message.find({ post: postBand._id })
+        .populate("owner")
+        .then((messages) => {
+          res.render("comunity/details/formarBandaDetails", { postBand, messages });
+        })
+        .catch((error) => next(error));
+    })
     .catch((error) => next(error))
 }
 
@@ -251,8 +266,18 @@ module.exports.anunciatuconciertoDelete = (req, res, next) => {
 module.exports.anunciatuconciertoDetails = (req, res, next) => {
 
   Atc.findById(req.params.id)
-    .then((postBand) => res.render("comunity/details/atcDetails", { postBand }))
+    .populate("creator")
+    .then((postBand) => {
+      if (!postBand) {
+        next(createError(404, "No se ha encontrado ningún comentario"));
+      }
+
+      Message.find({ post: postBand._id })
+      .populate("owner")
+      .then((messages) => {
+        res.render("comunity/details/atcDetails", { postBand, messages });
+      })
+      .catch((error) => next(error));
+    })
     .catch((error) => next(error))
 }
-
-

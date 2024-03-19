@@ -24,7 +24,7 @@ const userSchema = new Schema(
     },
     gender: {
       type: String,
-      enum: ["male", "female", "other", "none"]
+      enum: ["male", "female", "other"]
     },
     photo: {
       type: String,
@@ -87,8 +87,6 @@ userSchema.pre('save', function (next) {
 userSchema.methods.checkPassword = function(passwordToCheck) {
   return bcrypt.compare(passwordToCheck, this.password);
 };
-
-
 
 const User = mongoose.model('User', userSchema);
 module.exports = User;

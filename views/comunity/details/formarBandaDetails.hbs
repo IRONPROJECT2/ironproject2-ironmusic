@@ -13,6 +13,18 @@
   {{/theUserIsTheCreator}}
   {{/each}}
 
+  {{#each messages}}
+    <div>
+      <p>Usuario: {{owner.userName}}</p>
+      <p>Mensaje: {{text}}</p>
+    </div>
+    {{#theUserIsTheCreator ../currentUser owner._id}}
+      <a href="/message/{{id}}/edit"><i class="bi bi-pencil"></i></a>
+      <form action="/message/{{id}}/delete" method="post" id="deleteForm">
+        <button type="button" class="btn btn-outline-dark border-0" onclick="seguro()"><i class="fas fa-xmark"></i></button>
+      </form>
+    {{/theUserIsTheCreator}}
+  {{/each}}
 
 
   <form action="/message/{{postBand.id}}/message" method="post">
@@ -29,4 +41,28 @@
   </div>
 </form>
 
-<script>window.addEventListener('load', () => new SimpleMDE({ element: document.getElementById('description-md') }))</script>
+<script>
+  window.addEventListener('load', () => new SimpleMDE({ element: document.getElementById('description-md') }))
+  
+  function seguro() {
+    Swal.fire({
+    title: "¿Estás seguro/a?",
+    text: "¡No serás capaz de revertir este cambio!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "¡Sí, borrar!"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        title: "¡Mensaje borrado!",
+        text: "El mensaje ha sido eliminado",
+        icon: "success"
+      });
+      document.getElementById("deleteForm").submit();
+    }
+  });
+  }
+
+</script>

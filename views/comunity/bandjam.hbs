@@ -4,6 +4,36 @@
 {{#each postBand}}
   <h1>{{bandName}}</h1>
   <h5>género: {{musicalGenre}}</h5>
+  <h5>género: {{instruments}}</h5>
   <p>Integrantes: {{numberOfMembers}}</p>
-  <a href="/bandjam/{{id}}/details">Detalles</a>
+  <p>localización: {{location}}</p>
+  <p>descripción: {{lookingfor}}</p>
+  <a href="/bandjam/{{id}}/details" class="btn btn-secondary">Detalles</a>
+  <a href="/bandjam/{{id}}/edit" class="btn btn-primary">Editar</a>
+  <form action="/bandjam/{{id}}/delete" method="post" id="deleteForm">
+    <button type="button" class="btn btn-danger" onclick="seguro()">Eliminar</button>
+  </form>
 {{/each}}
+
+<script>
+  function seguro() {
+    Swal.fire({
+    title: "¿Estás seguro/a?",
+    text: "¡No serás capaz de revertir este cambio!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "¡Sí, borrar!"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        title: "¡Post borrado!",
+        text: "El post ha sido eliminado",
+        icon: "success"
+      });
+      document.getElementById("deleteForm").submit();
+    }
+  });
+  }
+</script>

@@ -63,4 +63,26 @@ module.exports.joinBand = (req, res, next) => {
     })
     .catch((error) => next(error));
 }
+
+module.exports.bandEdit = (req, res, next) => {
+  Band.findById(req.params.id)
+    .then((band) => {
+      res.render("bands/bandEdit", { band });
+  })
+  .catch((error) => next(error))
+}
+
+module.exports.bandDoEdit = (req, res, next) => {
+  Band.findByIdAndUpdate(req.params.id, req.body, { new: true })
+    .then(() => {
+      res.redirect("/bands");
+    })
+    .catch((error) => next(error));
+}
+
+module.exports.delete = (req, res, next) => {
+  Band.findByIdAndDelete(req.params.id)
+    .then(() => res.redirect("/bands"))
+    .catch((error) => next(error))
+}
   

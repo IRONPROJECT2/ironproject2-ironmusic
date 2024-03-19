@@ -1,0 +1,79 @@
+[
+  {
+    "name": "The Beatles",
+    "musicalGenre": "Rock",
+    "biography": "The Beatles were an English rock band formed in Liverpool in 1960.",
+    "photo": "https://example.com/the-beatles.jpg",
+    "socialMedia": ["https://www.facebook.com/thebeatles", "https://twitter.com/thebeatles"],
+    "administrator": "611c33f76a1e182d4a005c75",
+    "members": ["611c33f76a1e182d4a005c75", "611c33f76a1e182d4a005c76"],
+    "pendingMembers": [],
+    "created": "1960-01-01T00:00:00.000Z"
+  },
+  {
+    "name": "Queen",
+    "musicalGenre": "Rock",
+    "biography": "Queen are a British rock band formed in London in 1970.",
+    "photo": "https://example.com/queen.jpg",
+    "socialMedia": ["https://www.facebook.com/Queen", "https://twitter.com/QueenWillRock"],
+    "administrator": "611c33f76a1e182d4a005c76",
+    "members": ["611c33f76a1e182d4a005c75", "611c33f76a1e182d4a005c76", "611c33f76a1e182d4a005c77"],
+    "pendingMembers": [],
+    "created": "1970-01-01T00:00:00.000Z"
+  },
+  {
+    "name": "Led Zeppelin",
+    "musicalGenre": "Rock",
+    "biography": "Led Zeppelin were an English rock band formed in London in 1968.",
+    "photo": "https://example.com/led-zeppelin.jpg",
+    "socialMedia": ["https://www.facebook.com/ledzeppelin", "https://twitter.com/ledzeppelin"],
+    "administrator": "611c33f76a1e182d4a005c77",
+    "members": ["611c33f76a1e182d4a005c75", "611c33f76a1e182d4a005c77"],
+    "pendingMembers": [],
+    "created": "1968-01-01T00:00:00.000Z"
+  },
+  {
+    "name": "Pink Floyd",
+    "musicalGenre": "Rock",
+    "biography": "Pink Floyd were an English rock band formed in London in 1965.",
+    "photo": "https://example.com/pink-floyd.jpg",
+    "socialMedia": ["https://www.facebook.com/pinkfloyd", "https://twitter.com/pinkfloyd"],
+    "administrator": "611c33f76a1e182d4a005c78",
+    "members": ["611c33f76a1e182d4a005c75", "611c33f76a1e182d4a005c78"],
+    "pendingMembers": [],
+    "created": "1965-01-01T00:00:00.000Z"
+  },
+  {
+    "name": "The Rolling Stones",
+    "musicalGenre": "Rock",
+    "biography": "The Rolling Stones are an English rock band formed in London in 1962.",
+    "photo": "https://example.com/rolling-stones.jpg",
+    "socialMedia": ["https://www.facebook.com/therollingstones", "https://twitter.com/rollingstones"],
+    "administrator": "611c33f76a1e182d4a005c79",
+    "members": ["611c33f76a1e182d4a005c75", "611c33f76a1e182d4a005c79"],
+    "pendingMembers": [],
+    "created": "1962-01-01T00:00:00.000Z"
+  },
+  {
+    "name": "AC/DC",
+    "musicalGenre": "Rock",
+    "biography": "AC/DC are an Australian rock band formed in Sydney in 1973.",
+    "photo": "https://example.com/ac-dc.jpg",
+    "socialMedia": ["https://www.facebook.com/acdc", "https://twitter.com/acdc"],
+    "administrator": "611c33f76a1e182d4a005c7a",
+    "members": ["611c33f76a1e182d4a005c75", "611c33f76a1e182d4a005c7a"],
+    "pendingMembers": [],
+    "created": "1973-01-01T00:00:00.000Z"
+  },
+  {
+    "name": "Metallica",
+    "musicalGenre": "Metal",
+    "biography": "Metallica are an American heavy metal band formed in Los Angeles in 1981.",
+    "photo": "https://example.com/metallica.jpg",
+    "socialMedia": ["https://www.facebook.com/Metallica", "https://twitter.com/Metallica"],
+    "administrator": "611c33f76a1e182d4a005c7b",
+    "members": ["611c33f76a1e182d4a005c75", "611c33f76a1e182d4a005c7b"],
+    "pendingMembers": [],
+    "created": "1981-01-01T00:00:00.000Z"
+  }
+]

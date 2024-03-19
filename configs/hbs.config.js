@@ -34,14 +34,6 @@ hbs.registerHelper("isAdministrator", function (administrator, user, options) {
   return user.id == administrator.administrator ? options.fn(this) : options.inverse(this);
 });
 
-// hbs.registerHelper("userIsInTheBand", function (user, band, options) {
-//   const bandMembers = band.members;
-//   const bandAdministrator = band.administrator
-//   const isInTheBand = bandMembers.some((bandMember) => bandMember.id == user.id);
-//   const isAdministrator = bandAdministrator == user.id;
-//   return isInTheBand || isAdministrator ? options.fn(this) : options.inverse(this)
-// });
-
 hbs.registerHelper("userIsInTheBand", function (user, band, options) {
   const bandMembers = band.members;
   const isInTheBand = bandMembers.some((bandMember) => bandMember.id == user.id);

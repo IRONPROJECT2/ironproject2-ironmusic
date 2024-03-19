@@ -1,11 +1,11 @@
 <h1>Mi perfil</h1>
 
 <p></p>
+<img src="{{currentUser.photo}}" alt="Profile Photo" style="height:300px;">
 {{currentUser.userName}}
 {{currentUser.name}}
 {{currentUser.email}}
 {{currentUser.gender}}
-{{currentUser.photo}}
 <ul>
 {{#each currentUser.instruments}}
   <li>{{this}}</li>
@@ -66,42 +66,44 @@
       </tr>
     </thead>
 
-    <tbody>
-      {{#each bands}}
-        {{#each pendingMembers}}
-          <tr>
-            <td>
-              <div class="d-flex align-items-center">
-                <img
-                    src="{{photo}}"
-                    alt=""
-                    style="width: 45px; height: 45px"
-                    class="rounded-circle"
-                    />
-                <div class="ms-3">
-                  <p class="fw-bold mb-1">{{name}}</p>
-                  <p class="text-muted mb-0">{{email}}</p>
+    {{#each bands}}
+      {{#each pendingMembers}}
+        {{#isAdministratorInTheBand ../administrator ../../currentUser}}
+          <tbody>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <img
+                      src="{{photo}}"
+                      alt=""
+                      style="width: 45px; height: 45px"
+                      class="rounded-circle"
+                      />
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1">{{name}}</p>
+                    <p class="text-muted mb-0">{{email}}</p>
+                  </div>
                 </div>
-              </div>
-            </td>
-            <td>
-              <ul class="list-unstyled d-flex flex-wrap justify-content-start align-content-center"> 
-                {{#each instruments}}
-                  <li class="me-2">{{this}}</li>
-                {{/each}}
-              </ul>
-            </td>
-            <td>{{../name}}</td>
-            <td>
-              <div class="d-flex justify-content-center align-content-center">
-                <form action="/pendingMembers/{{this.id}}/accept?bandId={{../_id}}" method="post"><button class="btn btn-primary me-2" type="submit"><i class="fas fa-check"></i></button></form>
-                <form action="/pendingMembers/{{this.id}}/decline?bandId={{../_id}}" method="post"><button class="btn btn-danger" type="submit"><i class="fas fa-xmark"></i></button></form>
-              </div>
-            </td>
-          </tr>
+              </td>
+              <td>
+                <ul class="list-unstyled d-flex flex-wrap justify-content-start align-content-center"> 
+                  {{#each instruments}}
+                    <li class="me-2">{{this}}</li>
+                  {{/each}}
+                </ul>
+              </td>
+              <td>{{../name}}</td>
+              <td>
+                <div class="d-flex justify-content-center align-content-center">
+                  <form action="/pendingMembers/{{this.id}}/accept?bandId={{../_id}}" method="post"><button class="btn btn-primary me-2" type="submit"><i class="fas fa-check"></i></button></form>
+                  <form action="/pendingMembers/{{this.id}}/decline?bandId={{../_id}}" method="post"><button class="btn btn-danger" type="submit"><i class="fas fa-xmark"></i></button></form>
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          {{/isAdministratorInTheBand}}
         {{/each}}  
       {{/each}}
-    </tbody>
   </table>
 </section>     
 

@@ -16,7 +16,20 @@ module.exports.doRegister = (req, res, next) => {
       if (user) {
         res.status(409).render("users/reglog", { user: req.body, errors: { userName: "Ya existe", email: "Ya existe"}});
       } else {
-       
+        if (req.body.photo === "") {
+          switch (req.body.gender) {
+            case "male":
+              req.body.photo = "https://i.postimg.cc/tJHXcyzH/f9fc35e1-7645-4b41-947e-2365091606f5.jpg";
+              break;
+            case "female":
+              req.body.photo = "https://i.postimg.cc/qBX07PLz/2920322b-c914-47f3-93ee-d1882f49fb08.jpg";
+              break;
+            case "other":
+              req.body.photo = "https://i.postimg.cc/VLVhsg3J/b49653e2-5aaf-4fbb-b970-86a0ab58a4eb.jpg";
+              break;
+          }
+        }
+
         const userOk = {
           userName: req.body.userName, 
           name: req.body.name, 
@@ -27,7 +40,6 @@ module.exports.doRegister = (req, res, next) => {
           instruments: req.body.instruments,
           description: req.body.description,
           location: req.body.location,
-          //bands: req.body.bands,
           socialMedia: req.body.socialMedia
         };
         return User.create(userOk)

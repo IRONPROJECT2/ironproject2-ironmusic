@@ -27,6 +27,9 @@ router.post("/createBand", band.doCreate);
 router.get("/bands", band.listBands);
 router.get("/band/:id/detail", band.details);
 router.post("/joinBand/:id", band.joinBand);
+router.get("/band/:id/edit", band.bandEdit);
+router.post("/band/:id/detail", band.bandDoEdit);
+router.post("/band/:id/delete", band.delete)
 
 //Comunity
 router.get("/comunity", comunity.list);
@@ -57,6 +60,9 @@ router.get("/anunciatuconcierto/:id/details", comunity.anunciatuconciertoDetails
 
 //Message
 router.post("/message/:id/message", message.doCreate);
+router.get("/message/:id/edit", message.messageEdit);
+router.post("/message/:id/edit", message.messageDoEdit);
+router.post("/message/:id/delete", message.messageDelete);
 
 
 router.get("/", index.index);
