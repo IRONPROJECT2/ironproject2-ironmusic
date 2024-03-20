@@ -85,4 +85,8 @@ module.exports.delete = (req, res, next) => {
     .then(() => res.redirect("/bands"))
     .catch((error) => next(error))
 }
+
+module.exports.rating = (req, res, next) => {
+  console.debug(req.body);
+}
   

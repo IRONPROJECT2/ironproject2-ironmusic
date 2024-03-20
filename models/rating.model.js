@@ -3,20 +3,20 @@ const Schema = mongoose.Schema;
 
 const ratingSchema = new Schema(
   {
-    userName: {
-      type: String,
-      required: true,
-      unique: true
+    members: [{
+      type: Schema.Types.ObjectId, 
+      ref: "User"
+    }],
+    band: {
+      type: Schema.Types.ObjectId, 
+      ref: "Band"
     },
-    bandName: {
-      type: String,
-      required: true
-    },
-    rating: {
-      type: String
-    }
-  }
+    rating: [{
+      type: Number
+    }]
+  },
+  { timestamps: true }
 )
 
-
-//id banda id usuario id rating
+const Rating = mongoose.model('Rating', ratingSchema);
+module.exports = Rating;

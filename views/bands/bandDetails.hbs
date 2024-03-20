@@ -32,18 +32,18 @@
   {{/userIsInTheBand}}
 {{/if}}
 
-<form action="" method="post"> {{!-- meter en un formulario --}}
+<form action="/rating" method="post">
   <div class="rating">
-    <span class="rating__result"></span> 
-    <i class="rating__star far fa-star"></i>
-    <i class="rating__star far fa-star"></i>
-    <i class="rating__star far fa-star"></i>
-    <i class="rating__star far fa-star"></i>
-    <i class="rating__star far fa-star"></i>
+    <span class="rating__result"></span>
+    <input type="hidden" name="rating" id="rating-value" value="0"> <!-- Campo de entrada oculto para enviar el valor de la calificación -->
+    <i class="rating__star far fa-star" data-value="1"></i> <!-- Primera estrella -->
+    <i class="rating__star far fa-star" data-value="2"></i> <!-- Segunda estrella -->
+    <i class="rating__star far fa-star" data-value="3"></i> <!-- Tercera estrella -->
+    <i class="rating__star far fa-star" data-value="4"></i> <!-- Cuarta estrella -->
+    <i class="rating__star far fa-star" data-value="5"></i> <!-- Quinta estrella -->
   </div>
 </form>
 
-//controlador de la accion y modelo rating id banda id usuario id rating
 
 <script>
   const ratingStars = [...document.getElementsByClassName("rating__star")];

@@ -20,6 +20,7 @@ router.post("/user/:id/delete", user.delete);
 router.post("/pendingMembers/:id/accept", user.acceptNewMember);
 router.post("/pendingMembers/:id/decline", user.removeNewMember);
 router.get("/user/:id/removeMember", user.removeMember); //Ruta get para eliminar a un miembro de la banda
+router.post("/search", user.search);
 
 //Band
 router.get("/createBand", band.create);
@@ -30,6 +31,9 @@ router.post("/joinBand/:id", band.joinBand);
 router.get("/band/:id/edit", band.bandEdit);
 router.post("/band/:id/detail", band.bandDoEdit);
 router.post("/band/:id/delete", band.delete)
+
+//Rating
+router.post("/rating", band.rating);
 
 //Comunity
 router.get("/comunity", comunity.list);
@@ -58,12 +62,12 @@ router.post("/anunciatuconcierto/:id/edit", comunity.anunciatuconciertoDoEdit);
 router.post("/anunciatuconcierto/:id/delete", comunity.anunciatuconciertoDelete);
 router.get("/anunciatuconcierto/:id/details", comunity.anunciatuconciertoDetails);
 
+
 //Message
 router.post("/message/:id/message", message.doCreate);
 router.get("/message/:id/edit", message.messageEdit);
 router.post("/message/:id/edit", message.messageDoEdit);
 router.post("/message/:id/delete", message.messageDelete);
-
 
 router.get("/", index.index);
 module.exports = router;

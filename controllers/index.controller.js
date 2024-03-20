@@ -7,7 +7,7 @@ const createError = require("http-errors");
 module.exports.index = (req, res, next) => {
   Promise.all([
     Band.find().sort({ created: -1 }).limit(5).exec(),
-    Atc.find().sort({ date: -1 }).limit(5).exec()
+    Atc.find().sort({ date: 1 }).limit(5).exec()
   ])
   .then(([bands, concerts]) => {
     res.render("index", { bands, concerts });

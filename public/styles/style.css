@@ -1,40 +1,74 @@
-/* .bg-image {
-  background-image: url("../images/bg-crawd/free-music-graphic-design-music-d95cd2bfac9a14916f62f6d3c7944028.png");
-  background-size: contain;
+/* FUENTES:
+primera fuente: IM Fell English (toda la web)
+segunda fuente:Forum (titulo ironmusic)
+tercera fuente:Reenie Beanie (comentarios)
+*/
+
+
+/* 
+.im-fell english-regular {
+  font-family: "IM Fell English", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.forum-regular {
+  font-family: "Forum", serif;
+  font-weight: 400;
+  font-style: normal;
+} 
+
+.reenie-beanie-regular {
+  font-family: "Reenie Beanie", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+*/
+
+
+
+
+body {
+  font-family: "Forum", serif;
+  /* background-color: #c4c4c4; */
+
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "IM Fell English", serif;
+}
+
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/bg-crawd/1.jpg");
   background-repeat: no-repeat;
-  background-position: center;
-} */
-
-
-/* .card1 {
-  background-image: url("https://d1rs3px2gf3dlr.cloudfront.net/media/blog/featured/RockBand4-KeyArt-1080p.png");
   background-size: cover;
-  background-repeat: no-repeat;
-  background-color: rgba(255, 255, 255, 0.6);
-} */
+  /* opacity: 0.3;  */
+  z-index: -1; 
+} 
 
-/* .card2 {
-  background-image: url("https://www.ansa.it/webimages/news_base/2023/6/30/8f0696df4fc75fa005931836c62d9697.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: rgba(255, 255, 255, 0.6);
-} */
+.bgNav {
+/*  
+  background: rgb(32,0,119);
+  background: linear-gradient(90deg, rgba(32,0,119,1) 0%, rgba(32,0,172,1) 50%, rgba(11,0,222,1) 100%); 
+*/
+background-color: rgb(172, 172, 172);
+background-image: url("../images/bg-crawd/rock-concert-silhouette-silhouette-fb49cd153ce2bcc57e7e0fa0ae50a961.png"), url("../images/bg-crawd/rock-concert-music-palacio-de-deportes-de-santander-concert-crowd-c63e8ab2c70a3618b3feab13d34e6521.png"), url("../images/bg-crawd/concert-music-festival-art-musician-crowd-fb11816fe1243a1e7da7ece9b5e1759d.png") ;
+background-repeat:repeat;
+background-size: contain;
+}
 
-/* .card3 {
-  background-image: url("https://www.timeoutdubai.com/cloud/timeoutdubai/2023/05/22/gigs-in-dubai-1.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: rgba(255, 255, 255, 0.6);
-} */
-
-
-/* .bg-image {
-  background-image: url("../images/bg-crawd/musical-note-musical-notation-stock-illustration-splash-music-decoration-pattern-388b1df52d8195d8fb17d93c34d0d3cc.png");
-  background-size:cover;
-  background-repeat: no-repeat;
-  background-position: center;
-} */
-
+.ironBody {
+  background-color: rgba(255, 255, 255, 0.801);
+  border: 1px solid black;
+}
 
 .card1 {
   background: rgb(255,0,0);

@@ -1,0 +1,59 @@
+<h1>Buscador</h1>
+
+<h5>Usuario:</h5>
+{{#each users}}
+  <div class="card" style="width: 18rem;">
+    <img src="{{photo}}" class="card-img-top" alt="profile photo"/>
+    <div class="card-body">
+      <h5 class="card-title">{{userName}}</h5>
+      <p class="m-0">Ubicación: {{location}}</p>
+      <p class="card-text m-0">Descripción: {{description}}</p>
+      <p class="m-0">Instrumentos:</p>
+      <ul class="list-unstyled">
+        {{#each instruments}}
+          <li>- {{this}}</li>
+        {{/each}}
+      </ul>
+
+      <div class="d-flex justify-content-center align-content-center">
+        <a href="" class="me-3 text-decoration-none link-dark">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="me-3 text-decoration-none link-dark">
+          <i class="fab fa-facebook-square"></i>
+        </a>
+        <a href="" class="me-3 text-decoration-none link-dark">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="me-3 text-decoration-none link-dark">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="me-3 text-decoration-none link-dark">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+{{/each}}
+
+<h5>Banda:</h5>
+{{#each bands}}
+  <p>{{this}}</p>
+{{/each}}
+
+<h4>post:</h4>
+
+<h5>Band-jam:</h5>
+{{#each bandjam}}
+  <p>{{this}}</p>
+{{/each}}
+
+<h5>Formar banda:</h5>
+{{#each formarBanda}}
+  <p>{{this}}</p>
+{{/each}}
+
+<h5>Anuncia tu concierto:</h5>
+{{#each atc}}
+  <p>{{this}}</p>
+{{/each}}

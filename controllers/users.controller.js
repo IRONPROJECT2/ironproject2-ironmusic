@@ -3,6 +3,10 @@ const Band = require("../models/band.model");
 const mongoose = require('mongoose');
 const { sessions } = require("../middlewares/auth.middleware");
 const createError = require("http-errors");
+const Bandjam = require("../models/bandjam.model");
+const FormBand = require("../models/formarbanda.model")
+const Atc = require("../models/anunciatuconcierto.model");
+const Message = require("../models/message.model");
 
 
 
@@ -179,3 +183,38 @@ module.exports.removeMember = (req, res, next) => {
     .then(() => res.redirect("/profile"))
     .catch((error) => next(error));
 }
+
+
+module.exports.search = (req, res, next) => {
+  const searched = req.body.query;
+  const search = [
+    User.find({ $or: [{ name: new RegExp(searched, 'i') }, { userName: new RegExp(searched, 'i') }] }),
+    Band.find({ name: new RegExp(searched, 'i')}, { administrator: new RegExp(searched, 'i')}),
+    Bandjam.find({ bandName: new RegExp(searched, 'i')}, { creator: new RegExp(searched, 'i')}),
+    FormBand.find({ name: new RegExp(searched, 'i')}, { creator: new RegExp(searched, 'i')}),
+    Atc.find({ name: new RegExp(searched, 'i')}, { creator: new RegExp(searched, 'i')})
+  ];
+
+  Promise.all(search)
+    .then((results) => {
+      const [users, bands, bandjam, formarBanda, atc] = results;
+      const bandIds = bands.map(band => band._id);
+      const bandjamIds = bandjam.map(band => band._id);
+      const formarBandaIds = formarBanda.map(band => band._id);
+      const atcIds = atc.map(band => band._id);
+
+      // Búsqueda por lotes de los documentos correspondientes a los IDs
+      const bandPromises = Band.find({ _id: { $in: bandIds }});
+      const bandjamPromises = Bandjam.find({ _id: { $in: bandjamIds }});
+      const formarBandaPromises = FormBand.find({ _id: { $in: formarBandaIds }});
+      const atcPromises = Atc.find({ _id: { $in: atcIds }});
+
+      return Promise.all([bandPromises, bandjamPromises, formarBandaPromises, atcPromises])
+        .then(([foundBands, foundBandjams, foundFormarBanda, foundAtc]) => {
+          res.render("misc/search", { users, bands: foundBands, bandjam: foundBandjams, formarBanda: foundFormarBanda, atc: foundAtc});
+        });
+    })
+    .catch((error) => next(error));
+};
+
+
