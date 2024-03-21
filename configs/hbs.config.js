@@ -51,3 +51,33 @@ hbs.registerHelper("isAdministratorInTheBand", function (administrator, members,
 hbs.registerHelper("theUserIsTheCreator", function (user, member, options) {
   return user.id == member ? options.fn(this) : options.inverse(this);
 });
+
+hbs.registerHelper("userVote", function (user, arrayUsers, options) {
+  const userVote = arrayUsers.some((voteUser) => voteUser.id == user.id);
+  return userVote ? options.fn(this) : options.inverse(this);
+});
+
+hbs.registerHelper('formatDate', function(date) {
+  // Convertir la fecha a un objeto Date
+  const eventDate = new Date(date);
+  
+  // Definir los nombres de los días de la semana
+  const daysOfWeek = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+
+  // Obtener el día de la semana y formatear el nombre
+  const dayOfWeek = daysOfWeek[eventDate.getDay()];
+
+  // Obtener el día, mes y año
+  const day = eventDate.getDate();
+  const month = eventDate.getMonth() + 1; // Los meses en JavaScript son indexados desde 0
+  const year = eventDate.getFullYear();
+
+  // Obtener la hora y los minutos
+  const hours = eventDate.getHours();
+  const minutes = eventDate.getMinutes();
+
+  // Formatear la fecha y hora
+  const formattedDate = `${dayOfWeek} ${day}/${month}/${year} a las ${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
+
+  return formattedDate;
+});

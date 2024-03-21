@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const ratingSchema = new Schema(
   {
-    members: [{
+    users: [{
       type: Schema.Types.ObjectId, 
       ref: "User"
     }],
@@ -17,6 +17,7 @@ const ratingSchema = new Schema(
   },
   { timestamps: true }
 )
+
 
 const Rating = mongoose.model('Rating', ratingSchema);
 module.exports = Rating;

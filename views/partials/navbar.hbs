@@ -1,84 +1,84 @@
 {{!-- container-fluid --}}
-<nav class="navbar navbar-expand-lg d-flex justify-content-center bgNav">
+<nav class="navbar navbar-expand-lg d-flex justify-content-end align-items-end bgNav">
   <div class="container-fluid ">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <div class="d-flex justify-content-evenly align-content-end w-100">
-        <a class="navbar-brand text-light fw-bold" href="/"><img src="https://i.postimg.cc/v8KHR9hh/logo-3.png" alt="ironmusic logo" style="height: 60px;"> IRONMUSIC </a>
+      <div class="d-flex justify-content-around align-items-end w-100">
+        <div class="d-flex justify-content-end align-items-end">
+          <a class="navbar-brand text-light fw-bold m-0 p-0 d-flex justify-content-end align-items-end" href="/">
+            <img src="https://i.postimg.cc/v8KHR9hh/logo-3.png" alt="ironmusic logo" style="height: 60px;">
+            <p class="py-0 m-0">IRONMUSIC</p>
+          </a>
+        </div>
 
-        <ul class="navbar-nav mb-2 mb-lg-0 d-flex justify-content-center align-items-end">
-          <li class="nav-item dropdown me-2">
-            <a class="nav-link dropdown-toggle text-light fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Menu
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/bands">Bandas</a></li>
-              <li><a class="dropdown-item" href="/comunity">Comunidad</a></li>
-            </ul>
-          </li>
-
-          {{#if currentUser}}
-            <li class="nav-item dropdown me-2">
-              <a class="nav-link dropdown-toggle text-light fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Crea un post
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/bandjamForm">Band-jam</a></li>
-                <li><a class="dropdown-item" href="/formarBandaForm">Formar banda</a></li>
-                <li><a class="dropdown-item" href="/anunciaTuConciertoForm">Anuncia tu concierto</a></li>
-              </ul>
-            </li>
-
-            <li class="nav-item dropdown me-2">
-              <a class="nav-link dropdown-toggle text-light fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Banda
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/bands">Unirme a banda</a></li>
-                <li><a class="dropdown-item" href="/createBand">Crear banda</a></li>
-              </ul>
-            </li>
-          {{/if}}
-        </ul>
-      </div>
-    </div>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <div class="collapse navbar-collapse text-decoration-none" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-decoration-none">
-          <li class="nav-item dropdown">
-            <form action="/search" class="d-flex" method="post" role="search">
-              <input class="form-control me-2" type="search" name="query" placeholder="Usuario o banda" aria-label="Search">
-              <button class="btn btn-outline-success fw-bold" type="submit">Buscar</button>
-            </form>
-          </li>
-
-          {{#if currentUser}}
-
-            {{!-- <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item"><a class="nav-link {{navActive currentPath '/profile'}}" aria-current="page" href="/profile">{{currentUser.userName}}</a></li>
-              <li class="nav-item"><a class="nav-link" aria-current="page" href="/logout">LOGOUT</a></li>
-            </ul> --}}
-
+        <ul class="navbar-nav mb-2 mb-lg-0 d-flex justify-content-around align-items-end w-100">
+          <div class="d-flex">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-light fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                {{currentUser.userName}}
+              <a class="nav-link dropdown-toggle text-light fw-bold py-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Menu
               </a>
               <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/bands">Bandas</a></li>
+                <li><a class="dropdown-item" href="/comunity">Comunidad</a></li>
+              </ul>
+            </li>
+
+            {{#if currentUser}}
+              <li class="nav-item dropdown me-2">
+                <a class="nav-link dropdown-toggle text-light fw-bold py-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Crea un post
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/bandjamForm">Band-jam</a></li>
+                  <li><a class="dropdown-item" href="/formarBandaForm">Formar banda</a></li>
+                  <li><a class="dropdown-item" href="/anunciaTuConciertoForm">Anuncia tu concierto</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown me-2">
+                <a class="nav-link dropdown-toggle text-light fw-bold py-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Banda
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/bands">Unirme a banda</a></li>
+                  <li><a class="dropdown-item" href="/createBand">Crear banda</a></li>
+                </ul>
+              </li>
+            {{/if}}
+          </div>
+
+          <div>
+            <li class="nav-item dropdown">
+              <form action="/search" class="d-flex" method="post" role="search">
+                <input class="form-control me-2 searchInput" type="search" name="query" placeholder="Usuario o banda" aria-label="Search">
+                <button class="btn btn-outline-success text-light fw-bold" type="submit">Buscar</button>
+              </form>
+            </li>
+          </div>
+        </ul>
+
+        <ul class="navbar-nav mb-2 mb-lg-0 text-decoration-none d-flex justify-content-end align-items-end w-100">
+          {{#if currentUser}}
+            <li class="nav-item dropdown">
+              <a class="nav-link text-light fw-bold p-0 mt-5 link-m profileShadow" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="{{currentUser.photo}}" alt="Foto de perfil" style="width: 45px; height: 45px; " class="rounded-circle">
+                <span class="ms-3 align-bottom">{{currentUser.userName}}</span>             
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end ">
                 <li class="nav-item"><a class="nav-link" aria-current="page" href="/profile">Perfil</a></li>
                 <li class="nav-item"><a class="nav-link" aria-current="page" href="/logout">Cerrar sesion</a></li>
               </ul>
             </li>
-              
           {{else}}
-            <a class="navbar-brand ms-3 text-light fw-bold" href="/reglog">login/register</a>
+            <a class="navbar-brand ms-3 text-light fw-bold p-0 link-m" href="/reglog">login/register</a>
           {{/if}}
         </ul>
       </div>
     </div>
+
   </div>
 </nav>
 

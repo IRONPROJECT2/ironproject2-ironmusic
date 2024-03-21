@@ -32,17 +32,45 @@
   {{/userIsInTheBand}}
 {{/if}}
 
-<form action="/rating" method="post">
-  <div class="rating">
-    <span class="rating__result"></span>
-    <input type="hidden" name="rating" id="rating-value" value="0"> <!-- Campo de entrada oculto para enviar el valor de la calificación -->
-    <i class="rating__star far fa-star" data-value="1"></i> <!-- Primera estrella -->
-    <i class="rating__star far fa-star" data-value="2"></i> <!-- Segunda estrella -->
-    <i class="rating__star far fa-star" data-value="3"></i> <!-- Tercera estrella -->
-    <i class="rating__star far fa-star" data-value="4"></i> <!-- Cuarta estrella -->
-    <i class="rating__star far fa-star" data-value="5"></i> <!-- Quinta estrella -->
-  </div>
-</form>
+{{!-- <p>Rating: {{average}}</p> --}}
+<p>Rating: {{band.rating}}</p>
+
+
+{{#if currentUser}}
+  {{#if result.users.length}}
+    {{#userVote currentUser result.users}}
+      <p>Gracias por votar!</p>
+    {{else}}  
+      <form id="rating-form" action="/rating" method="post">
+        <div class="rating">
+          <input type="hidden" name="users" value="{{currentUser.id}}">
+          <input type="hidden" name="band" value="{{band.id}}">
+          <span class="rating__result"></span>
+          <input type="hidden" name="rating" id="rating-value" value="0"> <!-- Campo de entrada oculto para enviar el valor de la calificación -->
+          <i class="rating__star far fa-star" data-value="1"></i> <!-- Primera estrella -->
+          <i class="rating__star far fa-star" data-value="2"></i> <!-- Segunda estrella -->
+          <i class="rating__star far fa-star" data-value="3"></i> <!-- Tercera estrella -->
+          <i class="rating__star far fa-star" data-value="4"></i> <!-- Cuarta estrella -->
+          <i class="rating__star far fa-star" data-value="5"></i> <!-- Quinta estrella -->
+        </div>
+      </form>
+    {{/userVote}}
+  {{else}}
+    <form id="rating-form" action="/rating" method="post">
+      <div class="rating">
+        <input type="hidden" name="users" value="{{currentUser.id}}">
+        <input type="hidden" name="band" value="{{band.id}}">
+        <span class="rating__result"></span>
+        <input type="hidden" name="rating" id="rating-value" value="0"> <!-- Campo de entrada oculto para enviar el valor de la calificación -->
+        <i class="rating__star far fa-star" data-value="1"></i> <!-- Primera estrella -->
+        <i class="rating__star far fa-star" data-value="2"></i> <!-- Segunda estrella -->
+        <i class="rating__star far fa-star" data-value="3"></i> <!-- Tercera estrella -->
+        <i class="rating__star far fa-star" data-value="4"></i> <!-- Cuarta estrella -->
+        <i class="rating__star far fa-star" data-value="5"></i> <!-- Quinta estrella -->
+      </div>
+    </form>
+  {{/if}}
+{{/if}}
 
 
 <script>
@@ -98,5 +126,21 @@
     }
   });
   }
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const ratingStars = document.querySelectorAll('.rating__star');
+    const ratingValue = document.getElementById('rating-value');
+    const ratingForm = document.getElementById('rating-form');
+
+    ratingStars.forEach(star => {
+      star.addEventListener('click', function() {
+        const value = parseInt(star.getAttribute('data-value'));
+        ratingValue.value = value;
+        // Envía el formulario al hacer clic en la estrella
+        ratingForm.submit();
+      });
+    });
+  });
 
 </script>

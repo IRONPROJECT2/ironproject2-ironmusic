@@ -41,10 +41,20 @@ const bandSchema = new Schema(
     }],
     created: {
       type: Date
+    },
+    rating: {
+      type: Number
     }
   },
   { timestamps: true }
 )
+
+bandSchema.virtual('bandRating', {
+  ref: 'Rating', 
+  localField: '_id', //Que voy a utilizar para identificarme en mi modelo
+  foreignField: 'band', //Que voy a utilizar para identificarme en el modelo que aparezca en ref
+  justOne: false 
+});
 
 const Band = mongoose.model('Band', bandSchema);
 module.exports = Band;

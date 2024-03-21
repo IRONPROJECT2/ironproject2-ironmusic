@@ -1,6 +1,9 @@
-const Band = require("../models/band.model");
-const mongoose = require('mongoose');
 const createError = require("http-errors");
+const mongoose = require('mongoose');
+const Band = require("../models/band.model");
+const Rating = require("../models/rating.model");
+
+
 
 
 module.exports.create = (req, res, next) => res.render("bands/registerBand");
@@ -43,7 +46,21 @@ module.exports.details = (req, res, next) => {
       if (!band) {
         next(createError(404, "Banda no encontrada"));
       } else {
-        res.render("bands/bandDetails", { band });
+        Rating.find({band: band._id})
+          .populate("users")
+          .then((result) => {
+            if (result && result.length > 0 && result[0].rating) {
+              const sum = result[0].rating.reduce((acc, num) => {
+                return acc + num
+              }, 0);
+              const average = Math.round(sum / result[0].rating.length);
+              band.rating = average;
+              res.render("bands/bandDetails", { band, result: result[0], average });
+            } else {
+              res.render("bands/bandDetails", { band } )
+            }   
+          })
+          .catch((error) => next(error))
       }
     })
     .catch((error) => next(error));
@@ -56,9 +73,7 @@ module.exports.joinBand = (req, res, next) => {
       return band.save();
     })
     .then(() => {
-      // Obtener la URL anterior desde el encabezado Referer
       const referer = req.get('Referer');
-      // Redirigir de nuevo a la misma página
       res.redirect(referer || '/');
     })
     .catch((error) => next(error));
@@ -87,6 +102,29 @@ module.exports.delete = (req, res, next) => {
 }
 
 module.exports.rating = (req, res, next) => {
-  console.debug(req.body);
+  const ranking = req.body
+  Rating.find({ band: req.body.band })
+    .populate("band")
+    .then((rating) => {
+      if (!rating || rating.length === 0) {
+        Rating.create(ranking)
+          .then(() => res.redirect(`/band/${ranking.band}/detail`))
+          .catch((error) => next(error));
+      } else {
+        rating[0].rating.push(req.body.rating);
+        rating[0].users.push(req.body.users)
+        rating[0].save()
+          .then((updatedRating) => {
+            const sum = updatedRating.rating.reduce((acc, num) => {
+              return acc + num
+            }, 0);
+            const average = Math.round(sum / updatedRating.rating.length);
+            Band.findByIdAndUpdate(updatedRating.band, {rating: average}, { new: true })
+              .then((band) => res.redirect(`/band/${band.id}/detail`))
+          })
+          .catch((error) => next(error));
+      }
+    })
+    .catch((error) => next(error));
 }
   

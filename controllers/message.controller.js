@@ -39,7 +39,6 @@ module.exports.messageEdit = (req, res, next) => {
   Message.findById(req.params.id)
     .populate("post")
     .then((message) => {
-      console.debug(message);
       switch (message.postType) {
         case "Bandjam": 
           res.render(`comunity/details/editComent/bandjamEditComent`, { message });
