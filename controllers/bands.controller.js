@@ -3,22 +3,35 @@ const mongoose = require('mongoose');
 const Band = require("../models/band.model");
 const Rating = require("../models/rating.model");
 
-
-
-
 module.exports.create = (req, res, next) => res.render("bands/registerBand");
 
 module.exports.doCreate = (req, res, next) => {
   const bandUser = req.body;
   bandUser.administrator = req.user.id;
 
-  Band.create(bandUser)
+  Band.findOne({name: req.body.name})
     .then((band) => {
-      band.members.push(req.user.id);
-      return band.save();
-    })
-    .then(() => res.redirect("/bands"))
-    .catch((error) => {
+      if (band) {
+        res.status(409).render("bands/registerBand", {
+          errors: { 
+            name: "El nombre de la banda es obligatorio", 
+            biography: "La biografía es obligatoria", 
+            location: "La ubicación de la banda es obligatoria"
+          }
+        })
+      } else {
+        if (req.body.photo === "") {
+          req.body.photo = "https://i.postimg.cc/6QH9kchf/f1b84763-a7d9-4e48-b583-9e3dc24bbcdf.jpg";
+        }
+
+        return Band.create(bandUser)
+          .then((band) => {
+            band.members.push(req.user.id);
+            return band.save();
+          })
+          .then(() => res.redirect("/bands"));
+      }
+    }).catch((error) => {
       if (error instanceof mongoose.Error.ValidationError) {
         res.status(400).render("bands/registerBand", {bandUser, errors: error.errors});
       } else {

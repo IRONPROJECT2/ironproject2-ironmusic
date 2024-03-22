@@ -51,8 +51,28 @@ module.exports.doBandjamForm = (req, res, next) => {
       return req.user.save();
     })
     .then(() => res.redirect("/bandjam"))
-    .catch((error) => next(error));
+    .catch((error) => {
+      if (error instanceof mongoose.Error.ValidationError) {
+        res.status(400).render("comunity/forms/bandjamForm", {errors: error.errors});
+      } else {
+        next(error);
+      }
+    });
 }
+
+// module.exports.doBandjamForm = (req, res, next) => {
+//   const userCreator = req.body;
+//   userCreator.creator = req.user.id;
+//   userCreator.postType = "Bandjam";
+
+//   Bandjam.create(userCreator)
+//     .then((bandjam) => {
+//       req.user.posts.push(bandjam._id);
+//       return req.user.save();
+//     })
+//     .then(() => res.redirect("/bandjam"))
+//     .catch((error) => next(error));
+// }
 
 module.exports.formarBandaForm = (req, res, next) => {
   res.render("comunity/forms/formarBandaForm")

@@ -15,10 +15,19 @@ module.exports.reglog = (req, res, next) => {
 }
 
 module.exports.doRegister = (req, res, next) => {
-  User.findOne({userName: req.body.userName, email: req.body.email})
+  User.find({userName: req.body.userName, email: req.body.email})
     .then((user) => {
       if (user) {
-        res.status(409).render("users/reglog", { user: req.body, errors: { userName: "Ya existe", email: "Ya existe"}});
+        res.status(409).render("users/reglog", { 
+          user: req.body, 
+          errors: { 
+            nameUser: "Ya existe", 
+            name: "Hay que rellenar el campo", 
+            email: "Ya existe",
+            password: "La contraseña necesita al menos 8 caracteres",
+            description: "Hay que rellenar el campo",
+            location: "Hay que rellenar el campo"
+          }});
       } else {
         if (req.body.photo === "") {
           switch (req.body.gender) {

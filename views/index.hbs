@@ -2,50 +2,113 @@
 <main>
 {{!-- TOP 10 BANDS --}}
   <section class="text-center"> 
-    <h2>LAS TOP-10 BANDAS DEL MOMENTO YA ESTÁN AQUÍ</h2>
+    <h2 class="mt-5">LAS TOP-10 BANDAS DEL MOMENTO YA ESTÁN AQUÍ</h2>
+    
+    <table class="table table-dark table-striped-columns my-5">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre de la banda</th>
+          <th scope="col">Estilo musical</th>
+          <th scope="col">Integrantes</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each rating}}
+        <tr>
+            <th scope="row">
+              <p class="fs-5">{{@index}}</p>
+            </th>
+          
+          <td>
+            <div class="d-flex justify-content-center align-items-center">
+              <a href="/band/{{id}}/detail" class="d-flex justify-content-center align-items-center text-decoration-none text-white">
+                <img src="{{photo}}" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
+                <div class="ms-3">
+                  <p class="text-uppercase mb-1 fs-5">{{name}}</p>
+                </div>
+              </a>
+            </div>
+          </td>
+          <td class="fs-5">{{musicalGenre}}</td>
+          <td>
+            <ul class="list-unstyled d-flex flex-column justify-content-center align-content-center align-items-center">
+              {{#each members}}
+                <li class="fs-5">{{this.name}}</li>
+              {{/each}}
+            </ul>
+          </td>
+          {{/each}}
+        </tr>   
+        
+      </tbody>
+    </table>
 
-    {{#each rating}}
-      <p>{{name}}: {{rating}}</p>
-    {{/each}}
 
-
-    <hr <hr class="w-75 mx-auto my-5">>
+    <hr class="w-75 mx-auto my-5">
   </section>
-
 
 
 
   {{!-- NEW ARTISTS --}}
-  <section> 
-    <h2 class="text-center">LOS NUEVOS ARTISTAS LLEGAN PISANDO FUERTE</h2>
-
-
-    {{#each bands}}
-      <p>{{name}}</p>
-    {{/each}}
-
-    <hr class="w-75 mx-auto my-5">
+  <section class="text-center my-5"> 
+    <h2>LOS NUEVOS ARTISTAS LLEGAN PISANDO FUERTE</h2>
   </section>
+  
+  <section class="">
+    <div class="w-75 mx-auto">
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          {{#each bands}}
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{@index}}" class="{{#if @first}}active{{/if}}" aria-label="Slide {{@index}}"></button>
+          {{/each}}
+          </div>
+        <div class="carousel-inner">
+          {{#each bands}}
+            <div class="carousel-item {{#if @first}}active{{/if}}" style="height: 500px;">
+              <img src="{{photo}}" class="d-block w-100" alt="new artist poster">
+              <div class="carousel-caption bg-dark opacity-75">
+                <h5 class="text-uppercase fs-5">{{name}}</h5>
+                <p class="fs-5">{{biography}}</p>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+          </button>
+      </div>
+    </div>
+    
+    <hr class="w-75 mx-auto my-5">
+</section>
+    
+  
   {{!-- NEWS --}}
 <section> 
   <h2 class="text-center">DESCUBRE LAS ÚLTIMAS NOTICIAS DEL MUNDO MUSICAL</h2>
 </section>
 <section class="container text-center mt-5"> 
-  <div class="d-flex flex-wrap justify-content-between">
-    <div class="card shadow-lg" style="width: 18rem;">
+  <div class="d-flex flex-wrap justify-content-around">
+    
+    <div class="card shadow-lg m-3" style="width: 18rem;">
       <a href="https://es.rollingstone.com/dua-lipa-revela-el-titulo-de-su-proximo-album-radical-optimism/" class="text-decoration-none">
         <img src="https://es.rollingstone.com/wp-content/uploads/2024/03/Dua-Lipa-revela-el-titulo-de-su-proximo-album-Radical-Optimism.jpg" class="card-img-top" alt="Dua Lipa" style="height: 160px;">
-        <div class="text-center d-flex flex-column h-100">
+        <div class="text-center d-flex flex-column align-items-center h-100">
           <h5 class="card-title text-dark">Dua Lipa revela por fín el esperado título de su próximo álbum: Radical Optimism</h5>
           <div class="d-flex justify-content-center align-items-center text-center">
             <p class="d-inline-block text-truncate text-dark" style="max-width: 270px;">Dua Lipa se prepara para la llegada de Radical Optimism, su tercer álbum de estudio.</p>
           </div>
-       </div>
+        </div>
       </a>
     </div>
   
-
-    <div class="card shadow-lg" style="width: 18rem;">
+    <div class="card shadow-lg m-3" style="width: 18rem;">
       <a href="https://metalcry.com/amon-amarth-lanza-el-tema-y-video-de-heidrun/" class="text-decoration-none">
         <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT5IyPPEwsV6tikorr5znGcnb5nui_NZSIT6oN1jFysv9533QYf" class="card-img-top" alt="Amon Amarth" style="height: 160px;">
         <div class="text-center d-flex flex-column align-items-center h-100">
@@ -54,9 +117,8 @@
         </div>
       </a>
     </div>
-    
-
-    <div class="card shadow-lg" style="width: 18rem;">
+  
+    <div class="card shadow-lg m-3" style="width: 18rem;">
       <a href="https://www.europafm.com/noticias/musica/que-pasado-supersubmarina-como-estan-que-hacen-miembros-banda_2022080862ef9b0a3ef61200013aa68f.html" class="text-decoration-none">
         <img src="https://image.europafm.com/clipping/cmsimages02/2016/09/07/E5298E9F-7206-4CEA-8D9D-9397F2756276/98.jpg?crop=800,450,x0,y42&width=1900&height=1069&optimize=low&format=webply" class="card-img-top" alt="Supersubmarina" style="height: 160px;">
         <div class="text-center d-flex flex-column align-items-center h-100">
@@ -65,17 +127,6 @@
         </div>
       </a>
     </div>
-
-    <div class="card shadow-lg" style="width: 18rem;">
-      <a href="https://los40.com/2024/03/18/the-eras-tour-de-taylor-swift-cumple-un-ano-estos-son-los-momentos-mas-iconicos-de-la-gira/" class="text-decoration-none"> 
-        <img src="https://los40.com/resizer/v2/JXAV5KFTGNGKJINFXDWRKT3RHY.jpg?auth=e579d001bba1903891b4e15f9f80753c2a4b611099990063c2f091d9079cada3&quality=70&width=1200&height=544&focal=2763,613" class="card-img-top" alt="Taylor Swift" style="height: 160px;">
-        <div class="text-center d-flex flex-column align-items-center h-100">
-          <h5 class="card-title text-dark">De la transición de 'Look What You Made Me Do' hasta los friendship bracelets</h5>
-          <p class="d-inline-block text-truncate text-dark" style="max-width: 270px;">Hace ya un año comenzaba una de las giras más exitosas y memorables de la historia de la música: The Eras Tour</p>
-        </div>
-      </a>
-    </div>
-  </div>
 
   <hr class="w-75 mx-auto my-5">
 </section> 
@@ -86,7 +137,8 @@
       <h2 class="my-5">ENTRA A LA MAYOR COMUNIDAD DE MÚSICOS DE INTERNET</h2>
     </section>
   <section class="container text-center my-5">
-    <div class="d-flex flex-wrap justify-content-around">
+    <div class="d-flex flex-wrap justify-content-around m-3">
+      
       <div class="card shadow-lg p-3 my-5 card1" style="width: 18rem; position: relative;">
           <a href="/bandjam" class="text-decoration-none">
             <img src="https://d1rs3px2gf3dlr.cloudfront.net/media/blog/featured/RockBand4-KeyArt-1080p.png" class="card-img-top card-imgNoMove shadow-img1 rounded-4" alt="musicians playing music">
@@ -130,12 +182,12 @@
   <h2>PRÓXIMOS CONCIERTOS</h2>
 </section>
 <section class="container text-center my-5">
-  <div class="d-flex justify-content-center align-items-center">
+  <div class="d-flex flex-wrap justify-content-center align-items-center mb-3">
     {{#each concerts}}
-      <div class="card shadow-lg mx-2" style="width: 18rem;">
+      <div class="card shadow-lg m-3" style="width: 18rem;">
         <img src="{{photo}}" class="card-img-top" alt="artist" style="height: 160px;">
         <div class="text-center d-flex flex-column h-100">
-          <h5 class="card-title mt-1">{{name}}</h5>
+          <h5 class="card-title bold mt-1">{{name}}</h5>
           <p class="d-inline-block">{{descriptionGenre}}</p>
           <p class="d-inline-block">{{location}}</p>
           <p class="d-inline-block">{{formatDate date}}</p>
@@ -144,7 +196,6 @@
     {{/each}}
   </div>
 </section>
-
 
 </main>
 

@@ -24,6 +24,10 @@ hbs.registerHelper("matchGenre", function (genre, bands, options) {
   }
 });
 
+hbs.registerHelper("musicalMatch", function (bandGenre, genre, options) {
+  return bandGenre == genre ? options.fn(this) : options.inverse(this);
+})
+
 hbs.registerHelper("registerPending", function (user, band, options) {
   const pendingMembers = band.pendingMembers;
   const isPending = pendingMembers.some((pendingUser) => pendingUser == user.id);

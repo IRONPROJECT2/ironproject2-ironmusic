@@ -72,6 +72,20 @@ body::before {
   align-content: center !important;
 }
 
+.bgFooter {
+  background-image: url("../images/bgEdit2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+}
+
+.bgFooter p {
+  font-size: 16px !important;
+} 
+.bgFooter h6 {
+  font-size: 18px !important;
+}
+
 
 @media (min-width: 992px) {
   .bgNav {
@@ -89,6 +103,20 @@ body::before {
 
   .searchInput {
     width: 320px;
+  }
+
+  .bgFooter {
+    background-image: url("../images/bgEdit4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .bgFooter p {
+    font-size: 18px !important;
+  } 
+  .bgFooter h6 {
+    font-size: 20px !important;
   }
 }
 

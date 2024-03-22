@@ -31,7 +31,7 @@ const bandjamSchema = new Schema(
     },
     location: {
       type: String,
-      required: true
+      required: [true, "La ubicación de la banda es obligatoria"]
     },
     lookingfor: {
       type: String,

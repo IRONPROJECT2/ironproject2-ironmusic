@@ -5,7 +5,7 @@ const bandSchema = new Schema(
   {
     name: {
       type: String,
-      required: true,
+      required: [true, "El nombre de la banda es obligatorio"],
       unique: true
     },
     musicalGenre: {
@@ -26,6 +26,10 @@ const bandSchema = new Schema(
     socialMedia: [{
       type: String
     }],
+    location: {
+      type: String,
+      required: [true, "La ubicación de la banda es obligatoria"],
+    },
     administrator: {
       type: Schema.Types.ObjectId, 
       ref: "User",
