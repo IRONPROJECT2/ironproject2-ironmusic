@@ -1,19 +1,66 @@
-<h1 class="my-5">Band-jam</h1>
-<a class="btn btn-success" href="/bandjamForm">Crea un post</a>
+<section class="container text-center my-5 w-50">
+  <h1 class="text-center my-5">BAND-JAM</h1>
+  <div> 
+  <p class="text-center my-5 fs-5">Bienvenido a Band-jam, tu espacio para conectar con otras bandas. 
+    Aquí puedes crear un post rellenando el formulario; O bien puedes acceder a los diferentes post y ver sus detalles. 
+    ¿Te equivocaste en tu post? Si eres el autor puedes editar o eliminar lo que necesites</p>
+    </div>
+</section>
 
-{{#each postBand}}
-  <h1>{{bandName}}</h1>
-  <h5>género: {{musicalGenre}}</h5>
-  <h5>género: {{instruments}}</h5>
-  <p>Integrantes: {{numberOfMembers}}</p>
-  <p>localización: {{location}}</p>
-  <p>descripción: {{lookingfor}}</p>
-  <a href="/bandjam/{{id}}/details" class="btn btn-secondary">Detalles</a>
-  <a href="/bandjam/{{id}}/edit" class="btn btn-primary">Editar</a>
-  <form action="/bandjam/{{id}}/delete" method="post" id="deleteForm">
-    <button type="button" class="btn btn-danger" onclick="seguro()">Eliminar</button>
-  </form>
-{{/each}}
+<section class="d-flex flex-column justify-content-center align-content-center align-items-center my-5">
+  <table class="table table-dark align-middle mb-0">
+    <thead class="bg-transparent">
+      <tr>
+        <th>Foto</th>
+        <th>Título</th>
+        <th>Género musical</th>
+        <th>Ubicación</th>
+        <th>Más opciones</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      {{#each postBand}}
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <img
+                  src="{{creator.photo}}"
+                  alt="Foto del usuario"
+                  style="width: 45px; height: 45px"
+                  class="rounded-circle"
+                  />
+            </div>
+          </td>
+
+          <td>
+            <p class="fw-normal mb-1">{{bandName}}</p>
+          </td>
+
+          <td>
+            <p class="fw-normal mb-1">{{musicalGenre}}</p>
+          </td>
+
+          <td>{{location}}</td>
+
+          <td>
+            <div class="d-flex justify-content-center align-content-center align-items-center">
+              <a href="/bandjam/{{id}}/details" class="btn btn-secondary"><i class="bi bi-zoom-in"></i></a>
+              {{#theUserIsTheCreator ../currentUser creator._id}}
+                <a href="/bandjam/{{id}}/edit" class="btn btn-primary ms-2"><i class="bi bi-pencil"></i></a>
+                <form action="/bandjam/{{id}}/delete" method="post" id="deleteForm">
+                  <button type="button" class="btn btn-danger ms-2" onclick="seguro()"><i class="bi bi-x-lg"></i></button>
+                </form>
+              {{/theUserIsTheCreator}}
+            </div>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+  <a class="btn btn-success btn-block my-5 w-25 fs-5" href="/bandjamForm">Crea un post<i class="bi bi-bookmark ms-3"></i></a>
+</section>
 
 <script>
   function seguro() {

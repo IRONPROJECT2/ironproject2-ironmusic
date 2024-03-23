@@ -22,6 +22,11 @@ app.use(loadUserSession);
 
 app.use((req, res, next) => {
   res.locals.currentPath = req.path;
+
+  if (req.session.flash) {
+    res.locals.flash = req.session.flash
+    delete req.session.flash
+  }
   next();
 });
 

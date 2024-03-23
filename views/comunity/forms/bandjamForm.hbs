@@ -1,4 +1,9 @@
-
+<section class="container text-center my-5 w-50">
+  <h1 class="text-center my-2">Formulario de registro para crear una Band-Jam</h1>
+  <div> 
+  <p class="text-center my-5">Para crear tu formulario no olvides rellenar todos los campos y anunciar tu post.</p>
+    </div>
+</section>
 
 <form action="/bandjamForm" method="post">
   <div class="d-flex flex-column justify-content-center align-content-center align-items-center w-100">
@@ -9,7 +14,7 @@
     </div>
 
     <div class="form-group mb-2 w-75">
-      <select name="musicalGenre" id="musicalGenre" class="{{#if errors.musicalGenre}}is-invalid{{/if}}">
+      <select name="musicalGenre" id="musicalGenre" class="form-control {{#if errors.musicalGenre}}is-invalid{{/if}}">
         <option value="Rock">Rock</option>
         <option value="Pop">Pop</option>
         <option value="Indie">Indie</option>
@@ -109,7 +114,7 @@
     </div>
 
     <!-- Submit button -->
-    <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4 w-50">Anunciar!<i class="bi bi-music-note"></i></button>
+    <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4 w-25">Anunciar!<i class="bi bi-music-note"></i></button>
   </div>
 </form>
 

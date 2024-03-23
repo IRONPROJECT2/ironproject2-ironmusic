@@ -13,6 +13,7 @@ module.exports.list = (req, res, next) => res.render("comunity/comunity");
 
 module.exports.bandjam = (req, res, next) => {
   Bandjam.find()
+  .populate("creator")
   .then((postBand) => { 
     res.render("comunity/bandjam", { postBand })
   })
@@ -21,6 +22,7 @@ module.exports.bandjam = (req, res, next) => {
 
 module.exports.formarbanda = (req, res, next) => {
   FormBand.find()
+  .populate("creator")
   .then((postBand) => {
     res.render("comunity/formarbanda", { postBand })  
   })
@@ -29,9 +31,9 @@ module.exports.formarbanda = (req, res, next) => {
 
 module.exports.anunciatuconcierto = (req, res, next) => {
   Atc.find()
+    .populate("creator")
     .then((postBand) => res.render("comunity/anunciatuconcierto", { postBand }))
     .catch((error) => next(error));
-  
 };
 
 /* FORMS */
@@ -60,20 +62,6 @@ module.exports.doBandjamForm = (req, res, next) => {
     });
 }
 
-// module.exports.doBandjamForm = (req, res, next) => {
-//   const userCreator = req.body;
-//   userCreator.creator = req.user.id;
-//   userCreator.postType = "Bandjam";
-
-//   Bandjam.create(userCreator)
-//     .then((bandjam) => {
-//       req.user.posts.push(bandjam._id);
-//       return req.user.save();
-//     })
-//     .then(() => res.redirect("/bandjam"))
-//     .catch((error) => next(error));
-// }
-
 module.exports.formarBandaForm = (req, res, next) => {
   res.render("comunity/forms/formarBandaForm")
 };
@@ -90,7 +78,13 @@ module.exports.doFormarBandaForm = (req, res, next) => {
     return req.user.save();
   })
   .then(() => res.redirect("/formarbanda"))
-  .catch((error) => next(error));
+  .catch((error) => {
+    if (error instanceof mongoose.Error.ValidationError) {
+      res.status(400).render("comunity/forms/formarBandaForm", {errors: error.errors});
+    } else {
+      next(error);
+    }
+  });
 }
 
 
@@ -109,7 +103,13 @@ module.exports.doAnunciaTuConciertoForm = (req, res, next) => {
       return req.user.save();
     })
     .then(() => res.redirect("/anunciatuconcierto"))
-    .catch((error) => next(error));
+    .catch((error) => {
+      if (error instanceof mongoose.Error.ValidationError) {
+        res.status(400).render("comunity/forms/anunciaTuConciertoForm", {errors: error.errors});
+      } else {
+        next(error);
+      }
+    });
 }
 
 module.exports.bandjamEdit = (req, res, next) => {
@@ -177,7 +177,13 @@ module.exports.bandjamDetails = (req, res, next) => {
         .then((messages) => {
           res.render("comunity/details/bandjamDetails", { postBand, messages });
         })
-        .catch((error) => next(error));
+        .catch((error) => {
+          if (error instanceof mongoose.Error.ValidationError) {
+            res.status(400).render("comunity/details/bandjamDetails", { post: req.body, errors: error.errors});
+          } else {
+            next(error);
+          }
+        });
     })
     .catch((error) => next(error));
 }
@@ -241,8 +247,9 @@ module.exports.formarBandaDetails = (req, res, next) => {
     .populate("creator")
     .then((postBand) => {
       if (!postBand) {
-        next(createError(404, "no se ha encontrado ningún comentario"))
+        return next(createError(404, "no se ha encontrado ningún comentario"))
       }
+      
       Message.find({ post: postBand._id })
         .populate("owner")
         .then((messages) => {

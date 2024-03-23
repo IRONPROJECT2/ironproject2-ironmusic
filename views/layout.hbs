@@ -10,7 +10,8 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"rel="stylesheet"/>
   <link rel="stylesheet" href="/styles/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
-
+  <link rel="stylesheet" href="https://cdn.rawgit.com/CoffeePerry/simplemde-theme-bootstrap-dark/master/dist/simplemde-theme-bootstrap-dark.min.css">
+  
   {{!-- Googlefonts --}}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +23,10 @@
 <body class="h-100 d-flex flex-column">
   <div class="flex-shrink-0">
     {{>navbar}}
+
+      {{#if flash}}
+        <div class="alert alert-danger">{{flash}}</div>
+      {{/if}}
 
     <div class="container py-3 ironBody">
       {{{body}}}

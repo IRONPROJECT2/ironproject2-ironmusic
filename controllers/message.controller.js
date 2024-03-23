@@ -10,7 +10,7 @@ module.exports.doCreate = (req, res, next) => {
   message.owner = req.user.id;
   return Message.create(message)
     .then((message) => {
-      switch (message.postType) {
+    switch (message.postType) {
         case "Bandjam": 
           res.redirect(`/bandjam/${message.post}/details`);
           break;
@@ -27,7 +27,23 @@ module.exports.doCreate = (req, res, next) => {
     })
     .catch((error) => {
       if (error instanceof mongoose.Error.ValidationError) {
-        res.status(400).render("bandjam", { message, errors: error.errors, message: req.body })
+        req.session.flash = 'ERROR AL CREAR EL COMENTARIO, DEBE ESTAR EL CAMPO RELLENO'
+
+        switch (message.postType) {
+          case "Bandjam": 
+            res.redirect(`/bandjam/${message.post}/details`);
+            break;
+          case "Formarbanda": 
+            res.redirect(`/formarBanda/${message.post}/details`);
+            break;
+          case "Anunciatuconcierto": 
+            res.redirect(`/anunciatuconcierto/${message.post}/details`);
+            break;
+          default:
+            res.redirect("/");
+            break;
+        }
+        
       } else {
         next(error);
       }

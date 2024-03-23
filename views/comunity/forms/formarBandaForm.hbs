@@ -1,104 +1,114 @@
+<section class="container text-center my-5 w-50">
+  <h1 class="text-center my-2">Formulario de registro para formar una banda</h1>
+  <div> 
+  <p class="text-center my-5">Para crear tu formulario no olvides rellenar todos los campos y anunciar tu post.</p>
+    </div>
+</section>
+
 
 <form action="/formarBandaForm" method="post">
- 
- 
-  <div data-mdb-input-init class="form-outline mb-4">
-    <input type="text" id="name" name="name" class="form-control {{#if name }}is-invalid{{/if}}" />
-    <label class="form-label" for="name">Nombre de la banda</label>
-    {{#if name}}<div class="invalid-feedback">{{name.message}}</div>{{/if}}
-  </div>
+  
+  <div class="d-flex flex-column justify-content-center align-content-center align-items-center w-100 my-5">
+    <div data-mdb-input-init class="form-outline mb-4 w-75">
+      <input type="text" id="name" name="name" class="form-control {{#if errors.name}}is-invalid{{/if}}"/>
+      <label class="form-label" for="name">Nombre de la banda*</label>
+      {{#if errors.name}}<div class="invalid-feedback">{{errors.name}}</div>{{/if}}
+    </div>
 
-  <div class="form-group mb-2">
-    <label for="musicalGenre" class="form-label">Género</label>
-    <select name="musicalGenre" id="musicalGenre">
-      <option value="Rock">Rock</option>
-      <option value="Pop">Pop</option>
-      <option value="Indie">Indie</option>
-      <option value="Hip Hop">Hip Hop</option>
-      <option value="Jazz">Jazz</option>
-      <option value="Blues">Blues</option>
-      <option value="Reggae">Reggae</option>
-      <option value="R&B">R&B</option>
-      <option value="Country">Country</option>
-      <option value="Electrónica">Electrónica</option>
-      <option value="Folk">Folk</option>
-      <option value="Metal">Metal</option>
-      <option value="Punk">Punk</option>
-      <option value="Clásica">Clásica</option>
-      <option value="Soul">Soul</option>
-      <option value="Funk">Funk</option>
-      <option value="Gospel">Gospel</option>
-      <option value="Salsa">Salsa</option>
-      <option value="Reggaeton">Reggaeton</option>
-      <option value="Alternativa">Alternativa</option>
-    </select>
-  </div>
+    <div class="form-group mb-2 w-75">
+      <select name="musicalGenre" id="musicalGenre" class="form-control {{#if errors.musicalGenre}}is-invalid{{/if}}">
+        <option value="Rock">Rock</option>
+        <option value="Pop">Pop</option>
+        <option value="Indie">Indie</option>
+        <option value="Hip Hop">Hip Hop</option>
+        <option value="Jazz">Jazz</option>
+        <option value="Blues">Blues</option>
+        <option value="Reggae">Reggae</option>
+        <option value="R&B">R&B</option>
+        <option value="Country">Country</option>
+        <option value="Electrónica">Electrónica</option>
+        <option value="Folk">Folk</option>
+        <option value="Metal">Metal</option>
+        <option value="Punk">Punk</option>
+        <option value="Clásica">Clásica</option>
+        <option value="Soul">Soul</option>
+        <option value="Funk">Funk</option>
+        <option value="Gospel">Gospel</option>
+        <option value="Salsa">Salsa</option>
+        <option value="Reggaeton">Reggaeton</option>
+        <option value="Alternativa">Alternativa</option>
+      </select>
+      <label for="musicalGenre" class="form-label">Género*</label>
+      {{#if errors.musicalGenre}}<div class="invalid-feedback">{{errors.musicalGenre}}</div>{{/if}}
+    </div>
 
- <div data-mdb-input-init class="form-outline mb-4">
-    <select class="form-select" name="instruments" multiple aria-label="Multiple select example">
-      <option value="Voz">Voz</option>
-      <option value="Coros">Coros</option>
-      <option value="Guitarra">Guitarra</option>
-      <option value="Bajo">Bajo</option>          
-      <option value="Teclado">Teclado</option>
-      <option value="Batería">Batería</option>
-      <option value="Piano">Piano</option>
-      <option value="Saxofón">Saxofón</option>
-      <option value="Arpa">Arpa</option>
-      <option value="Acordeón">Acordeón</option>
-      <option value="Banjo">Banjo</option>
-      <option value="Bagpipes">Bagpipes</option>
-      <option value="Cello">Cello</option>
-      <option value="Charango">Charango</option>
-      <option value="Clarinete">Clarinete</option>
-      <option value="Contrabajo">Contrabajo</option>
-      <option value="Congas">Congas</option>
-      <option value="Cítara">Cítara</option>
-      <option value="Cuerno Francés">Cuerno Francés</option>
-      <option value="Djembe">Djembe</option>
-      <option value="Didgeridoo">Didgeridoo</option>
-      <option value="Dulcémele">Dulcémele</option>
-      <option value="Erhu">Erhu</option>
-      <option value="Flauta">Flauta</option>
-      <option value="Gaita">Gaita</option>
-      <option value="Gong">Gong</option>
-      <option value="Harmónica">Harmónica</option>
-      <option value="Kalimba">Kalimba</option>
-      <option value="Koto">Koto</option>
-      <option value="Mandolina">Mandolina</option>
-      <option value="Marimba">Marimba</option>
-      <option value="Melódica">Melódica</option>
-      <option value="Oboe">Oboe</option>
-      <option value="Pandereta">Pandereta</option>
-      <option value="Sitar">Sitar</option>
-      <option value="Shakuhachi">Shakuhachi</option>
-      <option value="Steel Drum">Steel Drum</option>
-      <option value="Trombón">Trombón</option>
-      <option value="Trompeta">Trompeta</option>
-      <option value="Theremin">Theremin</option>
-      <option value="Tuba">Tuba</option>
-      <option value="Ukelele">Ukelele</option>
-      <option value="Viola">Viola</option>
-      <option value="Violín">Violín</option>
-      <option value="Xilófono">Xilófono</option>
-      <option value="Zampoña">Zampoña</option>
-    </select>
-        <label for="instruments">Instrumentos</label>
-      </div>
+  <div data-mdb-input-init class="form-outline mb-4 w-75">
+      <select class="form-select" name="instruments" multiple aria-label="Multiple select example">
+        <option value="Voz">Voz</option>
+        <option value="Coros">Coros</option>
+        <option value="Guitarra">Guitarra</option>
+        <option value="Bajo">Bajo</option>          
+        <option value="Teclado">Teclado</option>
+        <option value="Batería">Batería</option>
+        <option value="Piano">Piano</option>
+        <option value="Saxofón">Saxofón</option>
+        <option value="Arpa">Arpa</option>
+        <option value="Acordeón">Acordeón</option>
+        <option value="Banjo">Banjo</option>
+        <option value="Bagpipes">Bagpipes</option>
+        <option value="Cello">Cello</option>
+        <option value="Charango">Charango</option>
+        <option value="Clarinete">Clarinete</option>
+        <option value="Contrabajo">Contrabajo</option>
+        <option value="Congas">Congas</option>
+        <option value="Cítara">Cítara</option>
+        <option value="Cuerno Francés">Cuerno Francés</option>
+        <option value="Djembe">Djembe</option>
+        <option value="Didgeridoo">Didgeridoo</option>
+        <option value="Dulcémele">Dulcémele</option>
+        <option value="Erhu">Erhu</option>
+        <option value="Flauta">Flauta</option>
+        <option value="Gaita">Gaita</option>
+        <option value="Gong">Gong</option>
+        <option value="Harmónica">Harmónica</option>
+        <option value="Kalimba">Kalimba</option>
+        <option value="Koto">Koto</option>
+        <option value="Mandolina">Mandolina</option>
+        <option value="Marimba">Marimba</option>
+        <option value="Melódica">Melódica</option>
+        <option value="Oboe">Oboe</option>
+        <option value="Pandereta">Pandereta</option>
+        <option value="Sitar">Sitar</option>
+        <option value="Shakuhachi">Shakuhachi</option>
+        <option value="Steel Drum">Steel Drum</option>
+        <option value="Trombón">Trombón</option>
+        <option value="Trompeta">Trompeta</option>
+        <option value="Theremin">Theremin</option>
+        <option value="Tuba">Tuba</option>
+        <option value="Ukelele">Ukelele</option>
+        <option value="Viola">Viola</option>
+        <option value="Violín">Violín</option>
+        <option value="Xilófono">Xilófono</option>
+        <option value="Zampoña">Zampoña</option>
+      </select>
+          <label class="form-label" for="instruments">Instrumentos</label>
+        </div>
+
+    
+    <div data-mdb-input-init class="form-outline mb-4 w-75">
+      <input type="text" id="location" name="location" class="form-control {{#if errors.location}}is-invalid{{/if}}"/>
+      <label class="form-label" for="location">Ubicación*</label>
+      {{#if errors.location}}<div class="invalid-feedback">{{errors.location}}</div>{{/if}}
+    </div>
 
   
-  <div data-mdb-input-init class="form-outline mb-4">
-    <input type="text" id="location" name="location" class="form-control" />
-    <label class="form-label" for="location">Ubicación</label>
+    <div data-mdb-input-init class="form-outline mb-4 w-75">
+      <textarea class="form-control {{#if errors.lookingfor}}is-invalid{{/if}}" id="lookingfor" name="lookingfor" rows="4"></textarea>
+      <label class="form-label" for="lookingfor">¿Qué estoy buscando?*</label>
+      {{#if errors.lookingfor}}<div class="invalid-feedback">{{errors.lookingfor}}</div>{{/if}}
+    </div>
+
+    <!-- Submit button -->
+    <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4 w-25 fs-5">Anunciar!<i class="bi bi-music-note"></i></button>
   </div>
-
- 
-  <div data-mdb-input-init class="form-outline mb-4">
-    <textarea class="form-control" id="lookingfor" name="lookingfor" rows="4"></textarea>
-    <label class="form-label" for="lookingfor">¿Qué estoy buscando?</label>
-  </div>
-
-
-  <!-- Submit button -->
-  <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Anunciar</button>
 </form>

@@ -1,44 +1,88 @@
-<h1>ver los post de bandjam</h1>
+<section class="container text-center my-5 w-50">
+  <h1 class="text-center my-2">Más detalles del post</h1>
+</section>
 
-  <h1>{{postBand.bandName}}</h1>
-  <h5>género: {{postBand.musicalGenre}}</h5>
-  <p>Integrantes: {{postBand.numberOfMembers}}</p>
+<section class="border border-white">
+  <div class="border border-white">
+    <div class="card">
+      <div class="card-body">
+        <h3>{{postBand.bandName}}</h3>
+      </div>
+    </div>
 
-  {{#each postBand}}
+      <div class="col col-sm-8">
+        <h5>Descripción: {{ postBand.musicalGenre}}</h5>
+        <p>Ubicación: {{postBand.location}}</p>
+        <p>Número de integrantes: {{postBand.numberOfMembers}}</p>
+        <ul class="list-unstyled">
+          {{#each postBand.instruments}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      </div>
+
+  </div>
+
+  </section>
+
+
+ {{#each postBand}}
     {{#theUserIsTheCreator ../currentUser creator}}
       <a href="/bandjam/{{_id}}/edit">Editar</a>
-      <form action="/bandjam/{{_id}}/delete" method="post">
-        <button type="submit" class="btn btn-primary btn-block mb-4">Eliminar</button>
+      <form action="/bandjam/{{_id}}/delete" method="post" id="deleteForm">
+        <button type="button" class="btn btn-primary btn-block mb-4">Eliminar</button>
       </form>
     {{/theUserIsTheCreator}}
   {{/each}}
 
+<section>
+  <h5 class="text-center mt-5">COMENTARIOS DE LOS USUARIOS</h5>
+</section>
+
+<section class="d-flex flex-column justify-content-center  align-items-center">
   {{#each messages}}
-    <div>
-      <p>Usuario: {{owner.userName}}</p>
-      <p>Mensaje: {{text}}</p>
+    <div class="card text-bg-dark w-75 my-2">
+      <div class="card-header">
+        Usuario: {{owner.userName}}
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item text-bg-dark mt-1">
+          <div class="d-flex justify-content-between align-items-center">
+            <p>Mensaje: {{text}}</p>
+            {{#theUserIsTheCreator ../currentUser owner._id}}
+              <div class="d-flex justify-content-center align-content-center">            
+                <a href="/message/{{id}}/edit"><i class="btn btn-primary bi bi-pencil mx-3"></i></a>
+                <form action="/message/{{id}}/delete" method="post" id="deleteForm">
+                  <button type="button" class="btn btn-danger" onclick="seguro()"><i class="bi bi-x-lg"></i></button>
+                </form>
+              </div>
+            {{/theUserIsTheCreator}}
+          </div>
+        </li>
+      </ul>
     </div>
-    {{#theUserIsTheCreator ../currentUser owner._id}}
-      <a href="/message/{{id}}/edit"><i class="bi bi-pencil"></i></a>
-      <form action="/message/{{id}}/delete" method="post" id="deleteForm">
-        <button type="button" class="btn btn-outline-dark border-0" onclick="seguro()"><i class="fas fa-xmark"></i></button>
-      </form>
-    {{/theUserIsTheCreator}}
   {{/each}}
+</section>
 
-<form action="/message/{{postBand.id}}/message" method="post">
+
+
+<form action="/message/{{postBand.id}}/message" method="post" class="markdown-form mt-5">
   <input type="hidden" name="postType" value="Bandjam">
   <input type="hidden" name="post" value="{{postBand.id}}">
-  
+
   <div class="mb-1 {{#if errors.description }}is-invalid{{/if}}">
     <textarea name="text" id="description-md" class="{{#if errors.description }}is-invalid{{/if}}"></textarea>
     {{#if errors.description }}<div class="invalid-feedback">{{errors.description}}</div>{{/if}}
   </div>
-  
+
   <div class="form-actions mt-2">
-    <button type="submit" class="btn btn-outline-primary">Enviar</button>
+    <button type="submit" class="btn btn-outline-primary text-white fs-5">Enviar</button>
   </div>
 </form>
+
+<a href="/bandjam" class="btn btn-outline-info text-white fs-5 my-5">Volver</a>
+
+
 
 <script>
   window.addEventListener('load', () => new SimpleMDE({ element: document.getElementById('description-md') }))

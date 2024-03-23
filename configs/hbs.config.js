@@ -53,6 +53,7 @@ hbs.registerHelper("isAdministratorInTheBand", function (administrator, members,
 });
 
 hbs.registerHelper("theUserIsTheCreator", function (user, member, options) {
+  console.debug(member)
   return user.id == member ? options.fn(this) : options.inverse(this);
 });
 
