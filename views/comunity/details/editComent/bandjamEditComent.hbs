@@ -1,12 +1,48 @@
+<section class="container text-center my-5 w-50">
+  <h1 class="text-center my-2">Edita tu comentario</h1>
+</section>
 
-  <h1>{{message.post.bandName}}</h1>
-  <h5>género: {{message.post.musicalGenre}}</h5>
-  <p>Integrantes: {{message.post.numberOfMembers}}</p>
+<section class="mx-auto border border-white w-75">
 
+  <div class="row my-3">
+    <div class="col text-center">
+      <h3 class="card-title"><u>{{ message.post.bandName}}</u></h3>  
+    </div>
+  </div>
 
-<form action="/message/{{message._id}}/edit" method="post">
+  <div class="row my-2">
+    <div class="col text-center">
+      <h4 class="card-title">{{message.post.lookingfor}}</h4>  
+    </div>
+  </div>
+
+  <div class="row my-2">
+    <div class="col d-flex flex-column justify-content-center align-items-center w-25">
+      <p class="fs-5">Hacemos {{ message.post.musicalGenre}}, Somos de {{message.post.location}} y nuestra banda esta integrada por {{message.post.numberOfMembers}} músicos que tocan:</p>
+      <ul class="list-unstyled d-flex">
+        {{#each message.post.instruments}}
+          <li class="fs-5">{{#unless @last}}{{this}}, &nbsp{{/unless}} {{#if @last}} y {{this}}.{{/if}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+
+  {{#theUserIsTheCreator currentUser message.post.creator._id}}
+    <div class="row">
+      <div class="col d-flex justify-content-start align-content-center">
+        <a href="/bandjam/{{message.post._id}}/edit"><i class="btn btn-primary bi bi-pencil mx-3"></i></a>
+        <form action="/bandjam/{{message.post._id}}/delete" method="post" id="deleteForm">
+          <button type="button" class="btn btn-danger" onclick="seguro()"><i class="bi bi-x-lg"></i></button>
+        </form>
+      </div>
+    </div>
+  {{/theUserIsTheCreator}}
+
+</section>
+
+<form action="/message/{{message._id}}/edit" method="post" class="markdown-form mt-5">
   <input type="hidden" name="postType" value="Bandjam">
-  <input type="hidden" name="post" value="{{postBand.id}}">
+  <input type="hidden" name="post" value="{{message.post.id}}">
   
   <div class="mb-1 {{#if errors.description }}is-invalid{{/if}}">
     <textarea name="text" id="description-md" class="{{#if errors.description }}is-invalid{{/if}}">{{message.text}}</textarea>
@@ -18,4 +54,5 @@
   </div>
 </form>
 
+<a href="/bandjam/{{message.post.id}}/details" class="btn btn-outline-info text-white fs-5 my-5">Volver</a>
 <script>window.addEventListener('load', () => new SimpleMDE({ element: document.getElementById('description-md') }))</script>

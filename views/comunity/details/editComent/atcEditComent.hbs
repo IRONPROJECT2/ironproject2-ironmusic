@@ -1,12 +1,44 @@
+<section class="container text-center my-5 w-50">
+  <h1 class="text-center my-2">Edita tu comentario</h1>
+</section>
 
-  <h1>{{message.post.name}}</h1>
-  <h5>género: {{message.post.descriptionGenre}}</h5>
-  <p>location: {{message.post.location}}</p>
 
+<section class="mx-auto border border-white w-75">
 
-<form action="/message/{{message._id}}/edit" method="post">
-  <input type="hidden" name="postType" value="Bandjam">
-  <input type="hidden" name="post" value="{{postBand.id}}">
+  <div class="row my-3">
+    <div class="col text-center">
+      <img src="{{message.post.photo}}" alt="show flyer">
+    </div>
+  </div>
+
+  <div class="row my-2">
+    <div class="col text-center">
+      <h3 class="card-title">{{ message.post.name}}</h3>    
+    </div>
+  </div>
+
+  <div class="row my-2">
+    <div class="col text-center">  
+      <h4 class="card-title">{{message.post.descriptionGenre}}</h4>  
+    </div>
+  </div>
+
+  
+  {{#theUserIsTheCreator currentUser message.post.creator._id}}
+    <div class="row mb-3">
+      <div class="col d-flex justify-content-start align-content-center">
+        <a href="/anunciaTuConcierto/{{message.post._id}}/edit"><i class="btn btn-primary bi bi-pencil mx-3"></i></a>
+        <form action="/anunciaTuConcierto/{{message.post._id}}/delete" method="post" id="deleteForm">
+          <button type="button" class="btn btn-danger" onclick="seguro()"><i class="bi bi-x-lg"></i></button>
+        </form>
+      </div>
+    </div>
+  {{/theUserIsTheCreator}}
+</section>
+
+<form action="/message/{{message._id}}/edit" method="post" class="markdown-form mt-5">
+  <input type="hidden" name="postType" value="Anunciatuconcierto">
+  <input type="hidden" name="post" value="{{message.post.id}}">
   
   <div class="mb-1 {{#if errors.description }}is-invalid{{/if}}">
     <textarea name="text" id="description-md" class="{{#if errors.description }}is-invalid{{/if}}">{{message.text}}</textarea>
@@ -18,4 +50,29 @@
   </div>
 </form>
 
-<script>window.addEventListener('load', () => new SimpleMDE({ element: document.getElementById('description-md') }))</script>
+<a href="/anunciatuconcierto/{{message.post.id}}/details" class="btn btn-outline-info text-white fs-5 my-5">Volver</a>
+
+<script>
+  window.addEventListener('load', () => new SimpleMDE({ element: document.getElementById('description-md') }))
+
+  function seguro() {
+      Swal.fire({
+      title: "¿Estás seguro/a?",
+      text: "¡No serás capaz de revertir este cambio!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "¡Sí, borrar!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "¡Mensaje borrado!",
+          text: "El mensaje ha sido eliminado",
+          icon: "success"
+        });
+        document.getElementById("deleteForm").submit();
+      }
+    });
+  }  
+</script>

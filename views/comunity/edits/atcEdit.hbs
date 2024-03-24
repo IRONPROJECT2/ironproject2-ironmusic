@@ -1,34 +1,46 @@
+
+
+
 <form action="/anunciatuconcierto/{{post.id}}/edit" method="post">
+  
+  <div class="d-flex flex-column justify-content-center align-content-center align-items-center w-100">
+    <div data-mdb-input-init class="form-outline mb-4 w-75">
+      <input type="text" id="name" name="name" value="{{post.name}}" class="form-control {{#if errors.name}}is-invalid{{/if}}" value="{{formarbanda.name}}"/>
+      <label class="form-label" for="name">Nombre</label>
+      {{#if errors.name}}<div class="invalid-feedback">{{errors.name}}</div>{{/if}}
+    </div>
 
-  <div data-mdb-input-init class="form-outline mb-4">
-    <input type="text" id="name" name="name" value="{{post.name}}" class="form-control"/>
-    <label class="form-label" for="name">Nombre</label>
-  </div>
+    <div data-mdb-input-init class="form-outline mb-4 w-75">
+      <textarea class="form-control {{#if errors.descriptionGenre}}is-invalid{{/if}}" value="{{formarbanda.name}}" id="descriptionGenre" name="descriptionGenre" rows="4">{{post.descriptionGenre}}</textarea>
+      <label class="form-label" for="descriptionGenre">Descripción del evento</label>
+      {{#if errors.descriptionGenre}}<div class="invalid-feedback">{{errors.descriptionGenre}}</div>{{/if}}
+    </div>
 
-  <div data-mdb-input-init class="form-outline mb-4">
-    <textarea class="form-control" id="descriptionGenre" name="descriptionGenre" rows="4">{{post.descriptionGenre}}</textarea>
-    <label class="form-label" for="descriptionGenre">Descripción del evento</label>
-  </div>
+    <div data-mdb-input-init class="form-outline mb-4 w-75">
+      <input type="text" id="photo" name="photo" value="{{post.photo}}" class="form-control {{#if errors.photo}}is-invalid{{/if}}" placeholder="https://media.emisorasmusicales.net/wp-content/uploads/2023/12/13181114/MC24-POSTER-emisoras-musicales-2023-819x1024.webp"/>
+      <label class="form-label" for="photo">Flyer</label>
+      {{#if errors.photo}}<div class="invalid-feedback">{{errors.photo}}</div>{{/if}}
+    </div>
 
-  <div data-mdb-input-init class="form-outline mb-4">
-    <input type="text" id="photo" name="photo" value="{{post.photo}}" class="form-control" placeholder="https://media.emisorasmusicales.net/wp-content/uploads/2023/12/13181114/MC24-POSTER-emisoras-musicales-2023-819x1024.webp"/>
-    <label class="form-label" for="photo">Flyer</label>
-  </div>
+    <div data-mdb-input-init class="form-outline mb-4 w-75">
+      <input type="text" id="location" name="location" value="{{post.location}}" class="form-control {{#if errors.location}}is-invalid{{/if}}" />
+      <label class="form-label" for="location">Ubicación</label>
+      {{#if errors.location}}<div class="invalid-feedback">{{errors.location}}</div>{{/if}}
+    </div>
 
-  <div data-mdb-input-init class="form-outline mb-4">
-    <input type="text" id="location" name="location" value="{{post.location}}" class="form-control" />
-    <label class="form-label" for="location">Ubicación</label>
-  </div>
-
-  <div class="mb-4 d-flex justify-content-evenly">
-    <div class="d-flex flex-column">
-      <div data-mdb-input-init class="form-outline">
-        <input type="datetime-local" id="date" name="date" class="form-control"/>
-        <label class="form-label" for="date">Fecha del concierto</label>
+    <div class="mb-4 d-flex justify-content-evenly">
+      <div class="d-flex flex-column">
+        <div data-mdb-input-init class="form-outline">
+          <input type="datetime-local" id="date" name="date" class="form-control {{#if errors.date}}is-invalid{{/if}}"/>
+          <label class="form-label" for="date">Fecha del concierto</label>
+          {{#if errors.date}}<div class="invalid-feedback">{{errors.date}}</div>{{/if}}
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Submit button -->
-  <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Editar <i class="bi bi-pencil"></i></button>
+    <!-- Submit button -->
+    <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block fs-5 mb-4 w-25">Editar <i class="bi bi-pencil"></i></button>
+  </div>
 </form>
+
+<a href="/anunciatuconcierto/{{post.id}}/details" class="btn btn-outline-info text-white fs-5 my-5">Volver</a>

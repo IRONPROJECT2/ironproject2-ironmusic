@@ -2,25 +2,38 @@
   <h1 class="text-center my-2">Más detalles del post</h1>
 </section>
 
+<section class="mx-auto border border-white w-75">
 
-  <section class="border border-white">
-    <div class="border border-white">
-      <div class="row">
-        <div class="col col-sm-4">
-          <h3>{{postBand.name}}</h3>
-        </div>
-
-        <div class="col col-sm-8">
-          <h5>descripción: {{ postBand.descriptionGenre}}</h5>
-          <p>locación: {{postBand.location}}</p>
-        </div>
-      </div>
-      
-      
-
+  <div class="row my-3">
+    <div class="col text-center">
+      <img src="{{postBand.photo}}" alt="show flyer">
     </div>
+  </div>
 
-  </section>
+  <div class="row my-2">
+    <div class="col text-center">
+      <h3 class="card-title">{{ postBand.name}}</h3>    
+    </div>
+  </div>
+
+  <div class="row my-2">
+    <div class="col text-center">  
+      <h4 class="card-title">{{postBand.descriptionGenre}}</h4>  
+    </div>
+  </div>
+
+  
+  {{#theUserIsTheCreator currentUser postBand.creator._id}}
+    <div class="row mb-3">
+      <div class="col d-flex justify-content-start align-content-center">
+        <a href="/anunciaTuConcierto/{{postBand._id}}/edit"><i class="btn btn-primary bi bi-pencil mx-3"></i></a>
+        <form action="/anunciaTuConcierto/{{postBand._id}}/delete" method="post" id="deleteForm">
+          <button type="button" class="btn btn-danger" onclick="seguro()"><i class="bi bi-x-lg"></i></button>
+        </form>
+      </div>
+    </div>
+  {{/theUserIsTheCreator}}
+</section>
   
 
   {{#each postBand}}
@@ -38,6 +51,7 @@
 
 <section class="d-flex flex-column justify-content-center  align-items-center">
   {{#each messages}}
+    
     <div class="card text-bg-dark w-75 my-2">
       <div class="card-header">
         Usuario: {{owner.userName}}
@@ -49,8 +63,8 @@
             {{#theUserIsTheCreator ../currentUser owner._id}}
               <div class="d-flex justify-content-center align-content-center">            
                 <a href="/message/{{id}}/edit"><i class="btn btn-primary bi bi-pencil mx-3"></i></a>
-                <form action="/message/{{id}}/delete" method="post" id="deleteForm">
-                  <button type="button" class="btn btn-danger" onclick="seguro()"><i class="bi bi-x-lg"></i></button>
+                <form action="/message/{{_id}}/delete" method="post" id="deleteFormMessage">
+                  <button type="button" class="btn btn-danger" onclick="seguroMessage()"><i class="bi bi-x-lg"></i></button>
                 </form>
               </div>
             {{/theUserIsTheCreator}}
@@ -98,6 +112,27 @@
         icon: "success"
       });
       document.getElementById("deleteForm").submit();
+    }
+  });
+  }
+
+  function seguroMessage() {
+    Swal.fire({
+    title: "¿Estás seguro/a?",
+    text: "¡No serás capaz de revertir este cambio!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "¡Sí, borrar!"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        title: "¡Mensaje borrado!",
+        text: "El mensaje ha sido eliminado",
+        icon: "success"
+      });
+      document.getElementById("deleteFormMessage").submit();
     }
   });
   }

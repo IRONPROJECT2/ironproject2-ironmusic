@@ -2,38 +2,48 @@
   <h1 class="text-center my-2">Más detalles del post</h1>
 </section>
 
-<section class="border border-white">
-  <div class="border border-white">
-    <div class="card">
-      <div class="card-body">
-        <h3>{{postBand.bandName}}</h3>
-      </div>
+<section class="mx-auto border border-white w-75">
+
+  <div class="row my-3">
+    <div class="col text-center">
+      <h3 class="card-title">{{ postBand.bandName}}</h3>  
     </div>
-
-      <div class="col col-sm-8">
-        <h5>Descripción: {{ postBand.musicalGenre}}</h5>
-        <p>Ubicación: {{postBand.location}}</p>
-        <p>Número de integrantes: {{postBand.numberOfMembers}}</p>
-        <ul class="list-unstyled">
-          {{#each postBand.instruments}}
-            <li>{{this}}</li>
-          {{/each}}
-        </ul>
-      </div>
-
   </div>
 
-  </section>
+  <div class="row my-2">
+    <div class="col text-center">
+      <h4 class="card-title">{{postBand.lookingfor}}</h4>  
+    </div>
+  </div>
 
+  <div class="row my-2">
+    <div class="col d-flex flex-column justify-content-center align-items-center w-25">
+      <p class="fs-5">Hacemos {{ postBand.musicalGenre}}, Somos de {{postBand.location}} y nuestra banda esta integrada por {{postBand.numberOfMembers}} músicos que tocan:</p>
+      <ul class="list-unstyled d-flex">
+        {{#each postBand.instruments}}
+          <li class="fs-5">{{#unless @last}}{{this}}, &nbsp{{/unless}} {{#if @last}}y {{this}}.{{/if}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
 
- {{#each postBand}}
-    {{#theUserIsTheCreator ../currentUser creator}}
-      <a href="/bandjam/{{_id}}/edit">Editar</a>
-      <form action="/bandjam/{{_id}}/delete" method="post" id="deleteForm">
-        <button type="button" class="btn btn-primary btn-block mb-4">Eliminar</button>
-      </form>
-    {{/theUserIsTheCreator}}
-  {{/each}}
+  
+  {{#theUserIsTheCreator currentUser postBand.creator._id}}
+    <div class="row">
+      <div class="col d-flex justify-content-start align-content-center">
+        <a href="/bandjam/{{postBand._id}}/edit"><i class="btn btn-primary bi bi-pencil mx-3"></i></a>
+        <form action="/bandjam/{{postBand._id}}/delete" method="post" id="deleteForm">
+          <button type="button" class="btn btn-danger" onclick="seguro()"><i class="bi bi-x-lg"></i></button>
+        </form>
+      </div>
+    </div>
+  {{/theUserIsTheCreator}}
+  
+
+</section>
+
+    
+
 
 <section>
   <h5 class="text-center mt-5">COMENTARIOS DE LOS USUARIOS</h5>
@@ -52,8 +62,8 @@
             {{#theUserIsTheCreator ../currentUser owner._id}}
               <div class="d-flex justify-content-center align-content-center">            
                 <a href="/message/{{id}}/edit"><i class="btn btn-primary bi bi-pencil mx-3"></i></a>
-                <form action="/message/{{id}}/delete" method="post" id="deleteForm">
-                  <button type="button" class="btn btn-danger" onclick="seguro()"><i class="bi bi-x-lg"></i></button>
+                <form action="/message/{{id}}/delete" method="post" id="deleteFormMessage">
+                  <button type="button" class="btn btn-danger"  onclick="seguroMessage()"><i class="bi bi-x-lg"></i></button>
                 </form>
               </div>
             {{/theUserIsTheCreator}}
@@ -70,9 +80,8 @@
   <input type="hidden" name="postType" value="Bandjam">
   <input type="hidden" name="post" value="{{postBand.id}}">
 
-  <div class="mb-1 {{#if errors.description }}is-invalid{{/if}}">
-    <textarea name="text" id="description-md" class="{{#if errors.description }}is-invalid{{/if}}"></textarea>
-    {{#if errors.description }}<div class="invalid-feedback">{{errors.description}}</div>{{/if}}
+  <div>
+    <textarea name="text" id="description-md"></textarea>
   </div>
 
   <div class="form-actions mt-2">
@@ -104,6 +113,27 @@
         icon: "success"
       });
       document.getElementById("deleteForm").submit();
+    }
+  });
+  }
+
+  function seguroMessage() {
+    Swal.fire({
+    title: "¿Estás seguro/a?",
+    text: "¡No serás capaz de revertir este cambio!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "¡Sí, borrar!"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        title: "¡Mensaje borrado!",
+        text: "El mensaje ha sido eliminado",
+        icon: "success"
+      });
+      document.getElementById("deleteFormMessage").submit();
     }
   });
   }

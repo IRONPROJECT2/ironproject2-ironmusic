@@ -99,8 +99,10 @@ module.exports.messageDoEdit = (req, res, next) => {
 
 
 module.exports.messageDelete = (req, res, next) => {
+  console.debug("entre" + req.body)
   Message.findByIdAndDelete(req.params.id)
     .then((message) => {
+      console.debug(message)
       switch (message.postType) {
         case "Bandjam": 
           res.redirect(`/bandjam/${message.post}/details`);

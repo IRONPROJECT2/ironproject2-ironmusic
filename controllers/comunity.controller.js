@@ -149,7 +149,7 @@ module.exports.bandjamDoEdit = (req, res, next) => {
     })
     .catch((error) => {
       if (error instanceof mongoose.Error.ValidationError) {
-        res.status(400).render("comunity/edits/bandjamDoEdit", { bandjam: req.body, errors: error.errors});
+        res.status(400).render("comunity/edits/bandjamEdit", { bandjam: req.body, errors: error.errors});
       } else {
         next(error);
       }
@@ -249,7 +249,7 @@ module.exports.formarBandaDetails = (req, res, next) => {
       if (!postBand) {
         return next(createError(404, "no se ha encontrado ningún comentario"))
       }
-      
+
       Message.find({ post: postBand._id })
         .populate("owner")
         .then((messages) => {

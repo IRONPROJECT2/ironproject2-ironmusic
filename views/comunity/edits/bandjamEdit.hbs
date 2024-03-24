@@ -1,51 +1,59 @@
 
-<h1>Editar post de Band-Jam</h1>
+<h1 class="text-center my-5">Editar post de Band-Jam</h1>
+
 <form action="/bandjam/{{bandjam.id}}/edit" method="post">
   <!-- 2 column grid layout with text inputs for the first and last names -->
+  <div class="d-flex flex-column justify-content-center align-content-center align-items-center w-100">
+    <div data-mdb-input-init class="form-outline mb-4 w-75">
+      <input type="text" id="bandName" name="bandName" class="form-control {{#if errors.bandName}}is-invalid{{/if}}" value="{{bandjam.bandName}}" />
+      <label class="form-label" for="bandName">Nombre de la banda</label>
+      {{#if errors.bandName}}<div class="invalid-feedback">{{errors.bandName}}</div>{{/if}}
+    </div>
 
-  <div data-mdb-input-init class="form-outline mb-4">
-    <input type="text" id="bandName" name="bandName" class="form-control" value="{{bandjam.bandName}}" />
-    <label class="form-label" for="bandName">Nombre de la banda</label>
+    <div class="form-group mb-2 w-75">
+      <select name="musicalGenre" id="musicalGenre" class="form-control {{#if errors.musicalGenre}}is-invalid{{/if}}">
+        {{#each genre}}
+          <option value="{{this}}">{{this}}</option>
+        {{/each}}
+      </select>
+      <label for="musicalGenre" class="form-label">Género musical</label>
+      {{#if errors.musicalGenre}}<div class="invalid-feedback">{{errors.musicalGenre}}</div>{{/if}}
+    </div>
+
+    <div data-mdb-input-init class="form-outline mb-4 w-75">
+      <select class="form-select" name="instruments" multiple aria-label="Multiple select example">
+        {{#each inst}}
+          <option value="{{this}}">{{this}}</option>
+        {{/each}}
+      </select>
+      <label class="form-label" for="instruments">Instrumentos</label>
+    </div>
+
+    <!-- Email input -->
+    <div data-mdb-input-init class="form-outline mb-4 w-75">
+      <input type="number" id="numberOfMembers" name="numberOfMembers" value="{{bandjam.numberOfMembers}}" class="form-control {{#if errors.numberOfMembers}}is-invalid{{/if}}"/>
+      <label class="form-label" for="numberOfMembers">Número de integrantes</label>
+      {{#if errors.numberOfMembers}}<div class="invalid-feedback">{{errors.numberOfMembers}}</div>{{/if}}
+    </div>
+
+    <!-- Number input -->
+    <div data-mdb-input-init class="form-outline mb-4 w-75">
+      <input type="text" id="location" name="location" class="form-control {{#if errors.location}}is-invalid{{/if}}" value="{{bandjam.location}}" />
+      <label class="form-label" for="location">Ubicación</label>
+      {{#if errors.location}}<div class="invalid-feedback">{{errors.location}}</div>{{/if}}
+    </div>
+
+    <!-- Message input -->
+    <div data-mdb-input-init class="form-outline mb-4 w-75">
+      <textarea class="form-control {{#if errors.lookingfor}}is-invalid{{/if}}" value="{{bandjam.location}}" id="lookingfor" name="lookingfor" rows="4">{{bandjam.lookingfor}}</textarea>
+      <label class="form-label" for="lookingfor">Cuéntanos, ¿qué estás buscando?</label>
+      {{#if errors.lookingfor}}<div class="invalid-feedback">{{errors.lookingfor}}</div>{{/if}}
+    </div>
+
+    <!-- Submit button -->
+    <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4 w-25">Editar <i class="bi bi-pencil"></i></button>
   </div>
-
-  <div class="form-group mb-2">
-    <label for="musicalGenre" class="form-label">Género musical</label>
-    <select name="musicalGenre" id="musicalGenre" >
-
-      {{#each genre}}
-        <option value="{{this}}">{{this}}</option>
-      {{/each}}
-    </select>
-  </div>
-
-  <div data-mdb-input-init class="form-outline mb-4">
-    <select class="form-select" name="instruments" multiple aria-label="Multiple select example">
-      {{#each inst}}
-        <option value="{{this}}">{{this}}</option>
-      {{/each}}
-    </select>
-    <label class="form-label" for="instruments">Instrumentos</label>
-  </div>
-
-  <!-- Email input -->
-  <div data-mdb-input-init class="form-outline mb-4">
-    <input type="number" id="numberOfMembers" name="numberOfMembers" value="{{bandjam.numberOfMembers}}" class="form-control" />
-    <label class="form-label" for="numberOfMembers">Número de integrantes</label>
-  </div>
-
-  <!-- Number input -->
-  <div data-mdb-input-init class="form-outline mb-4">
-    <input type="text" id="location" name="location" class="form-control" value="{{bandjam.location}}" />
-    <label class="form-label" for="location">Ubicación</label>
-  </div>
-
-  <!-- Message input -->
-  <div data-mdb-input-init class="form-outline mb-4">
-    <textarea class="form-control" id="lookingfor" name="lookingfor" rows="4">{{bandjam.lookingfor}}</textarea>
-    <label class="form-label" for="lookingfor">Cuéntanos, ¿qué estás buscando?</label>
-  </div>
-
-  <!-- Submit button -->
-  <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Editar <i class="bi bi-pencil"></i></button>
 </form>
+
+<a href="/bandjam/{{bandjam.id}}/details" class="btn btn-outline-info text-white fs-5 my-5">Volver</a>
 

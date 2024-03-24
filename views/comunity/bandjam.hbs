@@ -8,7 +8,7 @@
 </section>
 
 <section class="d-flex flex-column justify-content-center align-content-center align-items-center my-5">
-  <table class="table table-dark align-middle mb-0">
+  <table class="table table-dark align-middle mb-0 w-75 text-center">
     <thead class="bg-transparent">
       <tr>
         <th>Foto</th>
@@ -23,13 +23,8 @@
       {{#each postBand}}
         <tr>
           <td>
-            <div class="d-flex align-items-center">
-              <img
-                  src="{{creator.photo}}"
-                  alt="Foto del usuario"
-                  style="width: 45px; height: 45px"
-                  class="rounded-circle"
-                  />
+            <div class="d-flex justify-content-center align-items-center">
+              <img src="{{creator.photo}}" alt="Foto del usuario" style="width: 45px; height: 45px" class="rounded-circle"/>
             </div>
           </td>
 
@@ -61,6 +56,7 @@
 
   <a class="btn btn-success btn-block my-5 w-25 fs-5" href="/bandjamForm">Crea un post<i class="bi bi-bookmark ms-3"></i></a>
 </section>
+<a href="/comunity" class="btn btn-outline-info text-white fs-5 my-5">Volver</a>
 
 <script>
   function seguro() {
