@@ -1,59 +1,194 @@
-<h1>Buscador</h1>
+<h1 class="text-center my-5">Buscador</h1>
 
-<h5>Usuario:</h5>
-{{#each users}}
-  <div class="card" style="width: 18rem;">
-    <img src="{{photo}}" class="card-img-top" alt="profile photo"/>
-    <div class="card-body">
-      <h5 class="card-title">{{userName}}</h5>
-      <p class="m-0">Ubicación: {{location}}</p>
-      <p class="card-text m-0">Descripción: {{description}}</p>
-      <p class="m-0">Instrumentos:</p>
-      <ul class="list-unstyled">
-        {{#each instruments}}
-          <li>- {{this}}</li>
-        {{/each}}
-      </ul>
-
-      <div class="d-flex justify-content-center align-content-center">
-        <a href="" class="me-3 text-decoration-none link-dark">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="" class="me-3 text-decoration-none link-dark">
-          <i class="fab fa-facebook-square"></i>
-        </a>
-        <a href="" class="me-3 text-decoration-none link-dark">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="" class="me-3 text-decoration-none link-dark">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="" class="me-3 text-decoration-none link-dark">
-          <i class="fab fa-youtube"></i>
-        </a>
-      </div>
-    </div>
+<div class="d-flex justify-content-center align-items-center my-3">
+  <div class="w-75">
+    <h5 class="me-auto">Usuarios:</h5>
   </div>
-{{/each}}
+</div>
 
-<h5>Banda:</h5>
-{{#each bands}}
-  <p>{{this}}</p>
-{{/each}}
+<table class="table table-dark w-75 mx-auto">
+  <thead>
+    <tr>
+      <th scope="col">Foto de perfil</th>
+      <th scope="col">Nombre de usuario</th>
+      <th scope="col">Ubicación</th>
+      <th scope="col">Descripción</th>
+    </tr>
+  </thead>
 
-<h4>post:</h4>
+  <tbody class="table-dark">
+    {{#each users}}
+      <tr>
+        <th scope="row">
+          <div class="d-flex justify-content-start align-items-center">
+            <img src="{{photo}}" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
+            <div class="ms-3">
+              <p class="mb-1">{{name}}</p>
+            </div>
+          </div>
+        </th>
+        <td>{{userName}}</td>
+        <td>{{location}}</td>
+        <td>{{description}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
 
-<h5>Band-jam:</h5>
-{{#each bandjam}}
-  <p>{{this}}</p>
-{{/each}}
+<div class="d-flex justify-content-center align-items-center mt-5 mb-3">
+  <div class="w-75">
+    <h5 class="me-auto">Bandas:</h5>
+  </div>
+</div>
 
-<h5>Formar banda:</h5>
-{{#each formarBanda}}
-  <p>{{this}}</p>
-{{/each}}
+<table class="table table-dark w-75 mx-auto">
+  <thead>
+    <tr>
+      <th scope="col">Foto de perfil</th>
+      <th scope="col">Genero</th>
+      <th scope="col">Biografía</th>
+      <th scope="col">Miembros</th>
+    </tr>
+  </thead>
 
-<h5>Anuncia tu concierto:</h5>
-{{#each atc}}
-  <p>{{this}}</p>
-{{/each}}
+  <tbody class="table-dark">
+    {{#each bands}}
+      <tr>
+        <th scope="row">
+          <a href="/band/{{id}}/detail" class="text-decoration-none text-white">
+            <div class="d-flex justify-content-start align-items-center">
+              <img src="{{photo}}" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
+              <div class="ms-3">
+                <p class="mb-1">{{name}}</p>
+              </div>
+            </div>
+          </a>
+        </th>
+        <td><a href="/band/{{id}}/detail" class="text-decoration-none text-white">{{musicalGenre}}</a></td>
+        <td><a href="/band/{{id}}/detail" class="text-decoration-none text-white">{{biography}}</a></td>
+        <td>
+          <ul class="list-unstyled"><a href="/band/{{id}}/detail" class="text-decoration-none text-white">
+            {{#each members}}
+              <li>{{userName}}</li>
+            {{/each}}
+          </a></ul>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+<h3 class="text-center my-5">Comunidad</h3>
+
+<div class="d-flex justify-content-center align-items-center mt-5 mb-3">
+  <div class="w-75">
+    <h5 class="me-auto">Band-jam:</h5>
+  </div>
+</div>
+
+<table class="table table-dark w-75 mx-auto">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Genero</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Número de integrantes</th>
+    </tr>
+  </thead>
+
+  <tbody class="table-dark">
+    {{#each bandjam}}
+      <tr>
+        <th scope="row">
+          <a href="/bandjam/{{id}}/details" class="text-decoration-none text-white">
+            <p class="mb-1">{{bandName}}</p>
+          </a>
+        </th>
+        <td><a href="/bandjam/{{id}}/details" class="text-decoration-none text-white">{{musicalGenre}}</a></td>
+        <td><a href="/bandjam/{{id}}/details" class="text-decoration-none text-white">{{lookingfor}}</a></td>
+        <td>
+          <a href="/bandjam/{{id}}/details" class="text-decoration-none text-white">
+            <p>{{numberOfMembers}}</p>
+          </a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+<div class="d-flex justify-content-center align-items-center mt-5 mb-3">
+  <div class="w-75">
+    <h5 class="me-auto">Formar banda:</h5>
+  </div>
+</div>
+
+<table class="table table-dark w-75 mx-auto">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Genero</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Ubicación</th>
+    </tr>
+  </thead>
+
+  <tbody class="table-dark">
+    {{#each formarBanda}}
+      <tr>
+        <th scope="row">
+          <a href="/formarbanda/{{id}}/details" class="text-decoration-none text-white">
+            <p class="mb-1">{{name}}</p>
+          </a>
+        </th>
+        <td><a href="/formarbanda/{{id}}/details" class="text-decoration-none text-white">{{musicalGenre}}</a></td>
+        <td><a href="/formarbanda/{{id}}/details" class="text-decoration-none text-white">{{lookingfor}}</a></td>
+        <td>
+          <a href="/formarbanda/{{id}}/details" class="text-decoration-none text-white">
+            <p>{{location}}</p>
+          </a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+<div class="d-flex justify-content-center align-items-center mt-5 mb-3">
+  <div class="w-75">
+    <h5 class="me-auto">Anuncia tu concierto:</h5>
+  </div>
+</div>
+
+<table class="table table-dark w-75 mx-auto mb-3">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Ubicación</th>
+      <th scope="col">Cuando?</th>
+    </tr>
+  </thead>
+
+  <tbody class="table-dark">
+    {{#each atc}}
+      <tr>
+        <th scope="row">
+          <a href="/anunciatuconcierto/{{id}}/details" class="text-decoration-none text-white">
+            <div class="d-flex justify-content-start align-items-center">
+              <img src="{{photo}}" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
+              <div class="ms-3">
+                <p class="mb-1">{{name}}</p>
+              </div>
+            </div>
+          </a>
+        </th>
+        <td><a href="/anunciatuconcierto/{{id}}/details" class="text-decoration-none text-white">{{descriptionGenre}}</a></td>
+        <td><a href="/anunciatuconcierto/{{id}}/details" class="text-decoration-none text-white">{{location}}</a></td>
+        <td>
+          <a href="/anunciatuconcierto/{{id}}/details" class="text-decoration-none text-white">
+            <p>{{formatDate date}}</p>
+          </a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

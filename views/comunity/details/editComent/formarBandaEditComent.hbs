@@ -28,7 +28,7 @@
   </div>
 
   
-  {{#theUserIsTheCreator currentUser message.post.creator._id}}
+  {{#theUserIsTheCreator currentUser._id message.post.creator._id}}
     <div class="row">
       <div class="col d-flex justify-content-start align-content-center">
         <a href="/bandjam/{{message.post._id}}/edit"><i class="btn btn-primary bi bi-pencil mx-3"></i></a>
@@ -56,7 +56,7 @@
         <li class="list-group-item text-bg-dark mt-1">
           <div class="d-flex justify-content-between align-items-center">
             <p>Mensaje: {{text}}</p>
-            {{#theUserIsTheCreator ../currentUser owner._id}}
+            {{#theUserIsTheCreator ../currentUser._id owner._id}}
               <div class="d-flex justify-content-center align-content-center">            
                 <a href="/message/{{id}}/edit"><i class="btn btn-primary bi bi-pencil mx-3"></i></a>
                 <form action="/message/{{id}}/delete" method="post" id="deleteForm">

@@ -6,7 +6,7 @@ const userSchema = new Schema(
   {
     userName: {
       type: String,
-      required: true,
+      required: [true,"Es necesario rellenar este campo con un nombre único"],
       unique: true
     },
     name: {
@@ -15,12 +15,12 @@ const userSchema = new Schema(
     },
     email: {
       type: String,
-      required: true,
+      required: [true,"Es necesario rellenar este campo"],
       unique: true
     },
     password: {
       type: String,
-      required: true,
+      required: [true,"Es necesario rellenar este campo"],
       minLength: [8, "La contraseña necesita al menos 8 caracteres"]
     },
     gender: {
@@ -29,7 +29,6 @@ const userSchema = new Schema(
     },
     photo: {
       type: String,
-      //PREGUNTAR COMO VER SI ES HOMBRE MUJER U OTRO
     },
     instruments: [{
       type: String,
@@ -48,7 +47,7 @@ const userSchema = new Schema(
     },
     location: {
       type: String,
-      required: true
+      required: [true,"Es necesario rellenar este campo"],
     },
     bands: [{
       type: Schema.Types.ObjectId,

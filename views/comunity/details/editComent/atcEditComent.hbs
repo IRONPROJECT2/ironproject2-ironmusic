@@ -24,7 +24,7 @@
   </div>
 
   
-  {{#theUserIsTheCreator currentUser message.post.creator._id}}
+  {{#theUserIsTheCreator currentUser._id message.post.creator._id}}
     <div class="row mb-3">
       <div class="col d-flex justify-content-start align-content-center">
         <a href="/anunciaTuConcierto/{{message.post._id}}/edit"><i class="btn btn-primary bi bi-pencil mx-3"></i></a>

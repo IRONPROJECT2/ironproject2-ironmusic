@@ -1,55 +1,74 @@
-<h1>Editar banda</h1>
-<form action="/band/{{band.id}}/detail" method="post">
-  <div class="form-group mb-2">
-    <label for="name">Nombre de la banda</label>
-    <input type="text" name="name" id="name" value="{{band.name}}">
-  </div>
+<section class="container text-center my-5 w-50">
+  <h1 class="text-center my-2">Editar la banda</h1>
+</section>
 
-  <div class="form-group mb-2">
-    <label for="musicalGenre">Género</label>
-    <select name="musicalGenre" id="musicalGenre">
-      <option value="Rock">Rock</option>
-      <option value="Pop">Pop</option>
-      <option value="Indie">Indie</option>
-      <option value="Hip Hop">Hip Hop</option>
-      <option value="Jazz">Jazz</option>
-      <option value="Blues">Blues</option>
-      <option value="Reggae">Reggae</option>
-      <option value="R&B">R&B</option>
-      <option value="Country">Country</option>
-      <option value="Electrónica">Electrónica</option>
-      <option value="Folk">Folk</option>
-      <option value="Metal">Metal</option>
-      <option value="Punk">Punk</option>
-      <option value="Clásica">Clásica</option>
-      <option value="Soul">Soul</option>
-      <option value="Funk">Funk</option>
-      <option value="Gospel">Gospel</option>
-      <option value="Salsa">Salsa</option>
-      <option value="Reggaeton">Reggaeton</option>
-      <option value="Alternativa">Alternativa</option>
-    </select>
-  </div>
+<section>
+  <form action="/band/{{band.id}}/detail" method="post">
+    <div class="d-flex flex-column justify-content-center align-content-center align-items-center w-100">
+      <div data-mdb-input-init class="form-outline mb-4 w-75">
+        <input type="text" name="name" id="name" class="form-control {{#if errors.name}}is-invalid{{/if}}" value="{{band.name}}"/>
+        <label class="form-label" for="name">Nombre de la banda*</label>
+        {{#if errors.name}}<div class="invalid-feedback">{{errors.name}}</div>{{/if}}
+      </div>
 
-  <div class="form-group mb-2">
-    <label for="biography">Biografía</label>
-    <input type="text" name="biography" id="biography" value="{{band.biography}}">
-  </div>
+      <div class="form-group mb-2 w-75">
+        <select name="musicalGenre" id="musicalGenre" class="form-control {{#if errors.musicalGenre}}is-invalid{{/if}}">
+          <option value="Rock">Rock</option>
+          <option value="Pop">Pop</option>
+          <option value="Indie">Indie</option>
+          <option value="Hip Hop">Hip Hop</option>
+          <option value="Jazz">Jazz</option>
+          <option value="Blues">Blues</option>
+          <option value="Reggae">Reggae</option>
+          <option value="R&B">R&B</option>
+          <option value="Country">Country</option>
+          <option value="Electrónica">Electrónica</option>
+          <option value="Folk">Folk</option>
+          <option value="Metal">Metal</option>
+          <option value="Punk">Punk</option>
+          <option value="Clásica">Clásica</option>
+          <option value="Soul">Soul</option>
+          <option value="Funk">Funk</option>
+          <option value="Gospel">Gospel</option>
+          <option value="Salsa">Salsa</option>
+          <option value="Reggaeton">Reggaeton</option>
+          <option value="Alternativa">Alternativa</option>
+        </select>
+        <label for="musicalGenre" class="form-label">Género*</label>
+        {{#if errors.musicalGenre}}<div class="invalid-feedback">{{errors.musicalGenre}}</div>{{/if}}
+      </div>
 
-  <div class="form-group mb-2">
-    <label for="photo">Foto del grupo</label>
-    <input type="text" name="photo" id="photo" value="{{band.photo}}">
-  </div>
+      <div data-mdb-input-init class="form-outline mb-4 w-75">
+        <input type="text" name="biography" id="biography" class="form-control {{#if errors.biography}}is-invalid{{/if}}" value="{{band.biography}}">
+        <label class="form-label" for="biography">Biografía*</label>
+        {{#if errors.biography}}<div class="invalid-feedback">{{errors.biography}}</div>{{/if}}
+      </div>
 
-  <div class="form-group mb-2">
-    <label for="socialMedia">Redes Sociales</label>
-    <input type="text" name="socialMedia" id="socialMedia" value="{{band.socialMedia}}">
-  </div>
+      <div data-mdb-input-init class="form-outline mb-4 w-75">
+        <input type="text" name="photo" id="photo" class="form-control {{#if errors.photo}}is-invalid{{/if}}" value="{{band.photo}}">
+        <label class="form-label" for="photo">Foto del grupo*</label>
+        {{#if errors.photo}}<div class="invalid-feedback">{{errors.photo}}</div>{{/if}}
+      </div>
 
-  <input type="hidden" name="created" id="created">
-  <button type="submit">Registrar la banda</button>
-</form>
+      <div data-mdb-input-init class="form-outline mb-4 w-75">
+        <input type="text" id="location" name="location" class="form-control {{#if errors.location}}is-invalid{{/if}}" value="{{band.location}}"/>
+        <label class="form-label" for="location">Ubicación*</label>
+        {{#if errors.location}}<div class="invalid-feedback">{{errors.location}}</div>{{/if}}
+      </div>
 
+      <div data-mdb-input-init class="form-outline mb-4 w-75">
+        <input type="text" name="socialMedia" id="socialMedia" class="form-control {{#if errors.socialMedia}}is-invalid{{/if}}" value="{{band.socialMedia}}">
+        <label for="socialMedia">Redes Sociales*</label>
+        {{#if errors.socialMedia}}<div class="invalid-feedback">{{errors.socialMedia}}</div>{{/if}}
+      </div>
+
+      <input type="hidden" name="created" id="created">
+      <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block fs-5 mb-4 w-25">Guardar los cambios <i class="bi bi-hand-thumbs-up"></i></button>
+    </div>
+  </form>
+</section>
+
+<a href="/bands" class="btn btn-outline-info text-white fs-5 my-5">Volver</a>
 
 <script>
 const createdInput = document.getElementById("created");

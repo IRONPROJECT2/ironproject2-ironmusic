@@ -1,118 +1,104 @@
-<h2>Editar mi perfil</h2>
+<h2 class="text-center my-5">Editar mi perfil</h2>
 
 <form action="/user/{{currentUser.id}}/edit" method="post">
-  <div class="form-group mb-2">
-    <label for="userName">Nombre de usuario</label>
-    <input type="text" name="userName" id="userName"  value="{{currentUser.userName}}">
-  </div>
-  
-  <div class="form-group mb-2">
-    <label for="name">Nombre completo</label>
-    <input type="text" name="name" id="name" value="{{currentUser.name}}">
-  </div>
+  <div class="d-flex flex-column justify-content-center align-content-center align-items-center w-100">
+    <div class="form-outline mb-4 w-75">
+      <input type="text" name="userName" id="userName" value="{{currentUser.userName}}" class="form-control {{#if errors.userName}}is-invalid{{/if}}">
+      <label for="userName" class="form-label">Nombre de usuario*</label>
+      {{#if errors.userName}}<div class="invalid-feedback">{{errors.userName}}</div>{{/if}}
+    </div>
+    
+    <div class="form-group mb-2 w-75"> 
+      <input type="text" name="name" id="name" value="{{currentUser.name}}" class="form-control {{#if errors.name}}is-invalid{{/if}}">
+      <label for="name">Nombre completo*</label>
+      {{#if errors.name}}<div class="invalid-feedback">{{errors.name}}</div>{{/if}}
 
-  <div class="form-group mb-2">
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email"  value="{{currentUser.email}}">
-  </div>
+    </div>
 
+    <div class="form-group mb-2 w-75">
+      <select name="gender" id="gender" class="form-control">
+        <option value="male">Hombre</option>
+        <option value="female">Mujer</option>
+        <option value="other">Otro</option>
+        <option value="none">Prefiero no decirlo</option>
+      </select>
+      <label for="gender" class="form-label">Género</label>
+    </div>
 
-  <div class="form-group mb-2">
-    <label for="gender">Género</label>
-    <select name="gender" id="gender">
-      <option value="male">Hombre</option>
-      <option value="female">Mujer</option>
-      <option value="other">Otro</option>
-      <option value="none">Prefiero no decirlo</option>
+    <div class="form-group mb-2 w-75">
+      <input type="text" name="photo" id="photo" value="{{currentUser.photo}}" class="form-control">
+      <label for="photo" class="form-label">Foto avatar</label>
+    </div>
+
+    <div class="form-group mb-2 w-75">
+      <select name="instruments" id="instruments" class="form-control" multiple>
+        <option value="Arpa">Arpa</option>
+        <option value="Acordeón">Acordeón</option>
+        <option value="Bajo">Bajo</option>
+        <option value="Banjo">Banjo</option>
+        <option value="Batería">Batería</option>
+        <option value="Bagpipes">Bagpipes</option>
+        <option value="Cello">Cello</option>
+        <option value="Charango">Charango</option>
+        <option value="Clarinete">Clarinete</option>
+        <option value="Contrabajo">Contrabajo</option>
+        <option value="Congas">Congas</option>
+        <option value="Cítara">Cítara</option>
+        <option value="Cuerno Francés">Cuerno Francés</option>
+        <option value="Djembe">Djembe</option>
+        <option value="Didgeridoo">Didgeridoo</option>
+        <option value="Dulcémele">Dulcémele</option>
+        <option value="Erhu">Erhu</option>
+        <option value="Flauta">Flauta</option>
+        <option value="Gaita">Gaita</option>
+        <option value="Gong">Gong</option>
+        <option value="Guitarra">Guitarra</option>
+        <option value="Harmónica">Harmónica</option>
+        <option value="Kalimba">Kalimba</option>
+        <option value="Koto">Koto</option>
+        <option value="Mandolina">Mandolina</option>
+        <option value="Marimba">Marimba</option>
+        <option value="Melódica">Melódica</option>
+        <option value="Oboe">Oboe</option>
+        <option value="Piano">Piano</option>
+        <option value="Pandereta">Pandereta</option>
+        <option value="Saxofón">Saxofón</option>
+        <option value="Sitar">Sitar</option>
+        <option value="Shakuhachi">Shakuhachi</option>
+        <option value="Steel Drum">Steel Drum</option>
+        <option value="Trombón">Trombón</option>
+        <option value="Trompeta">Trompeta</option>
+        <option value="Teclado">Teclado</option>
+        <option value="Theremin">Theremin</option>
+        <option value="Tuba">Tuba</option>
+        <option value="Ukelele">Ukelele</option>
+        <option value="Viola">Viola</option>
+        <option value="Violín">Violín</option>
+        <option value="Xilófono">Xilófono</option>
+        <option value="Zampoña">Zampoña</option>
     </select>
+    <label for="instruments" class="form-label">Instrumentos</label>
   </div>
 
-  <div class="form-group mb-2">
-    <label for="photo">Foto avatar</label>
-    <input type="text" name="photo" id="photo" value="{{currentUser.photo}}">
+    <div class="form-group mb-2 w-75">
+      <input type="text" name="description" id="description" value="{{currentUser.description}}" class="form-control {{#if errors.description}}is-invalid{{/if}}">
+      <label for="description" class="form-label">Biografía*</label>
+      {{#if errors.description}}<div class="invalid-feedback">{{errors.description}}</div>{{/if}}
+    </div>
 
+    <div class="form-group mb-2 w-75">
+      <input type="text" name="location" id="location" value="{{currentUser.location}}" class="form-control {{#if errors.location}}is-invalid{{/if}}">
+      <label for="location" class="form-label">Localización*</label>
+      {{#if errors.location}}<div class="invalid-feedback">{{errors.location}}</div>{{/if}}
+    </div>
+
+    <div class="form-group mb-2 w-75">
+      <input type="text" name="socialMedia" id="socialMedia" value="{{currentUser.socialMedia}}" class="form-control">
+      <label for="socialMedia" class="form-label">Redes Sociales</label>
+    </div>
+    
+    <button type="submit" class="btn btn-primary btn-block fs-5 mb-4 w-25">Actualizar mis cambios</button>
   </div>
-
-  <div class="form-group mb-2">
-    <label for="instruments">Instrumentos</label>
-    <select name="instruments" id="instruments" multiple>
-      <option value="Arpa">Arpa</option>
-      <option value="Acordeón">Acordeón</option>
-      <option value="Bajo">Bajo</option>
-      <option value="Banjo">Banjo</option>
-      <option value="Batería">Batería</option>
-      <option value="Bagpipes">Bagpipes</option>
-      <option value="Cello">Cello</option>
-      <option value="Charango">Charango</option>
-      <option value="Clarinete">Clarinete</option>
-      <option value="Contrabajo">Contrabajo</option>
-      <option value="Congas">Congas</option>
-      <option value="Cítara">Cítara</option>
-      <option value="Cuerno Francés">Cuerno Francés</option>
-      <option value="Djembe">Djembe</option>
-      <option value="Didgeridoo">Didgeridoo</option>
-      <option value="Dulcémele">Dulcémele</option>
-      <option value="Erhu">Erhu</option>
-      <option value="Flauta">Flauta</option>
-      <option value="Gaita">Gaita</option>
-      <option value="Gong">Gong</option>
-      <option value="Guitarra">Guitarra</option>
-      <option value="Harmónica">Harmónica</option>
-      <option value="Kalimba">Kalimba</option>
-      <option value="Koto">Koto</option>
-      <option value="Mandolina">Mandolina</option>
-      <option value="Marimba">Marimba</option>
-      <option value="Melódica">Melódica</option>
-      <option value="Oboe">Oboe</option>
-      <option value="Piano">Piano</option>
-      <option value="Pandereta">Pandereta</option>
-      <option value="Saxofón">Saxofón</option>
-      <option value="Sitar">Sitar</option>
-      <option value="Shakuhachi">Shakuhachi</option>
-      <option value="Steel Drum">Steel Drum</option>
-      <option value="Trombón">Trombón</option>
-      <option value="Trompeta">Trompeta</option>
-      <option value="Teclado">Teclado</option>
-      <option value="Theremin">Theremin</option>
-      <option value="Tuba">Tuba</option>
-      <option value="Ukelele">Ukelele</option>
-      <option value="Viola">Viola</option>
-      <option value="Violín">Violín</option>
-      <option value="Xilófono">Xilófono</option>
-      <option value="Zampoña">Zampoña</option>
-  </select>
-</div>
-
-  <div class="form-group mb-2">
-    <label for="description">Biografía</label>
-    <input type="text" name="description" id="description" value="{{currentUser.description}}">
-  </div>
-
-  <div class="form-group mb-2">
-    <label for="location">Localización</label>
-    <input type="text" name="location" id="location" value="{{currentUser.location}}">
-  </div>
-
-  {{!-- <div class="form-group mb-2">
-    <label for="bands">Banda/s</label>
-    <input type="text" name="bands" id="bands">
-  </div> --}}
-
-  <div class="form-group mb-2">
-    <label for="socialMedia">Redes Sociales</label>
-    <input type="text" name="socialMedia" id="socialMedia" value="{{currentUser.socialMedia}}">
-  </div>
-
-  {{!-- <div class="form-group mb-2">
-    <label for="bandRequest">Petición de acceso a banda/s</label>
-    <input type="text" name="bandRequest" id="bandRequest">
-  </div>
-
-  <div class="form-group mb-2">
-    <label for="status">Estado de la petición</label>
-    <input type="text" name="status" id="status">
-  </div> --}}
-  
-  <button type="submit">Actualizar mis cambios</button>
-  
 </form>
+
+<a href="/profile" class="btn btn-outline-info text-white fs-5 my-5">Volver</a>

@@ -55,6 +55,10 @@ body::before {
   z-index: -1; 
 } 
 
+p {
+  font-size: 1.25rem;
+}
+
 /*  
   background: rgb(32,0,119);
   background: linear-gradient(90deg, rgba(32,0,119,1) 0%, rgba(32,0,172,1) 50%, rgba(11,0,222,1) 100%); 
@@ -62,14 +66,11 @@ body::before {
 
 .bgNav {
   background-color: rgb(172, 172, 172);
-  height: 110px;
   background-image: url("../images/bg-crawd/rock-concert-silhouette-silhouette-fb49cd153ce2bcc57e7e0fa0ae50a961.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
-  display: flex !important;
-  flex-direction: column !important;
-  align-content: center !important;
+
 }
 
 .bgFooter {
@@ -143,6 +144,7 @@ body::before {
   background-color: rgba(0, 0, 0, 0.37);
   /* border: 1px solid black; */
 }
+
 
 .card1 {
   background: rgb(249,255,0);

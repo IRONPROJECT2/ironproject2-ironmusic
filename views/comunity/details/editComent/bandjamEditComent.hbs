@@ -27,7 +27,7 @@
     </div>
   </div>
 
-  {{#theUserIsTheCreator currentUser message.post.creator._id}}
+  {{#theUserIsTheCreator currentUser._id message.post.creator._id}}
     <div class="row">
       <div class="col d-flex justify-content-start align-content-center">
         <a href="/bandjam/{{message.post._id}}/edit"><i class="btn btn-primary bi bi-pencil mx-3"></i></a>

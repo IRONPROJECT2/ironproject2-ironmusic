@@ -1,46 +1,94 @@
+<section class="container text-center my-5 w-50">
+  <h1 class="text-center my-2">Más detalles de la banda</h1>
+</section>
 
-<img src="{{band.photo}}" alt="band image">
-<h2>{{band.name}}</h2>
-<h4>Biografía:</h4>
-<p>{{band.biography}}</p>
+<section class="mx-auto border border-white w-75">
 
-<h4>Integrantes:</h4>
-<ul>
-  {{#each band.members}}
-    <li>{{this.name}}</li>
-    <li>{{this.description}}</li>
-  {{/each}}
-</ul>
+  <div class="row my-3">
+    <div class="col text-center">
+      <img src="{{band.photo}}" alt="band photo">
+    </div>
+  </div>
 
+  <div class="row my-2">
+    <div class="col text-center">
+      <h2 class="card-title">{{band.name}}</h2>    
+    </div>
+  </div>
 
-<a href="/band/{{band.id}}/edit" class="btn btn-primary">Editar</a>
-<form action="/band/{{band.id}}/delete" method="post" id="deleteForm">
-  <button type="button" class="btn btn-danger" onclick="seguro()">Eliminar</button>
-</form>
+<div class="row my-2">
+    <div class="col text-center">
+      <h2 class="card-title">{{band.location}}</h2>    
+    </div>
+  </div>
+  
+  <div class="row my-2">
+    <div class="col text-center">  
+      <h6 class="card-title">Integrantes del grupo</h6>  
+      <ul>
+      {{#each band.members}}
+       <li>{{this.name}}</li>
+      {{/each}}
+      </ul>
+    </div>
+  </div>
 
-{{#if currentUser}}
-  {{#userIsInTheBand currentUser band}}
-    <p>Estas en la banda</p>
-  {{else}}
-    {{#registerPending currentUser band}}
-      <p>Solicitud enviada</p>
+  <div class="d-flex justify-content-center align-content-center align-items-center mb-3"> 
+    {{#theUserIsTheCreator currentUser._id band.administrator._id}}
+      <a href="/band/{{band.id}}/edit" class="btn btn-primary ms-2"><i class="bi bi-pencil"></i></a>
+        <form action="/band/{{band.id}}/delete" method="post" id="deleteForm">
+        <button type="button" class="btn btn-danger ms-2" onclick="seguro()"><i class="bi bi-x-lg"></i></button>
+        </form>
+    {{/theUserIsTheCreator}}
+  </div>
+</section>
+ 
+
+{{!-- UNIRSE A LA BANDA --}}
+<section class="d-flex justify-content-center align-content-center align-items-center my-5 fs-5">
+  {{#if currentUser}}
+    {{#userIsInTheBand currentUser band}}
+      <p>Ya perteneces a esta banda</p>
     {{else}}
-      <form action="/joinBand/{{band.id}}" method="post">
-        <button class="btn btn-primary">Unirme a banda</button>
-      </form>
-    {{/registerPending}}
-  {{/userIsInTheBand}}
-{{/if}}
+      {{#registerPending currentUser band}}
+        <p>Solicitud enviada al grupo</p>
+      {{else}}
+        <form action="/joinBand/{{band.id}}" method="post">
+          <button class="btn btn-info btn-lg">Unirme a banda</button>
+        </form>
+      {{/registerPending}}
+    {{/userIsInTheBand}}
+  {{/if}}
+</section>
+{{!-- /UNIRSE A LA BANDA --}}
 
+
+{{!-- STARS --}}
 {{!-- <p>Rating: {{average}}</p> --}}
-<p>Rating: {{band.rating}}</p>
-
-
-{{#if currentUser}}
-  {{#if result.users.length}}
-    {{#userVote currentUser result.users}}
-      <p>Gracias por votar!</p>
-    {{else}}  
+<section class="d-flex my-6 ms-1 fs-5"> 
+  <p>RANKING DE PUNTUACIÓN: {{band.rating}}</p>
+</section> 
+<section>
+  {{#if currentUser}}
+    {{#if result.users.length}}
+      {{#userVote currentUser result.users}}
+        <p>¡Gracias por votar!</p>
+      {{else}}  
+        <form id="rating-form" action="/rating" method="post">
+          <div class="rating">
+            <input type="hidden" name="users" value="{{currentUser.id}}">
+            <input type="hidden" name="band" value="{{band.id}}">
+            <span class="rating__result"></span>
+            <input type="hidden" name="rating" id="rating-value" value="0"> <!-- Campo de entrada oculto para enviar el valor de la calificación -->
+            <i class="rating__star far fa-star" data-value="1"></i> <!-- Primera estrella -->
+            <i class="rating__star far fa-star" data-value="2"></i> <!-- Segunda estrella -->
+            <i class="rating__star far fa-star" data-value="3"></i> <!-- Tercera estrella -->
+            <i class="rating__star far fa-star" data-value="4"></i> <!-- Cuarta estrella -->
+            <i class="rating__star far fa-star" data-value="5"></i> <!-- Quinta estrella -->
+          </div>
+        </form>
+      {{/userVote}}
+    {{else}}
       <form id="rating-form" action="/rating" method="post">
         <div class="rating">
           <input type="hidden" name="users" value="{{currentUser.id}}">
@@ -54,23 +102,15 @@
           <i class="rating__star far fa-star" data-value="5"></i> <!-- Quinta estrella -->
         </div>
       </form>
-    {{/userVote}}
-  {{else}}
-    <form id="rating-form" action="/rating" method="post">
-      <div class="rating">
-        <input type="hidden" name="users" value="{{currentUser.id}}">
-        <input type="hidden" name="band" value="{{band.id}}">
-        <span class="rating__result"></span>
-        <input type="hidden" name="rating" id="rating-value" value="0"> <!-- Campo de entrada oculto para enviar el valor de la calificación -->
-        <i class="rating__star far fa-star" data-value="1"></i> <!-- Primera estrella -->
-        <i class="rating__star far fa-star" data-value="2"></i> <!-- Segunda estrella -->
-        <i class="rating__star far fa-star" data-value="3"></i> <!-- Tercera estrella -->
-        <i class="rating__star far fa-star" data-value="4"></i> <!-- Cuarta estrella -->
-        <i class="rating__star far fa-star" data-value="5"></i> <!-- Quinta estrella -->
-      </div>
-    </form>
+    {{/if}}
   {{/if}}
-{{/if}}
+</section>
+{{!-- /STARS --}}
+
+
+
+<a href="/bands" class="btn btn-outline-info text-white fs-5 my-5">Volver</a>
+
 
 
 <script>

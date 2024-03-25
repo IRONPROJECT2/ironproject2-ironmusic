@@ -213,7 +213,7 @@ module.exports.search = (req, res, next) => {
       const atcIds = atc.map(band => band._id);
 
       // Búsqueda por lotes de los documentos correspondientes a los IDs
-      const bandPromises = Band.find({ _id: { $in: bandIds }});
+      const bandPromises = Band.find({ _id: { $in: bandIds }}).populate("members");
       const bandjamPromises = Bandjam.find({ _id: { $in: bandjamIds }});
       const formarBandaPromises = FormBand.find({ _id: { $in: formarBandaIds }});
       const atcPromises = Atc.find({ _id: { $in: atcIds }});

@@ -1,5 +1,6 @@
-{{!-- container-fluid --}}
-<nav class="navbar navbar-expand-lg d-flex justify-content-end align-items-end bgNav">
+{{!-- container-fluid d-flex justify-content-end align-items-end --}}
+
+<nav class="navbar navbar-expand-lg bgNav">
   <div class="container-fluid ">
     <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -15,8 +16,8 @@
         </div>
 
         <ul class="navbar-nav mb-2 mb-lg-0 d-flex justify-content-around align-items-end w-100">
-          <div class="d-flex">
-            <li class="nav-item dropdown">
+          <li class="d-flex">
+            <div class="nav-item dropdown">
               <a class="nav-link dropdown-toggle text-light fw-bold py-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Menu
               </a>
@@ -24,10 +25,10 @@
                 <li><a class="dropdown-item" href="/bands">Bandas</a></li>
                 <li><a class="dropdown-item" href="/comunity">Comunidad</a></li>
               </ul>
-            </li>
+            </div>
 
             {{#if currentUser}}
-              <li class="nav-item dropdown me-2">
+              <div class="nav-item dropdown me-2">
                 <a class="nav-link dropdown-toggle text-light fw-bold py-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Crea un post
                 </a>
@@ -36,9 +37,9 @@
                   <li><a class="dropdown-item" href="/formarBandaForm">Formar banda</a></li>
                   <li><a class="dropdown-item" href="/anunciaTuConciertoForm">Anuncia tu concierto</a></li>
                 </ul>
-              </li>
+              </div>
 
-              <li class="nav-item dropdown me-2">
+              <div class="nav-item dropdown me-2">
                 <a class="nav-link dropdown-toggle text-light fw-bold py-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Banda
                 </a>
@@ -46,18 +47,16 @@
                   <li><a class="dropdown-item" href="/bands">Unirme a banda</a></li>
                   <li><a class="dropdown-item" href="/createBand">Crear banda</a></li>
                 </ul>
-              </li>
+              </div>
             {{/if}}
-          </div>
+          </li>
 
-          <div>
-            <li class="nav-item dropdown">
-              <form action="/search" class="d-flex" method="post" role="search">
-                <input class="form-control me-2 searchInput" type="search" name="query" placeholder="Usuario o banda" aria-label="Search">
-                <button class="btn btn-outline-success text-light fw-bold" type="submit">Buscar</button>
-              </form>
-            </li>
-          </div>
+          <li class="nav-item dropdown">
+            <form action="/search" class="d-flex" method="post" role="search">
+              <input class="form-control me-2 searchInput" type="search" name="query" placeholder="Usuario o banda" aria-label="Search">
+              <button class="btn btn-outline-success text-light fw-bold" type="submit">Buscar</button>
+            </form>
+          </li>
         </ul>
 
         <ul class="navbar-nav mb-2 mb-lg-0 text-decoration-none d-flex justify-content-end align-items-end w-100">
@@ -73,7 +72,9 @@
               </ul>
             </li>
           {{else}}
-            <a class="navbar-brand ms-3 text-light fw-bold p-0 link-m" href="/reglog">login/register</a>
+            <li>
+              <a class="navbar-brand ms-3 text-light fw-bold p-0 link-m" href="/reglog">login/register</a>
+            </li>
           {{/if}}
         </ul>
       </div>
@@ -81,18 +82,3 @@
 
   </div>
 </nav>
-
-
-
-{{!-- en boostrap hay una option de botom que sale con un puntito rojo(tipo notificacion 
-en el boton de perfil, este es el codigo: SE PODRIA USAR PARA NUESTRO PERFIL
-
-
-<button type="button" class="btn btn-primary position-relative">
-  Profile
-  <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
-    <span class="visually-hidden">New alerts</span>
-  </span>
-</button>
-
-) --}}
