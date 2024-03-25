@@ -1,0 +1,107 @@
+[
+  {
+    "name": "The Rockers",
+    "musicalGenre": "Rock",
+    "instruments": ["Voz", "Batería", "Bajo"],
+    "location": "Madrid",
+    "lookingfor": "Buscamos músicos apasionados por el rock para completar nuestra banda.",
+    "creator": "6601c21dc7775715cbaaefe0"
+  },
+  {
+    "name": "Indie Vibes",
+    "musicalGenre": "Indie",
+    "instruments": ["Voz", "Batería", "Bajo"],
+    "location": "Barcelona",
+    "lookingfor": "Buscamos músicos indie talentosos para unirse a nuestra banda.",
+    "creator": "6601c21dc7775715cbaaefe1"
+  },
+  {
+    "name": "Jazz Groove",
+    "musicalGenre": "Jazz",
+    "instruments": ["Voz", "Batería", "Bajo"],
+    "location": "Valencia",
+    "lookingfor": "Buscamos músicos de jazz experimentados para nuestra banda.",
+    "creator": "6601c21dc7775715cbaaefe4"
+  },
+  {
+    "name": "Reggae Rhythms",
+    "musicalGenre": "Reggae",
+    "instruments": ["Voz", "Batería", "Bajo"],
+    "location": "Sevilla",
+    "lookingfor": "Buscamos músicos que amen el reggae para unirse a nuestra banda.",
+    "creator": "6601c21dc7775715cbaaefe5"
+  },
+  {
+    "name": "Country Road",
+    "musicalGenre": "Country",
+    "instruments": ["Voz", "Batería", "Bajo"],
+    "location": "Granada",
+    "lookingfor": "Buscamos músicos apasionados por la música country para nuestra banda.",
+    "creator": "6601c21dc7775715cbaaefe2"
+  },
+  {
+    "name": "Electro Beats",
+    "musicalGenre": "Electrónica",
+    "instruments": ["Voz", "Batería", "Bajo"],
+    "location": "Málaga",
+    "lookingfor": "Buscamos músicos electrónicos creativos para nuestra banda.",
+    "creator": "6601c21dc7775715cbaaefe6"
+  },
+  {
+    "name": "Folk Harmony",
+    "musicalGenre": "Folk",
+    "instruments": ["Voz", "Batería", "Bajo"],
+    "location": "Toledo",
+    "lookingfor": "Buscamos músicos apasionados por el folk para nuestra banda.",
+    "creator": "6601c21dc7775715cbaaefe3"
+  },
+  {
+    "name": "Metal Mayhem",
+    "musicalGenre": "Metal",
+    "instruments": ["Voz", "Batería", "Bajo"],
+    "location": "Córdoba",
+    "lookingfor": "Buscamos músicos metaleros apasionados para unirse a nuestra banda.",
+    "creator": "6601c21dc7775715cbaaefe9"
+  },
+  {
+    "name": "Punk Rebellion",
+    "musicalGenre": "Punk",
+    "instruments": ["Voz", "Batería", "Bajo"],
+    "location": "Murcia",
+    "lookingfor": "Buscamos músicos rebeldes para formar nuestra banda punk.",
+    "creator": "6601c21dc7775715cbaaefea"
+  },
+  {
+    "name": "Clásica Harmony",
+    "musicalGenre": "Clásica",
+    "instruments": ["Voz", "Batería", "Bajo"],
+    "location": "Alicante",
+    "lookingfor": "Buscamos músicos clásicos talentosos para nuestra banda.",
+    "creator": "6601c21dc7775715cbaaefec"
+  },
+  {
+    "name": "Reggaeton Rhythm",
+    "musicalGenre": "Reggaeton",
+    "instruments": ["Voz", "Batería", "Bajo"],
+    "location": "Bilbao",
+    "lookingfor": "Buscamos músicos que amen el reggaeton para nuestra banda.",
+    "creator": "6601c21dc7775715cbaaefeb"
+  },
+  {
+    "name": "Alternativa Beats",
+    "musicalGenre": "Alternativa",
+    "instruments": ["Voz", "Batería", "Bajo"],
+    "location": "Vigo",
+    "lookingfor": "Buscamos músicos alternativos creativos para unirse a nuestra banda.",
+    "creator": "6601c21dc7775715cbaaefed"
+  },
+  {
+    "name": "Blues Soul",
+    "musicalGenre": "Blues",
+    "instruments": ["Voz", "Batería", "Bajo"],
+    "location": "Zaragoza",
+    "lookingfor": "Buscamos músicos apasionados por el blues para nuestra banda.",
+    "creator": "6601c21dc7775715cbaaefee"
+  }
+]
+  

@@ -59,7 +59,7 @@
         <li class="list-group-item text-bg-dark mt-1">
           <div class="d-flex justify-content-between align-items-center">
             <p>Mensaje: {{text}}</p>
-            {{#if currentUser}}
+            {{#if ../currentUser}}
               {{#theUserIsTheCreator ../currentUser._id owner._id}}
                 <div class="d-flex justify-content-center align-content-center">            
                   <a href="/message/{{id}}/edit"><i class="btn btn-primary bi bi-pencil mx-3"></i></a>

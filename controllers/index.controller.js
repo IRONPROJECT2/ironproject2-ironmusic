@@ -13,7 +13,6 @@ module.exports.index = (req, res, next) => {
     Atc.find().sort({ date: 1 }).limit(6).exec()
   ])
   .then(([bands, rating, concerts]) => {
-    console.debug(rating)
     res.render("index", { bands, rating, concerts, list });
   })
   .catch((error) => {

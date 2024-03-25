@@ -1,0 +1,74 @@
+[
+  {
+    "bandName": "Festival Rockers",
+    "musicalGenre": "Rock",
+    "instruments": ["Voz", "Guitarra", "Bajo", "Batería"],
+    "numberOfMembers": 4,
+    "location": "Madrid",
+    "lookingfor": "Buscamos bandas de rock para participar en nuestro festival anual.",
+    "creator": "6601c21dc7775715cbaaefe0"
+  },
+  {
+    "bandName": "IndieFest",
+    "musicalGenre": "Indie",
+    "instruments": ["Voz", "Guitarra", "Bajo", "Teclado", "Batería"],
+    "numberOfMembers": 5,
+    "location": "Barcelona",
+    "lookingfor": "Buscamos bandas indie para nuestro festival de música alternativa.",
+    "creator": "6601c21dc7775715cbaaefe1"
+  },
+  {
+    "bandName": "Jam Sessions Jazz",
+    "musicalGenre": "Jazz",
+    "instruments": ["Voz", "Saxofón", "Contrabajo", "Piano", "Batería", "Trompeta"],
+    "numberOfMembers": 6,
+    "location": "Valencia",
+    "lookingfor": "Buscamos músicos de jazz para nuestras jam sessions semanales.",
+    "creator": "6601c21dc7775715cbaaefe4"
+  },
+  {
+    "bandName": "Reggae Jamming",
+    "musicalGenre": "Reggae",
+    "instruments": ["Voz", "Guitarra", "Bajo", "Batería", "Teclado"],
+    "numberOfMembers": 5,
+    "location": "Sevilla",
+    "lookingfor": "Buscamos bandas de reggae para organizar una jam en la playa.",
+    "creator": "6601c21dc7775715cbaaefe0"
+  },
+  {
+    "bandName": "Country Concert",
+    "musicalGenre": "Country",
+    "instruments": ["Voz", "Guitarra", "Bajo", "Violín", "Banjo", "Mandolina"],
+    "numberOfMembers": 6,
+    "location": "Granada",
+    "lookingfor": "Buscamos bandas de música country para un concierto en el campo.",
+    "creator": "6601c21dc7775715cbaaefe1"
+  },
+  {
+    "bandName": "Electro Fest",
+    "musicalGenre": "Electrónica",
+    "instruments": ["Voz", "Guitarra", "Bajo", "Violín", "Banjo", "Mandolina"],
+    "numberOfMembers": 4,
+    "location": "Málaga",
+    "lookingfor": "Buscamos bandas electrónicas para nuestro festival de música digital.",
+    "creator": "6601c21dc7775715cbaaefe4"
+  },
+  {
+    "bandName": "Folk Gathering",
+    "musicalGenre": "Folk",
+    "instruments": ["Voz", "Guitarra", "Bajo", "Violín", "Acordeón", "Flauta"],
+    "numberOfMembers": 6,
+    "location": "Toledo",
+    "lookingfor": "Buscamos bandas de música folk para un encuentro musical en el bosque.",
+    "creator": "6601c21dc7775715cbaaefe0"
+  },
+  {
+    "bandName": "Metal Mayhem",
+    "musicalGenre": "Metal",
+    "instruments": ["Voz", "Guitarra", "Bajo", "Violín", "Banjo", "Mandolina"],
+    "numberOfMembers": 5,
+    "location": "Córdoba",
+    "lookingfor": "Buscamos bandas de metal para nuestro festival anual de música extrema.",
+    "creator": "6601c21dc7775715cbaaefe1"
+  }
+]

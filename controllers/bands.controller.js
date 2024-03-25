@@ -133,8 +133,6 @@ module.exports.rating = (req, res, next) => {
         rating[0].users.push(req.body.users)
         rating[0].save()
           .then((updatedRating) => {
-            console.debug(updatedRating)
-            console.debug(updatedRating.band._id)
             const sum = updatedRating.rating.reduce((acc, num) => {
               return acc + num
             }, 0);
