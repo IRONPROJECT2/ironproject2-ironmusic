@@ -25,8 +25,11 @@
       </ul>
       <p class="card-title">Mi nombre es: {{currentUser.name}}</p>  
       <p class="card-title">Mi ubicación es:{{currentUser.location}}</p> 
-      <p class="card-title">Descripción: {{currentUser.description}}</p>  
-      <p class="card-title">Mis redes sociales: {{currentUser.socialMedia}}</p> 
+      <p class="card-title">Descripción: {{currentUser.description}}</p>
+      {{#each currentUser.socialMedia}}
+        <a class="card-title " href="{{this}}">{{this}}</a> 
+      {{/each}}  
+      {{!-- <p class="card-title">Mis redes sociales: {{currentUser.socialMedia}}</p>  --}}
     </div>
   </div>
 </section>

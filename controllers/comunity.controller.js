@@ -14,7 +14,7 @@ module.exports.list = (req, res, next) => res.render("comunity/comunity");
 module.exports.bandjam = (req, res, next) => {
   Bandjam.find()
   .populate("creator")
-  .then((postBand) => { 
+  .then((postBand) => {
     res.render("comunity/bandjam", { postBand })
   })
   .catch((error) => next(error));

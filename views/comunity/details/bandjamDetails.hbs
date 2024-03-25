@@ -27,18 +27,18 @@
     </div>
   </div>
 
-  
-  {{#theUserIsTheCreator currentUser._id postBand.creator._id}}
-    <div class="row">
-      <div class="col d-flex justify-content-start align-content-center">
-        <a href="/bandjam/{{postBand._id}}/edit"><i class="btn btn-primary bi bi-pencil mx-3"></i></a>
-        <form action="/bandjam/{{postBand._id}}/delete" method="post" id="deleteForm">
-          <button type="button" class="btn btn-danger" onclick="seguro()"><i class="bi bi-x-lg"></i></button>
-        </form>
+  {{#if currentUser}}
+    {{#theUserIsTheCreator currentUser._id postBand.creator._id}}
+      <div class="row">
+        <div class="col d-flex justify-content-start align-content-center">
+          <a href="/bandjam/{{postBand._id}}/edit"><i class="btn btn-primary bi bi-pencil mx-3"></i></a>
+          <form action="/bandjam/{{postBand._id}}/delete" method="post" id="deleteForm">
+            <button type="button" class="btn btn-danger" onclick="seguro()"><i class="bi bi-x-lg"></i></button>
+          </form>
+        </div>
       </div>
-    </div>
-  {{/theUserIsTheCreator}}
-  
+    {{/theUserIsTheCreator}}
+  {{/if}}
 
 </section>
 
@@ -59,14 +59,16 @@
         <li class="list-group-item text-bg-dark mt-1">
           <div class="d-flex justify-content-between align-items-center">
             <p>Mensaje: {{text}}</p>
-            {{#theUserIsTheCreator ../currentUser._id owner._id}}
-              <div class="d-flex justify-content-center align-content-center">            
-                <a href="/message/{{id}}/edit"><i class="btn btn-primary bi bi-pencil mx-3"></i></a>
-                <form action="/message/{{id}}/delete" method="post" id="deleteFormMessage">
-                  <button type="button" class="btn btn-danger"  onclick="seguroMessage()"><i class="bi bi-x-lg"></i></button>
-                </form>
-              </div>
-            {{/theUserIsTheCreator}}
+            {{#if currentUser}}
+              {{#theUserIsTheCreator ../currentUser._id owner._id}}
+                <div class="d-flex justify-content-center align-content-center">            
+                  <a href="/message/{{id}}/edit"><i class="btn btn-primary bi bi-pencil mx-3"></i></a>
+                  <form action="/message/{{id}}/delete" method="post" id="deleteFormMessage">
+                    <button type="button" class="btn btn-danger"  onclick="seguroMessage()"><i class="bi bi-x-lg"></i></button>
+                  </form>
+                </div>
+              {{/theUserIsTheCreator}}
+            {{/if}}
           </div>
         </li>
       </ul>
@@ -75,19 +77,20 @@
 </section>
 
 
+{{#if currentUser}}
+  <form action="/message/{{postBand.id}}/message" method="post" class="markdown-form mt-5">
+    <input type="hidden" name="postType" value="Bandjam">
+    <input type="hidden" name="post" value="{{postBand.id}}">
 
-<form action="/message/{{postBand.id}}/message" method="post" class="markdown-form mt-5">
-  <input type="hidden" name="postType" value="Bandjam">
-  <input type="hidden" name="post" value="{{postBand.id}}">
+    <div>
+      <textarea name="text" id="description-md"></textarea>
+    </div>
 
-  <div>
-    <textarea name="text" id="description-md"></textarea>
-  </div>
-
-  <div class="form-actions mt-2">
-    <button type="submit" class="btn btn-outline-primary text-white fs-5">Enviar</button>
-  </div>
-</form>
+    <div class="form-actions mt-2">
+      <button type="submit" class="btn btn-outline-primary text-white fs-5">Enviar</button>
+    </div>
+  </form>
+{{/if}}
 
 <a href="/bandjam" class="btn btn-outline-info text-white fs-5 my-5">Volver</a>
 

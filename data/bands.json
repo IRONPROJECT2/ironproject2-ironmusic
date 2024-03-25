@@ -2,86 +2,95 @@
   {
     "name": "The Beatles",
     "musicalGenre": "Rock",
-    "biography": "The Beatles were an English rock band formed in Liverpool in 1960.",
+    "biography": "The Beatles es un grupo de rock inglés que se formó en 1960.",
     "photo": "https://s.france24.com/media/display/bcfb0914-ba43-11e9-8652-005056bff430/w:980/p:16x9/portada_beatles.jpg",
     "socialMedia": ["https://www.facebook.com/thebeatles", "https://twitter.com/thebeatles"],
     "location": "Madrid",
     "administrator": "6600c414b2f4cf52f5305bb6",
     "members": ["6600c414b2f4cf52f5305bb6", "6600c414b2f4cf52f5305bb9"],
     "pendingMembers": ["6600c414b2f4cf52f5305bc8","6600c414b2f4cf52f5305bce"],
-    "created": "1960-01-01T00:00:00.000Z"
+    "created": "1960-01-01T00:00:00.000Z",
+    "rating": 5
   },
   {
     "name": "Queen",
     "musicalGenre": "Rock",
-    "biography": "Queen are a British rock band formed in London in 1970.",
-    "photo": "https://static.wikia.nocookie.net/music/images/6/64/Queen.jpg/revision/latest?cb=20100812223012",
+    "biography": "Queen es un grupo de británico de rock que se creó en Londres en 1970.",
+    "photo": "https://wallpapers.com/images/hd/queen-pictures-og69zn64jvnj84op.jpg",
     "socialMedia": ["https://www.facebook.com/Queen", "https://twitter.com/QueenWillRock"],
     "location": "Madrid",
     "administrator": "6600c414b2f4cf52f5305bb9",
     "members": ["6600c414b2f4cf52f5305bb9", "6600c414b2f4cf52f5305bba", "6600c414b2f4cf52f5305bb8"],
     "pendingMembers": ["6600c414b2f4cf52f5305bc8"],
-    "created": "1970-01-01T00:00:00.000Z"
+    "created": "1970-01-01T00:00:00.000Z",
+    "rating": 5
   },
   {
     "name": "Led Zeppelin",
     "musicalGenre": "Rock",
-    "biography": "Led Zeppelin were an English rock band formed in London in 1968.",
+    "biography": "Led Zeppelin es una banda inglesa de rock que se creó en Londres en 1968.",
     "photo": "https://img.rtve.es/imagenes/led-zeppelin-starship-mundo-a-pies/1411109953003.jpg",
     "socialMedia": ["https://www.facebook.com/ledzeppelin", "https://twitter.com/ledzeppelin"],
     "location": "Barcelona",
     "administrator": "6600c414b2f4cf52f5305bb9",
     "members": ["6600c414b2f4cf52f5305bb9", "6600c414b2f4cf52f5305bba","6600c414b2f4cf52f5305bb8"],
     "pendingMembers": ["6600c414b2f4cf52f5305bbc"],
-    "created": "1968-01-01T00:00:00.000Z"
+    "created": "1968-01-01T00:00:00.000Z",
+    "rating": 5
+    
   },
   {
     "name": "Pink Floyd",
     "musicalGenre": "Rock",
-    "biography": "Pink Floyd were an English rock band formed in London in 1965.",
+    "biography": "Pink Floyd fueron una banda que se creo en 1965, pertenecían al género rock.",
     "photo": "https://s1.abcstatics.com/abc/www/multimedia/cultura/2023/02/28/pink-dark-RwGEH9QARsESVws6xyHFzPO-1200x840@abc.jpg",
     "socialMedia": ["https://www.facebook.com/pinkfloyd", "https://twitter.com/pinkfloyd"],
     "location": "Madrid",
     "administrator": "6600c414b2f4cf52f5305bba",
     "members": ["6600c414b2f4cf52f5305bba", "6600c414b2f4cf52f5305bb8","6600c414b2f4cf52f5305bb4"],
     "pendingMembers": ["6600c414b2f4cf52f5305bbc"],
-    "created": "1965-01-01T00:00:00.000Z"
+    "created": "1965-01-01T00:00:00.000Z",
+    "rating": 5
+  
   },
   {
     "name": "The Rolling Stones",
     "musicalGenre": "Rock",
-    "biography": "The Rolling Stones are an English rock band formed in London in 1962.",
+    "biography": "The Rolling Stones es un grupo de británico de rock que se creó en Londres en 1962.",
     "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/The_Rolling_Stones_Summerfest_in_Milwaukee_-_2015.jpg/640px-The_Rolling_Stones_Summerfest_in_Milwaukee_-_2015.jpg",
     "socialMedia": ["https://www.facebook.com/therollingstones", "https://twitter.com/rollingstones"],
     "location": "Asturias",
     "administrator": "6600c414b2f4cf52f5305bb8",
     "members": ["6600c414b2f4cf52f5305bb8", "6600c414b2f4cf52f5305bb4"],
     "pendingMembers": ["6600c414b2f4cf52f5305bc8", "6600c414b2f4cf52f5305bce"],
-    "created": "1962-01-01T00:00:00.000Z"
+    "created": "1962-01-01T00:00:00.000Z",
+    "rating": 5
   },
   {
     "name": "AC/DC",
     "musicalGenre": "Rock",
-    "biography": "AC/DC are an Australian rock band formed in Sydney in 1973.",
+    "biography": "AC/DC es una banda Australiana de rock que se creó en Sidney en 1973.",
     "photo": "https://images.ecestaticos.com/1n8yNGPOG60rrgy9pbgRMtNls2A=/135x8:2152x1514/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F906%2Fa1a%2F498%2F906a1a49814f8fad9e920d0622380882.jpg",
     "socialMedia": ["https://www.facebook.com/acdc", "https://twitter.com/acdc"],
     "location": "Valencia",
     "administrator": "6600c414b2f4cf52f5305bb4",
     "members": ["6600c414b2f4cf52f5305bb4", "6600c414b2f4cf52f5305bb5"],
     "pendingMembers": ["6600c414b2f4cf52f5305bcc"],
-    "created": "1973-01-01T00:00:00.000Z"
+    "created": "1973-01-01T00:00:00.000Z",
+    "rating": 5
   },
   {
     "name": "Metallica",
     "musicalGenre": "Metal",
-    "biography": "Metallica are an American heavy metal band formed in Los Angeles in 1981.",
+    "biography": "Metallica es una banda de heavy metal que nació en Los Ángeles en 1981.",
     "photo": "https://static.dw.com/image/59562031_605.jpg",
     "socialMedia": ["https://www.facebook.com/Metallica", "https://twitter.com/Metallica"],
     "location": "Sevilla",
     "administrator": "6600c414b2f4cf52f5305bb5",
     "members": ["6600c414b2f4cf52f5305bb5", "6600c414b2f4cf52f5305bb4"],
     "pendingMembers": ["6600c414b2f4cf52f5305bcc"],
-    "created": "1981-01-01T00:00:00.000Z"
+    "created": "1981-01-01T00:00:00.000Z",
+    "rating": 5
   },
   {
     "name": "Los Tormentos",
@@ -93,7 +102,8 @@
     "administrator": "6600c414b2f4cf52f5305bb6",
     "members": ["6600c414b2f4cf52f5305bb6", "6600c414b2f4cf52f5305bb9"],
     "pendingMembers": ["6600c414b2f4cf52f5305bc8","6600c414b2f4cf52f5305bce"],
-    "created": "2005-01-01T00:00:00.000Z"
+    "created": "2005-01-01T00:00:00.000Z",
+    "rating": 0
   },
   {
     "name": "Los Rebeldes",
@@ -105,7 +115,8 @@
     "administrator": "6600c414b2f4cf52f5305bba",
     "members": ["6600c414b2f4cf52f5305bba", "6600c414b2f4cf52f5305bb8","6600c414b2f4cf52f5305bb4"],
     "pendingMembers": ["6600c414b2f4cf52f5305bbc"],
-    "created": "1980-01-01T00:00:00.000Z"
+    "created": "1980-01-01T00:00:00.000Z",
+    "rating": 0
   },
   {
     "name": "Los Pioneros del Sonido",
@@ -117,7 +128,8 @@
     "administrator": "6600c414b2f4cf52f5305bb4",
     "members": ["6600c414b2f4cf52f5305bb4", "6600c414b2f4cf52f5305bb5"],
     "pendingMembers": ["6600c414b2f4cf52f5305bcc"],
-    "created": "2010-01-01T00:00:00.000Z"
+    "created": "2010-01-01T00:00:00.000Z",
+    "rating": 0
   },
   {
     "name": "Los Soñadores",
@@ -129,7 +141,9 @@
     "administrator": "6600c414b2f4cf52f5305bc0",
     "members": ["6600c414b2f4cf52f5305bc0", "6600c414b2f4cf52f5305bc1"],
     "pendingMembers": ["6600c414b2f4cf52f5305bc2", "6600c414b2f4cf52f5305bc3"],
-    "created": "2015-01-01T00:00:00.000Z"
+    "created": "2015-01-01T00:00:00.000Z",
+    "rating": 0
+
   },
   {
     "name": "Barrio Crew",
@@ -141,7 +155,9 @@
     "administrator": "6600c414b2f4cf52f5305bc2",
     "members": ["6600c414b2f4cf52f5305bc2", "6600c414b2f4cf52f5305bc3"],
     "pendingMembers": ["6600c414b2f4cf52f5305bc0", "6600c414b2f4cf52f5305bc1"],
-    "created": "2008-01-01T00:00:00.000Z"
+    "created": "2008-01-01T00:00:00.000Z",
+    "rating": 0
+
   },
   {
     "name": "El Patio de los Sueños",
@@ -153,7 +169,9 @@
     "administrator": "6600c414b2f4cf52f5305bc1",
     "members": ["6600c414b2f4cf52f5305bc1", "6600c414b2f4cf52f5305bc0"],
     "pendingMembers": ["6600c414b2f4cf52f5305bc2", "6600c414b2f4cf52f5305bc3"],
-    "created": "2012-01-01T00:00:00.000Z"
+    "created": "2012-01-01T00:00:00.000Z",
+    "rating": 0
+
   },
   {
     "name": "Sons of the Streets",
@@ -165,7 +183,9 @@
     "administrator": "6600c414b2f4cf52f5305bc3",
     "members": ["6600c414b2f4cf52f5305bc3", "6600c414b2f4cf52f5305bc2"],
     "pendingMembers": ["6600c414b2f4cf52f5305bc0", "6600c414b2f4cf52f5305bc1"],
-    "created": "2010-01-01T00:00:00.000Z"
+    "created": "2010-01-01T00:00:00.000Z",
+    "rating": 0
+
   },
   {
     "name": "Blue Jazzers Quartet",
@@ -177,7 +197,9 @@
     "administrator": "6600c414b2f4cf52f5305bca",
     "members": ["6600c414b2f4cf52f5305bca", "6600c414b2f4cf52f5305bc9"],
     "pendingMembers": ["6600c414b2f4cf52f5305bc8", "6600c414b2f4cf52f5305bc7"],
-    "created": "2013-01-01T00:00:00.000Z"
+    "created": "2013-01-01T00:00:00.000Z",
+    "rating": 0
+
   },
   {
     "name": "Soulful Blues Collective",
@@ -189,7 +211,9 @@
     "administrator": "6600c414b2f4cf52f5305bc9",
     "members": ["6600c414b2f4cf52f5305bc9", "6600c414b2f4cf52f5305bc8"],
     "pendingMembers": ["6600c414b2f4cf52f5305bc7", "6600c414b2f4cf52f5305bc6"],
-    "created": "2009-01-01T00:00:00.000Z"
+    "created": "2009-01-01T00:00:00.000Z",
+    "rating": 0
+
   },
   {
     "name": "Smooth Jazz Trio",
@@ -201,7 +225,9 @@
     "administrator": "6600c414b2f4cf52f5305bc8",
     "members": ["6600c414b2f4cf52f5305bc8", "6600c414b2f4cf52f5305bc7"],
     "pendingMembers": ["6600c414b2f4cf52f5305bc6", "6600c414b2f4cf52f5305bc5"],
-    "created": "2015-01-01T00:00:00.000Z"
+    "created": "2015-01-01T00:00:00.000Z",
+    "rating": 0
+
   },
   {
     "name": "Electric Blues Band",
@@ -213,271 +239,317 @@
     "administrator": "6600c414b2f4cf52f5305bc7",
     "members": ["6600c414b2f4cf52f5305bc7", "6600c414b2f4cf52f5305bc6"],
     "pendingMembers": ["6600c414b2f4cf52f5305bc5", "6600c414b2f4cf52f5305bc4"],
-    "created": "2011-01-01T00:00:00.000Z"
+    "created": "2011-01-01T00:00:00.000Z",
+    "rating": 0
+
   },
   {
     "name": "Midnight Groove",
     "musicalGenre": "Jazz",
-    "biography": "Midnight Groove is a jazz band formed in Barcelona in 2010. Their music blends traditional jazz elements with modern improvisation.",
+    "biography": "Midnight Groove es una banda de jazz formada en 2010 en Barcelona. Su música fusiona los elementos tradcionales del jazz junto con toques de improvisación.",
     "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz8wbhqJegMWskR_nFqPDjTk0Pqh2uxQjuAg&usqp=CAU",
     "socialMedia": ["https://www.facebook.com/midnight-groove", "https://twitter.com/midnight_groove"],
     "location": "Barcelona",
     "administrator": "6600c414b2f4cf52f5305bc5",
     "members": ["6600c414b2f4cf52f5305bc5", "6600c414b2f4cf52f5305bca"],
     "pendingMembers": ["6600c414b2f4cf52f5305bc8", "6600c414b2f4cf52f5305bc4"],
-    "created": "2010-01-01T00:00:00.000Z"
+    "created": "2010-01-01T00:00:00.000Z",
+    "rating": 0
+
   },
   {
     "name": "Blue Soul Revival",
     "musicalGenre": "Blues",
-    "biography": "Blue Soul Revival is a blues band hailing from Madrid, formed in 2012. Their music is influenced by the classic blues artists of the past.",
+    "biography": "Blue Soul Revival es una banda de blues nacida en Madrid en 2012. Su música se ve influenciada por los artistas clásicos de blues del pasado.",
     "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKPALxW381XKApocFS3YELk0_y3r2d-q27w_nJ8IMGiQsThW-e6ycsFdnrtqkA-A5Fdto&usqp=CAU",
     "socialMedia": ["https://www.facebook.com/blue-soul-revival", "https://twitter.com/blue_soul_revival"],
     "location": "Madrid",
     "administrator": "6600c414b2f4cf52f5305bc6",
     "members": ["6600c414b2f4cf52f5305bc6", "6600c414b2f4cf52f5305bc7"],
     "pendingMembers": ["6600c414b2f4cf52f5305bc5", "6600c414b2f4cf52f5305bcb"],
-    "created": "2012-01-01T00:00:00.000Z"
+    "created": "2012-01-01T00:00:00.000Z",
+    "rating": 0
+
   },
   {
     "name": "Roots Rhythm",
     "musicalGenre": "Reggae",
-    "biography": "Roots Rhythm is a reggae band based in Valencia, founded in 2014. Their music promotes positivity and social consciousness.",
+    "biography": "Roots Rhythm es una banda de reggae de Valencia de 2014. Promueve la positividad y la consciencia social.",
     "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCNiJbDssfCNoMjXeHWq0TcfXjA5fXEsXioiqASat43wYlT1b7JuLrzCufVXOdoJFZ0Uw&usqp=CAU",
     "socialMedia": ["https://www.facebook.com/roots-rhythm", "https://twitter.com/roots_rhythm"],
     "location": "Valencia",
     "administrator": "6600c414b2f4cf52f5305bca",
     "members": ["6600c414b2f4cf52f5305bca", "6600c414b2f4cf52f5305bc9"],
     "pendingMembers": ["6600c414b2f4cf52f5305bc8", "6600c414b2f4cf52f5305bce"],
-    "created": "2014-01-01T00:00:00.000Z"
+    "created": "2014-01-01T00:00:00.000Z",
+    "rating": 0
+
   },
   {
     "name": "Soulful Harmony",
     "musicalGenre": "R&B",
-    "biography": "Soulful Harmony is an R&B group originating from Seville, formed in 2011. Their smooth harmonies and soulful melodies captivate audiences.",
+    "biography": "Soulful Harmony es una banda de R&B originario de Sevilla, creado en 2011. Sus melodías y armonías con alma capturan las audiencias.",
     "photo": "https://qph.cf2.quoracdn.net/main-qimg-4b80b1e552ae39e624fd36e5d694390c-pjlq",
     "socialMedia": ["https://www.facebook.com/soulful-harmony", "https://twitter.com/soulful_harmony"],
-    "location": "Seville",
+    "location": "Sevilla",
     "administrator": "6600c414b2f4cf52f5305bc9",
     "members": ["6600c414b2f4cf52f5305bc9", "6600c414b2f4cf52f5305bc8"],
     "pendingMembers": ["6600c414b2f4cf52f5305bc7", "6600c414b2f4cf52f5305bcc"],
-    "created": "2011-01-01T00:00:00.000Z"
+    "created": "2011-01-01T00:00:00.000Z",
+    "rating": 0
+
   },
   {
     "name": "Whiskey Trails",
     "musicalGenre": "Country",
-    "biography": "Whiskey Trails is a country band from Madrid, formed in 2013. Their music embodies the essence of American country traditions with a modern twist.",
+    "biography": "Whiskey Trails es una banda de country de Madrid. Su música recuerda a la esencia de los EEUU  junto con las tradiciones del country.",
     "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlIEtkkPXRTFCodRoMWUFc3A_IOehymndzGKwozmeMFKUv699V4xsuw33hRP3ZRyd8-f8&usqp=CAU",
     "socialMedia": ["https://www.facebook.com/whiskey-trails", "https://twitter.com/whiskey_trails"],
     "location": "Madrid",
     "administrator": "6600c414b2f4cf52f5305bcb",
     "members": ["6600c414b2f4cf52f5305bcb", "6600c414b2f4cf52f5305bcd"],
     "pendingMembers": ["6600c414b2f4cf52f5305bc9", "6600c414b2f4cf52f5305bc5"],
-    "created": "2013-01-01T00:00:00.000Z"
+    "created": "2013-01-01T00:00:00.000Z",
+    "rating": 0
+
   },
   {
     "name": "Digital Echo",
     "musicalGenre": "Electrónica",
-    "biography": "Digital Echo is an electronic music duo based in Barcelona, formed in 2015. Their sound combines pulsating beats with ethereal melodies, creating a unique sonic experience.",
+    "biography": "Digital Echo es una banda dual de música electrónica de Barcelona. Sus ritmos combinan los beats con melodías etéreas creando una experiencia única.",
     "photo": "https://www.treblezine.com/wp-content/uploads/2024/01/wednesday-live.jpg",
     "socialMedia": ["https://www.facebook.com/digital-echo", "https://twitter.com/digital_echo"],
     "location": "Barcelona",
     "administrator": "6600c414b2f4cf52f5305bcc",
     "members": ["6600c414b2f4cf52f5305bcc", "6600c414b2f4cf52f5305bce"],
     "pendingMembers": ["6600c414b2f4cf52f5305bca", "6600c414b2f4cf52f5305bc9"],
-    "created": "2015-01-01T00:00:00.000Z"
+    "created": "2015-01-01T00:00:00.000Z",
+    "rating": 0
+
   },
   {
     "name": "Southern Charm",
     "musicalGenre": "Country",
-    "biography": "Southern Charm is a country band originating from Valencia, founded in 2017. Their heartfelt lyrics and catchy melodies resonate with audiences across Spain.",
+    "biography": "Southern Charm es una banda de country de Valencia, fundada en 2017. Sus melodías son muy pegadizas, tanto que resuenan por toda España.",
     "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV_WTtrzQ7nWE0h7lr1H7D_hd3Xj5QKerg8wsG5KgfMe_yzsZpSPjpmtRSVYUR7E2npYk&usqp=CAU",
     "socialMedia": ["https://www.facebook.com/southern-charm", "https://twitter.com/southern_charm"],
     "location": "Valencia",
     "administrator": "6600c414b2f4cf52f5305bcd",
     "members": ["6600c414b2f4cf52f5305bcd", "6600c414b2f4cf52f5305bca"],
     "pendingMembers": ["6600c414b2f4cf52f5305bcf", "6600c414b2f4cf52f5305bc8"],
-    "created": "2017-01-01T00:00:00.000Z"
+    "created": "2017-01-01T00:00:00.000Z",
+    "rating": 0
+
   },
   {
     "name": "Neon Dreams",
     "musicalGenre": "Electrónica",
-    "biography": "Neon Dreams is an electronic music project based in Seville, formed in 2018. Their energetic beats and futuristic soundscapes transport listeners to another dimension.",
+    "biography": "Neon Dreams es una banda de electrónica de Sevilla. Sus sonidos te transportan a otras dimensiones.",
     "photo": "https://www.lafactoriadelshow.com/pujaes/avatars/fitxes/8895_xth.jpg?5be85f42",
     "socialMedia": ["https://www.facebook.com/neon-dreams", "https://twitter.com/neon_dreams"],
-    "location": "Seville",
+    "location": "Sevilla",
     "administrator": "6600c414b2f4cf52f5305bce",
     "members": ["6600c414b2f4cf52f5305bce", "6600c414b2f4cf52f5305bcd"],
     "pendingMembers": ["6600c414b2f4cf52f5305bca", "6600c414b2f4cf52f5305bc7"],
-    "created": "2018-01-01T00:00:00.000Z"
+    "created": "2018-01-01T00:00:00.000Z",
+    "rating": 0
+
   },
   {
     "name": "Woodland Whispers",
     "musicalGenre": "Folk",
-    "biography": "Woodland Whispers is a folk band from Galicia, formed in 2015. Their music is inspired by the natural beauty of the Spanish countryside.",
+    "biography": "Woodland Whispers es una banda folk de Galicia. Nació en 2015 y está inspirada en los paisajes Gallegos.",
     "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRli-5hjmn0uCNRZDUwtWsPhI8rdj8tyqv3_A&usqp=CAU",
     "socialMedia": ["https://www.facebook.com/woodland-whispers", "https://twitter.com/woodland_whispers"],
     "location": "Galicia",
     "administrator": "6600c414b2f4cf52f5305bce",
     "members": ["6600c414b2f4cf52f5305bce", "6600c414b2f4cf52f5305bcb"],
     "pendingMembers": ["6600c414b2f4cf52f5305bca", "6600c414b2f4cf52f5305bc9"],
-    "created": "2015-01-01T00:00:00.000Z"
+    "created": "2015-01-01T00:00:00.000Z",
+    "rating": 0
+
   },
   {
     "name": "Iron Fury",
     "musicalGenre": "Metal",
-    "biography": "Iron Fury is a metal band originating from Valencia, formed in 2013. Their powerful riffs and intense performances have earned them a loyal following.",
+    "biography": "Iron Fury es una banda de metal originaria de Valencia. Sus sonidos te transportan a otras dimensiones.",
     "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAFqiVSjI1f0N4LDRFkau4TZqcWmYRdTWmSs-kt-7wLFqpClxXSk-rYKjQ7zuwqmNu3bo&usqp=CAU",
     "socialMedia": ["https://www.facebook.com/iron-fury", "https://twitter.com/iron_fury"],
     "location": "Valencia",
     "administrator": "6600c414b2f4cf52f5305bcd",
     "members": ["6600c414b2f4cf52f5305bcd", "6600c414b2f4cf52f5305bcc"],
     "pendingMembers": ["6600c414b2f4cf52f5305bca", "6600c414b2f4cf52f5305bc9"],
-    "created": "2013-01-01T00:00:00.000Z"
+    "created": "2013-01-01T00:00:00.000Z",
+    "rating": 0
+
   },
   {
     "name": "Misty Mountain",
     "musicalGenre": "Folk",
-    "biography": "Misty Mountain is a folk band hailing from the picturesque hills of Asturias. Formed in 2012, their music reflects the rich cultural heritage of the region.",
+    "biography": "Misty Mountain una banda de folk de las montañas de Asturias. Creado en 2012, su música refleja la riqueza del patrimonio de la región.",
     "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRePxOi_ZFzxfsz2WPkiaqFA6mcB4O3q49z8D76cY1e7bYedbQ2M8MW2OdolxNaq4Z9qS0&usqp=CAU",
     "socialMedia": ["https://www.facebook.com/misty-mountain", "https://twitter.com/misty_mountain"],
     "location": "Asturias",
     "administrator": "6600c414b2f4cf52f5305bc9",
     "members": ["6600c414b2f4cf52f5305bc9", "6600c414b2f4cf52f5305bcc"],
     "pendingMembers": ["6600c414b2f4cf52f5305bc8", "6600c414b2f4cf52f5305bca"],
-    "created": "2012-01-01T00:00:00.000Z"
+    "created": "2012-01-01T00:00:00.000Z",
+    "rating": 0
+
   },
   {
     "name": "Shadow Symphony",
     "musicalGenre": "Metal",
-    "biography": "Shadow Symphony is a metal band known for their dark themes and intricate compositions. Originating from Madrid, they formed in 2010 and have been pushing the boundaries of metal ever since.",
+    "biography": "Shadow Symphony es una banda de metal conocida por sus temas oscuros y composiciones intrigadas. Originarios de Madrid, crearon su banda en 2010.",
     "photo": "https://www.udiscovermusic.com/wp-content/uploads/2020/02/Megadeth-2018-press-shot-web-optimised-1000-1000x600.jpg",
     "socialMedia": ["https://www.facebook.com/shadow-symphony", "https://twitter.com/shadow_symphony"],
     "location": "Madrid",
     "administrator": "6600c414b2f4cf52f5305bc8",
     "members": ["6600c414b2f4cf52f5305bc8", "6600c414b2f4cf52f5305bc6"],
     "pendingMembers": ["6600c414b2f4cf52f5305bc5", "6600c414b2f4cf52f5305bc7"],
-    "created": "2010-01-01T00:00:00.000Z"
+    "created": "2010-01-01T00:00:00.000Z",
+    "rating": 0
+
   },
   {
     "name": "Rebel Riot",
     "musicalGenre": "Punk",
-    "biography": "Rebel Riot is a punk band from Barcelona known for their raw energy and rebellious spirit. Formed in 2008, they've been shaking up the local scene with their explosive performances.",
+    "biography": "Rebel Riot es un grupo punk de Barcelona creado en 2008 y famoso por su energía pura y su espíritu rebelador. Sus actuaciones son explosivas.",
     "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyU9lN0ziBnOna4I8blGAlbNOnOuOChZyEPCLAfFfFF5NEN49t7aYaVaJ48nxmrE_muBs&usqp=CAU",
     "socialMedia": ["https://www.facebook.com/rebel-riot", "https://twitter.com/rebelriot"],
     "location": "Barcelona",
     "administrator": "6600c414b2f4cf52f5305bcb",
     "members": ["6600c414b2f4cf52f5305bcb", "6600c414b2f4cf52f5305bce"],
     "pendingMembers": ["6600c414b2f4cf52f5305bcf", "6600c414b2f4cf52f5305bcc"],
-    "created": "2008-01-01T00:00:00.000Z"
+    "created": "2008-01-01T00:00:00.000Z",
+    "rating": 0
+
   },
   {
     "name": "Symphonic Virtuosi",
     "musicalGenre": "Clásica",
-    "biography": "Symphonic Virtuosi is a classical ensemble based in Madrid. Founded in 2015, they're dedicated to bringing the beauty and complexity of classical music to audiences worldwide.",
+    "biography": "Symphonic Virtuosi es una banda de música clásica creada en Madrid. Creada en 2015.",
     "photo": "https://c8.alamy.com/compes/2wkaxxf/grupo-de-artistas-musicales-con-instrumentos-musicales-violonchelo-violin-trompeta-y-trombon-aislados-sobre-fondo-blanco-2wkaxxf.jpg",
     "socialMedia": ["https://www.facebook.com/symphonic-virtuosi", "https://twitter.com/symphonic_virtuosi"],
     "location": "Madrid",
     "administrator": "6600c414b2f4cf52f5305bce",
     "members": ["6600c414b2f4cf52f5305bce", "6600c414b2f4cf52f5305bca"],
     "pendingMembers": ["6600c414b2f4cf52f5305bc9", "6600c414b2f4cf52f5305bcc"],
-    "created": "2015-01-01T00:00:00.000Z"
+    "created": "2015-01-01T00:00:00.000Z",
+    "rating": 0
+
   },
   {
     "name": "Sunflower Dreams",
     "musicalGenre": "Soul",
-    "biography": "Sunflower Dreams is a soul band hailing from Valencia. Their smooth melodies and heartfelt lyrics have captivated audiences across Spain since their formation in 2012.",
+    "biography": "Sunflower Dreams es una banda de musica Soul nacida en Valencia en 2012.",
     "photo": "https://d1bxnw4yi2rcwu.cloudfront.net/uploads/images/Video-thumbnails/_1200x674_crop_center-center_82_line/Reggae-Got-Soul_member-exclusive_thumbnail.png",
     "socialMedia": ["https://www.facebook.com/sunflowerdreams", "https://twitter.com/sunflowerdreams"],
     "location": "Valencia",
     "administrator": "6600c414b2f4cf52f5305bc5",
     "members": ["6600c414b2f4cf52f5305bc5", "6600c414b2f4cf52f5305bca"],
     "pendingMembers": ["6600c414b2f4cf52f5305bcb", "6600c414b2f4cf52f5305bc8"],
-    "created": "2012-01-01T00:00:00.000Z"
+    "created": "2012-01-01T00:00:00.000Z",
+    "rating": 2
+
   },
   {
     "name": "Funky Fusion",
     "musicalGenre": "Funk",
-    "biography": "Funky Fusion is a funk band based in Barcelona, formed in 2010. With their infectious rhythms and groovy tunes, they've become a staple of the local music scene.",
+    "biography": "Funky Fusion es una banda funk de Barcelona que se creó en 2010. Son conocidos por sus vibrantes tonos y sus puestas en escena",
     "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHSbS0Jh75tHSAUXij8eCiWMacRRAjgM4dwWF5P2i3Ikm2iTdu_y73MiwHR2r-_fgNo3o&usqp=CAU",
     "socialMedia": ["https://www.facebook.com/funkyfusion", "https://twitter.com/funkyfusion"],
     "location": "Barcelona",
     "administrator": "6600c414b2f4cf52f5305bcc",
     "members": ["6600c414b2f4cf52f5305bcc", "6600c414b2f4cf52f5305bcb"],
     "pendingMembers": ["6600c414b2f4cf52f5305bc8", "6600c414b2f4cf52f5305bca"],
-    "created": "2010-01-01T00:00:00.000Z"
+    "created": "2010-01-01T00:00:00.000Z",
+    "rating": 0
+
   },
   {
     "name": "Mystic Melodies",
     "musicalGenre": "Gospel",
-    "biography": "Mystic Melodies is a gospel choir originating from Sevilla. Since their inception in 2013, they've spread messages of hope and joy through their powerful performances.",
+    "biography": "Mystic Melodies es un grupo gospel originario de Sevilla. Desde su creación en 2013 han expandido mensajes de esperanza y alegría en todas sus actuaciones",
     "photo": "https://images.squarespace-cdn.com/content/v1/586d154f03596e5605562ea7/1627496667424-RKJOXLUKEH5OPKGONIIK/214875038_1247273742369538_5988226194101045948_n.jpg",
     "socialMedia": ["https://www.facebook.com/mysticmelodies", "https://twitter.com/mystic_melodies"],
     "location": "Sevilla",
     "administrator": "6600c414b2f4cf52f5305bc8",
     "members": ["6600c414b2f4cf52f5305bc8", "6600c414b2f4cf52f5305bce"],
     "pendingMembers": ["6600c414b2f4cf52f5305bca", "6600c414b2f4cf52f5305bc9"],
-    "created": "2013-01-01T00:00:00.000Z"
+    "created": "2013-01-01T00:00:00.000Z",
+    "rating": 0
+
   },
   {
     "name": "Salsa Sensation",
     "musicalGenre": "Salsa",
-    "biography": "Salsa Sensation is a vibrant salsa band based in Madrid. Formed in 2016, they bring the heat and rhythm of salsa music to dance floors across the city.",
+    "biography": "Salsa Sensation es una vibrante banda de salsa nacida en Madrid, en el sur, en 2016. Han llevado el ritmo por todas las partes de la ciudad.",
     "photo": "https://co-events.com/en/wp-content/uploads/sites/3/2019/09/Salsa-1-838x600.jpg",
     "socialMedia": ["https://www.facebook.com/salsasensation", "https://twitter.com/salsa_sensation"],
     "location": "Madrid",
     "administrator": "6600c414b2f4cf52f5305bc9",
     "members": ["6600c414b2f4cf52f5305bc9", "6600c414b2f4cf52f5305bcc"],
     "pendingMembers": ["6600c414b2f4cf52f5305bcb", "6600c414b2f4cf52f5305bce"],
-    "created": "2016-01-01T00:00:00.000Z"
+    "created": "2016-01-01T00:00:00.000Z",
+    "rating": 5
+
   },
   {
     "name": "Electric Echoes",
     "musicalGenre": "Electrónica",
-    "biography": "Electric Echoes is an electronic music duo from Barcelona, known for their mesmerizing beats and innovative soundscapes. Formed in 2015, they've been pushing the boundaries of electronic music ever since.",
+    "biography": "Electric Echoes es una banda electrónica de Barcelona que se creó en 2015.",
     "photo": "https://amco2008.wordpress.com/wp-content/uploads/2008/10/824009756_855545423_84d5dd05c76fc260016c66b20de6e99f136aa4c72.jpg",
     "socialMedia": ["https://www.facebook.com/electricechoes", "https://twitter.com/electric_echoes"],
     "location": "Barcelona",
     "administrator": "6600c414b2f4cf52f5305bcb",
     "members": ["6600c414b2f4cf52f5305bcb", "6600c414b2f4cf52f5305bce"],
     "pendingMembers": ["6600c414b2f4cf52f5305bc9", "6600c414b2f4cf52f5305bca"],
-    "created": "2015-01-01T00:00:00.000Z"
+    "created": "2015-01-01T00:00:00.000Z",
+    "rating": 0
+
   },
   {
     "name": "Rhythmic Revival",
     "musicalGenre": "Reggae",
-    "biography": "Rhythmic Revival is a reggae band hailing from Valencia. Since their formation in 2014, they've been spreading positive vibes and uplifting melodies through their music.",
+    "biography": "Rhythmic Revival es una banda de reggae de Valencia. Desde su formación en 2014 su popularidad ha ido creciendo expandiendo sus vibras positivas.",
     "photo": "https://uh.gsstatic.es/noticias/cultura/2010/05/12/15036/the-original-wailers-ex-banda-de-bob-marley-estrena-el-mallorska-reggae-fest.jpg",
     "socialMedia": ["https://www.facebook.com/rhythmicrevival", "https://twitter.com/rhythmic_revival"],
     "location": "Valencia",
     "administrator": "6600c414b2f4cf52f5305bcc",
     "members": ["6600c414b2f4cf52f5305bcc", "6600c414b2f4cf52f5305bc9"],
     "pendingMembers": ["6600c414b2f4cf52f5305bc8", "6600c414b2f4cf52f5305bca"],
-    "created": "2014-01-01T00:00:00.000Z"
+    "created": "2014-01-01T00:00:00.000Z",
+    "rating": 4
+
   },
   {
     "name": "Urban Groove",
     "musicalGenre": "Hip Hop",
-    "biography": "Urban Groove is a hip hop collective based in Madrid, formed in 2016. Known for their socially conscious lyrics and infectious beats, they've quickly gained recognition in the Spanish hip hop scene.",
+    "biography": "Urban Groove es una banda de hip hop de Madrid, formada en 2016. Famosos ya por Europa, empieza ahora su gira por EEUU",
     "photo": "https://media.gettyimages.com/id/1654636463/photo/topshot-adam-adrock-horowitz-and-michael-mike-d-diamond-of-the-hip-hop-music-band-beastie.jpg?s=612x612&w=gi&k=20&c=EtKL9dGOsRb5dxnEMsEoom1Pj1-XK0yGEv-29R54WTE=",
     "socialMedia": ["https://www.facebook.com/urbangroove", "https://twitter.com/urban_groove"],
     "location": "Madrid",
     "administrator": "6600c414b2f4cf52f5305bce",
     "members": ["6600c414b2f4cf52f5305bce", "6600c414b2f4cf52f5305bc9"],
     "pendingMembers": ["6600c414b2f4cf52f5305bca", "6600c414b2f4cf52f5305bc8"],
-    "created": "2016-01-01T00:00:00.000Z"
+    "created": "2016-01-01T00:00:00.000Z",
+    "rating": 4
+
   },
   {
     "name": "Blue Horizon",
     "musicalGenre": "Blues",
-    "biography": "Blue Horizon is a blues band originating from Asturias. Formed in 2013, they've been channeling the soulful essence of blues music and captivating audiences with their heartfelt performances.",
+    "biography": "Blue Horizon es una banda de blues de Asturias. Nació en 2013 para expresar las nuevas melodías de los tiempos pasados.",
     "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0qU6pnQtGmEofKFtxgFv1cfcf36jbQFUbsqhbKilNsR0q409pnXjar1OnLfXbWydKyoI&usqp=CAU",
     "socialMedia": ["https://www.facebook.com/bluehorizon", "https://twitter.com/blue_horizon"],
     "location": "Asturias",
     "administrator": "6600c414b2f4cf52f5305bc8",
     "members": ["6600c414b2f4cf52f5305bc8", "6600c414b2f4cf52f5305bc6"],
     "pendingMembers": ["6600c414b2f4cf52f5305bc5", "6600c414b2f4cf52f5305bc9"],
-    "created": "2013-01-01T00:00:00.000Z"
+    "created": "2013-01-01T00:00:00.000Z",
+    "rating": 3
+
   },
   {
     "name": "Tropical Beats",
@@ -489,7 +561,23 @@
     "administrator": "6600c414b2f4cf52f5305bcc",
     "members": ["6600c414b2f4cf52f5305bcc", "6600c414b2f4cf52f5305bc9"],
     "pendingMembers": ["6600c414b2f4cf52f5305bc8", "6600c414b2f4cf52f5305bca"],
-    "created": "2018-01-01T00:00:00.000Z"
+    "created": "2018-01-01T00:00:00.000Z",
+    "rating": 0
+
+  },
+  {
+    "name": "Knarias",
+    "musicalGenre": "Reggaeton",
+    "biography": "Knarias es un grupo de reggaeton originario de Canarias. Formado en 2018, han estado llevando los ritmos tropicales y las letras jugosas a las pistas de baile de toda España.",
+    "photo": "https://static.eldiario.es/clip/0e661799-2784-47c6-8baf-850b73e40dd2_16-9-discover-aspect-ratio_default_0.jpg",
+    "socialMedia": ["https://www.facebook.com/Knarias", "https://twitter.com/Knarias"],
+    "location": "Canarias",
+    "administrator": "6600c414b2f4cf52f5305bcc",
+    "members": ["6600c414b2f4cf52f5305bcc", "6600c414b2f4cf52f5305bc9"],
+    "pendingMembers": ["6600c414b2f4cf52f5305bc8", "6600c414b2f4cf52f5305bca"],
+    "created": "2018-01-01T00:00:00.000Z",
+    "rating": 2
+
   },
   {
     "name": "Echoes of the Underground",
@@ -501,7 +589,9 @@
     "administrator": "6600c414b2f4cf52f5305bca",
     "members": ["6600c414b2f4cf52f5305bca", "6600c414b2f4cf52f5305bc9"],
     "pendingMembers": ["6600c414b2f4cf52f5305bc8", "6600c414b2f4cf52f5305bcc"],
-    "created": "2017-01-01T00:00:00.000Z"
+    "created": "2017-01-01T00:00:00.000Z",
+    "rating": 5
+
   },
   {
     "name": "Sunset Riders",
@@ -513,7 +603,9 @@
     "administrator": "6600c414b2f4cf52f5305bc0",
     "members": ["6600c414b2f4cf52f5305bc0", "6600c414b2f4cf52f5305bb7"],
     "pendingMembers": ["6600c414b2f4cf52f5305bca", "6600c414b2f4cf52f5305bc3"],
-    "created": "2015-01-01T00:00:00.000Z"
+    "created": "2015-01-01T00:00:00.000Z",
+    "rating": 4
+
   },
   {
     "name": "Electro Fusion",
@@ -525,7 +617,9 @@
     "administrator": "6600c414b2f4cf52f5305bc1",
     "members": ["6600c414b2f4cf52f5305bc1", "6600c414b2f4cf52f5305bc2"],
     "pendingMembers": ["6600c414b2f4cf52f5305bcb", "6600c414b2f4cf52f5305bce"],
-    "created": "2016-01-01T00:00:00.000Z"
+    "created": "2016-01-01T00:00:00.000Z",
+    "rating": 0
+
   },
   {
     "name": "Harmony Strings",
@@ -537,10 +631,50 @@
     "administrator": "6600c414b2f4cf52f5305bcb",
     "members": ["6600c414b2f4cf52f5305bcb", "6600c414b2f4cf52f5305bc6"],
     "pendingMembers": ["6600c414b2f4cf52f5305bb7", "6600c414b2f4cf52f5305bc4"],
-    "created": "2014-01-01T00:00:00.000Z"
+    "created": "2014-01-01T00:00:00.000Z",
+    "rating": 5
+
+  },
+  {
+    "name": "Sweet Dreams",
+    "musicalGenre": "Pop",
+    "biography": "Sweet Dreams nació en Alicante en 2014. Este grupo es una fusión de dos antiguos famosos grupos del pop de los 2000",
+    "photo": "https://backend.artistealo.customia.com/media/supplier-service/IMG_20220505_094646.jpg",
+    "socialMedia": ["https://www.facebook.com/sweetdreams", "https://twitter.com/sweet_dreams"],
+    "location": "Alicante",
+    "administrator": "6600c414b2f4cf52f5305bcb",
+    "members": ["6600c414b2f4cf52f5305bcb", "6600c414b2f4cf52f5305bc6"],
+    "pendingMembers": ["6600c414b2f4cf52f5305bb7", "6600c414b2f4cf52f5305bc4"],
+    "created": "2014-01-01T00:00:00.000Z",
+    "rating": 3
+
+  },
+  {
+    "name": "Corriente Marina",
+    "musicalGenre": "Pop",
+    "biography": "Corriente Marina es un grupo pop que nació en Granada en 2014. Este grupo es una fusión pop tradicional con los toques más vibrantes",
+    "photo": "https://ocioalicante.net/blog/wp-content/uploads/2021/04/joe-pask.jpg",
+    "socialMedia": ["https://www.facebook.com/CorrienteMarina", "https://twitter.com/Corriente_Marina"],
+    "location": "Granada",
+    "administrator": "6600c414b2f4cf52f5305bcb",
+    "members": ["6600c414b2f4cf52f5305bcb", "6600c414b2f4cf52f5305bc6"],
+    "pendingMembers": ["6600c414b2f4cf52f5305bb7", "6600c414b2f4cf52f5305bc4"],
+    "created": "2014-01-01T00:00:00.000Z",
+    "rating": 4
+
+  },
+  {
+    "name": "Dorna",
+    "musicalGenre": "Pop",
+    "biography": "Dorna es un grupo pop que nació en Cantabria en 2017. Este grupo nació en mitad de unas fiestas populares",
+    "photo": "https://eldiariocantabria.publico.es/media/eldiariocantabria/images/2022/06/09/2022060920240646749.jpg",
+    "socialMedia": ["https://www.facebook.com/Dorna", "https://twitter.com/Dorna_music"],
+    "location": "Cantabria",
+    "administrator": "6600c414b2f4cf52f5305bcb",
+    "members": ["6600c414b2f4cf52f5305bcb", "6600c414b2f4cf52f5305bc6"],
+    "pendingMembers": ["6600c414b2f4cf52f5305bb7", "6600c414b2f4cf52f5305bc4"],
+    "created": "2017-01-01T00:00:00.000Z",
+    "rating": 3
   }
-  
-  
-  
   
 ]

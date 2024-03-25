@@ -121,13 +121,20 @@ module.exports.rating = (req, res, next) => {
     .then((rating) => {
       if (!rating || rating.length === 0) {
         Rating.create(ranking)
-          .then(() => res.redirect(`/band/${ranking.band}/detail`))
+          .then((algo) => {
+            Band.findByIdAndUpdate(algo.band._id, {rating: algo.rating[0]}, { new: true })
+              .then((band) => {
+                res.redirect(`/band/${band._id}/detail`)
+              })
+          })
           .catch((error) => next(error));
       } else {
         rating[0].rating.push(req.body.rating);
         rating[0].users.push(req.body.users)
         rating[0].save()
           .then((updatedRating) => {
+            console.debug(updatedRating)
+            console.debug(updatedRating.band._id)
             const sum = updatedRating.rating.reduce((acc, num) => {
               return acc + num
             }, 0);

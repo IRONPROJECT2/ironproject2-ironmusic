@@ -2,7 +2,7 @@
   <h1 class="text-center my-2">NUESTRAS BANDAS MUSICALES</h1>
 </section>
 
-<section class="mx-auto border border-white my-5">
+<section class="mx-auto border border-white my-5 w-75">
   <div class="d-flex flex-wrap justify-content-center align-content-center">
     {{#each genre}}
       <a class="text-decoration-none fs-5 text-white me-2" href="#{{this}}"><u>{{this}}</u></a>
@@ -11,446 +11,410 @@
 </section>
 
 
-
-<h1>Rock</h1>
-<section id="Rock" class="d-flex flex-wrap justify-content-center align-items-center">
-  {{#each bands}}
-    {{#musicalMatch musicalGenre "Rock"}}
-      <div class="card my-3 me-4" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="{{photo}}" class="img-fluid h-100 rounded-start" alt="band image">
-          </div>
-          <div class="col-md-8 text-bg-dark">
-            <div class="card-body">
-              <h5 class="card-title">{{name}}</h5>
-              <p class="card-text">{{biography}}</p>
-              <a href="/band/{{id}}/detail" class="btn btn-primary">Ver más</a>
+<section class="d-flex flex-column justify-content-center align-content-center align-items-center">
+  
+  <div class="d-flex flex-column justify-content-center align-items-center w-100">
+    <div class="d-flex justify-content-start w-100">
+      <h1>Rock</h1>
+    </div>
+    <div id="Rock" class="d-flex flex-wrap justify-content-center align-items-center w-100">
+      {{#each bands}}
+        {{#musicalMatch musicalGenre "Rock"}}
+          <div class="card mx-2 mt-4" style="width: 18rem;">
+            <img src="{{photo}}" class="card-img-fluid" alt="band image" style="height: 200px; object-fit: cover;">
+            <div class="card-body bg-black">
+              <h5 class="card-title text-center text-white">{{name}}</h5>
+              <p class="d-inline-block text-truncate text-center text-white" style="max-width: 250px;">{{biography}}</p>
+              <a href="/band/{{id}}/detail" class="btn btn-primary text-white">Ver más</a>
             </div>
           </div>
-        </div>
-      </div>
-    {{/musicalMatch}}
-  {{/each}}
+        {{/musicalMatch}}
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="d-flex flex-column justify-content-center align-items-center w-100">
+    <div class="d-flex justify-content-start w-100">
+      <h1>Pop</h1>
+    </div>
+  <div id="pop" class="d-flex flex-wrap justify-content-center align-items-center w-100">
+    {{#each bands}}
+        {{#musicalMatch musicalGenre "Pop"}}
+          <div class="card mx-2 mt-4" style="width: 18rem;">
+            <img src="{{photo}}" class="card-img-fluid" alt="band image" style="height: 200px; object-fit: cover;">
+            <div class="card-body bg-black">
+              <h5 class="card-title text-center text-white">{{name}}</h5>
+              <p class="d-inline-block text-truncate text-center text-white" style="max-width: 250px;">{{biography}}</p>
+              <a href="/band/{{id}}/detail" class="btn btn-primary text-white">Ver más</a>
+            </div>
+          </div>
+        {{/musicalMatch}}
+      {{/each}}
+  </div>
+
+  <div class="d-flex flex-column justify-content-center align-items-center w-100">
+    <div class="d-flex justify-content-start w-100">
+      <h1>Indie</h1>
+    </div>
+    <div id="Indie" class="d-flex flex-wrap justify-content-center align-items-center w-100">
+      {{#each bands}}
+        {{#musicalMatch musicalGenre "Indie"}}
+          <div class="card mx-2 mt-4" style="width: 18rem;">
+            <img src="{{photo}}" class="card-img-fluid" alt="band image" style="height: 200px; object-fit: cover;">
+            <div class="card-body bg-black">
+              <h5 class="card-title text-center text-white">{{name}}</h5>
+              <p class="d-inline-block text-truncate text-center text-white" style="max-width: 250px;">{{biography}}</p>
+              <a href="/band/{{id}}/detail" class="btn btn-primary text-white">Ver más</a>
+            </div>
+          </div>
+        {{/musicalMatch}}
+      {{/each}}
+    </div>
+  </div>
+
+
+
+    <div class="d-flex flex-column justify-content-center align-items-center w-100">
+    <div class="d-flex justify-content-start w-100">
+      <h1>Hip Hop</h1>
+    </div>
+    <div id="Hip Hop" class="d-flex flex-wrap justify-content-center align-items-center w-100">
+      {{#each bands}}
+        {{#musicalMatch musicalGenre "Hip Hop"}}
+          <div class="card mx-2 mt-4" style="width: 18rem;">
+            <img src="{{photo}}" class="card-img-fluid" alt="band image" style="height: 200px; object-fit: cover;">
+            <div class="card-body bg-black">
+              <h5 class="card-title text-center text-white">{{name}}</h5>
+              <p class="d-inline-block text-truncate text-center text-white" style="max-width: 250px;">{{biography}}</p>
+              <a href="/band/{{id}}/detail" class="btn btn-primary text-white">Ver más</a>
+            </div>
+          </div>
+        {{/musicalMatch}}
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="d-flex flex-column justify-content-center align-items-center w-100">
+    <div class="d-flex justify-content-start w-100">
+      <h1>Jazz</h1>
+    </div>
+    <div id="Jazz" class="d-flex flex-wrap justify-content-center align-items-center w-100">
+      {{#each bands}}
+        {{#musicalMatch musicalGenre "Jazz"}}
+          <div class="card mx-2 mt-4" style="width: 18rem;">
+              <img src="{{photo}}" class="card-img-fluid" alt="band image" style="height: 200px; object-fit: cover;">
+              <div class="card-body bg-black">
+                <h5 class="card-title text-center text-white">{{name}}</h5>
+                <p class="d-inline-block text-truncate text-center text-white" style="max-width: 250px;">{{biography}}</p>
+                <a href="/band/{{id}}/detail" class="btn btn-primary text-white">Ver más</a>
+              </div>
+            </div>
+        {{/musicalMatch}}
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="d-flex flex-column justify-content-center align-items-center w-100">
+    <div class="d-flex justify-content-start w-100">
+      <h1>Bues</h1>
+    </div>
+    <div id="Bues" class="d-flex flex-wrap justify-content-center align-items-center w-100">
+      {{#each bands}}
+        {{#musicalMatch musicalGenre "Bues"}}
+          <div class="card mx-2 mt-4" style="width: 18rem;">
+              <img src="{{photo}}" class="card-img-fluid" alt="band image" style="height: 200px; object-fit: cover;">
+              <div class="card-body bg-black">
+                <h5 class="card-title text-center text-white">{{name}}</h5>
+                <p class="d-inline-block text-truncate text-center text-white" style="max-width: 250px;">{{biography}}</p>
+                <a href="/band/{{id}}/detail" class="btn btn-primary text-white">Ver más</a>
+              </div>
+            </div>
+        {{/musicalMatch}}
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="d-flex flex-column justify-content-center align-items-center w-100">
+    <div class="d-flex justify-content-start w-100">
+      <h1>Reggae</h1>
+    </div>
+    <div id="Reggae" class="d-flex flex-wrap justify-content-center align-items-center w-100">
+      {{#each bands}}
+        {{#musicalMatch musicalGenre "Reggae"}}
+          <div class="card mx-2 mt-4" style="width: 18rem;">
+              <img src="{{photo}}" class="card-img-fluid" alt="band image" style="height: 200px; object-fit: cover;">
+              <div class="card-body bg-black">
+                <h5 class="card-title text-center text-white">{{name}}</h5>
+                <p class="d-inline-block text-truncate text-center text-white" style="max-width: 250px;">{{biography}}</p>
+                <a href="/band/{{id}}/detail" class="btn btn-primary text-white">Ver más</a>
+              </div>
+            </div>
+        {{/musicalMatch}}
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="d-flex flex-column justify-content-center align-items-center w-100">
+    <div class="d-flex justify-content-start w-100">
+      <h1>R&B</h1>
+    </div>
+    <div id="R&B" class="d-flex flex-wrap justify-content-center align-items-center w-100">
+      {{#each bands}}
+        {{#musicalMatch musicalGenre "R&B"}}
+          <div class="card mx-2 mt-4" style="width: 18rem;">
+              <img src="{{photo}}" class="card-img-fluid" alt="band image" style="height: 200px; object-fit: cover;">
+              <div class="card-body bg-black">
+                <h5 class="card-title text-center text-white">{{name}}</h5>
+                <p class="d-inline-block text-truncate text-center text-white" style="max-width: 250px;">{{biography}}</p>
+                <a href="/band/{{id}}/detail" class="btn btn-primary text-white">Ver más</a>
+              </div>
+            </div>
+        {{/musicalMatch}}
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="d-flex flex-column justify-content-center align-items-center w-100">
+    <div class="d-flex justify-content-start w-100">
+      <h1>Country</h1>
+    </div>
+    <div id="Country" class="d-flex flex-wrap justify-content-center align-items-center w-100">
+      {{#each bands}}
+        {{#musicalMatch musicalGenre "Country"}}
+          <div class="card mx-2 mt-4" style="width: 18rem;">
+              <img src="{{photo}}" class="card-img-fluid" alt="band image" style="height: 200px; object-fit: cover;">
+              <div class="card-body bg-black">
+                <h5 class="card-title text-center text-white">{{name}}</h5>
+                <p class="d-inline-block text-truncate text-center text-white" style="max-width: 250px;">{{biography}}</p>
+                <a href="/band/{{id}}/detail" class="btn btn-primary text-white">Ver más</a>
+              </div>
+            </div>
+        {{/musicalMatch}}
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="d-flex flex-column justify-content-center align-items-center w-100">
+    <div class="d-flex justify-content-start w-100">
+      <h1>Electronica</h1>
+    </div>
+    <div id="Electronica" class="d-flex flex-wrap justify-content-center align-items-center w-100">
+      {{#each bands}}
+        {{#musicalMatch musicalGenre "Electronica"}}
+          <div class="card mx-2 mt-4" style="width: 18rem;">
+              <img src="{{photo}}" class="card-img-fluid" alt="band image" style="height: 200px; object-fit: cover;">
+              <div class="card-body bg-black">
+                <h5 class="card-title text-center text-white">{{name}}</h5>
+                <p class="d-inline-block text-truncate text-center text-white" style="max-width: 250px;">{{biography}}</p>
+                <a href="/band/{{id}}/detail" class="btn btn-primary text-white">Ver más</a>
+              </div>
+            </div>
+        {{/musicalMatch}}
+      {{/each}}
+    </div>
+  </div>
+  
+  <div class="d-flex flex-column justify-content-center align-items-center w-100">
+    <div class="d-flex justify-content-start w-100">
+      <h1>Folk</h1>
+    </div>
+    <div id="Folk" class="d-flex flex-wrap justify-content-center align-items-center w-100">
+      {{#each bands}}
+        {{#musicalMatch musicalGenre "Folk"}}
+          <div class="card mx-2 mt-4" style="width: 18rem;">
+              <img src="{{photo}}" class="card-img-fluid" alt="band image" style="height: 200px; object-fit: cover;">
+              <div class="card-body bg-black">
+                <h5 class="card-title text-center text-white">{{name}}</h5>
+                <p class="d-inline-block text-truncate text-center text-white" style="max-width: 250px;">{{biography}}</p>
+                <a href="/band/{{id}}/detail" class="btn btn-primary text-white">Ver más</a>
+              </div>
+            </div>
+        {{/musicalMatch}}
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="d-flex flex-column justify-content-center align-items-center w-100">
+    <div class="d-flex justify-content-start w-100">
+      <h1>Metal</h1>
+    </div>
+    <div id="Metal" class="d-flex flex-wrap justify-content-center align-items-center w-100">
+      {{#each bands}}
+        {{#musicalMatch musicalGenre "Metal"}}
+          <div class="card mx-2 mt-4" style="width: 18rem;">
+              <img src="{{photo}}" class="card-img-fluid" alt="band image" style="height: 200px; object-fit: cover;">
+              <div class="card-body bg-black">
+                <h5 class="card-title text-center text-white">{{name}}</h5>
+                <p class="d-inline-block text-truncate text-center text-white" style="max-width: 250px;">{{biography}}</p>
+                <a href="/band/{{id}}/detail" class="btn btn-primary text-white">Ver más</a>
+              </div>
+            </div>
+        {{/musicalMatch}}
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="d-flex flex-column justify-content-center align-items-center w-100">
+    <div class="d-flex justify-content-start w-100">
+      <h1>Punk</h1>
+    </div>
+    <div id="Punk" class="d-flex flex-wrap justify-content-center align-items-center w-100">
+      {{#each bands}}
+        {{#musicalMatch musicalGenre "Punk"}}
+          <div class="card mx-2 mt-4" style="width: 18rem;">
+              <img src="{{photo}}" class="card-img-fluid" alt="band image" style="height: 200px; object-fit: cover;">
+              <div class="card-body bg-black">
+                <h5 class="card-title text-center text-white">{{name}}</h5>
+                <p class="d-inline-block text-truncate text-center text-white" style="max-width: 250px;">{{biography}}</p>
+                <a href="/band/{{id}}/detail" class="btn btn-primary text-white">Ver más</a>
+              </div>
+            </div>
+        {{/musicalMatch}}
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="d-flex flex-column justify-content-center align-items-center w-100">
+    <div class="d-flex justify-content-start w-100">
+      <h1>Clasica</h1>
+    </div>
+    <div id="Clasica" class="d-flex flex-wrap justify-content-center align-items-center w-100">
+      {{#each bands}}
+        {{#musicalMatch musicalGenre "Clasica"}}
+          <div class="card mx-2 mt-4" style="width: 18rem;">
+              <img src="{{photo}}" class="card-img-fluid" alt="band image" style="height: 200px; object-fit: cover;">
+              <div class="card-body bg-black">
+                <h5 class="card-title text-center text-white">{{name}}</h5>
+                <p class="d-inline-block text-truncate text-center text-white" style="max-width: 250px;">{{biography}}</p>
+                <a href="/band/{{id}}/detail" class="btn btn-primary text-white">Ver más</a>
+              </div>
+            </div>
+        {{/musicalMatch}}
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="d-flex flex-column justify-content-center align-items-center w-100">
+    <div class="d-flex justify-content-start w-100">
+      <h1>Soul</h1>
+    </div>
+    <div id="Soul" class="d-flex flex-wrap justify-content-center align-items-center w-100">
+      {{#each bands}}
+        {{#musicalMatch musicalGenre "Soul"}}
+          <div class="card mx-2 mt-4" style="width: 18rem;">
+              <img src="{{photo}}" class="card-img-fluid" alt="band image" style="height: 200px; object-fit: cover;">
+              <div class="card-body bg-black">
+                <h5 class="card-title text-center text-white">{{name}}</h5>
+                <p class="d-inline-block text-truncate text-center text-white" style="max-width: 250px;">{{biography}}</p>
+                <a href="/band/{{id}}/detail" class="btn btn-primary text-white">Ver más</a>
+              </div>
+            </div>
+        {{/musicalMatch}}
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="d-flex flex-column justify-content-center align-items-center w-100">
+    <div class="d-flex justify-content-start w-100">
+      <h1>Funk</h1>
+    </div>
+    <div id="Funk" class="d-flex flex-wrap justify-content-center align-items-center w-100">
+      {{#each bands}}
+        {{#musicalMatch musicalGenre "Funk"}}
+          <div class="card mx-2 mt-4" style="width: 18rem;">
+              <img src="{{photo}}" class="card-img-fluid" alt="band image" style="height: 200px; object-fit: cover;">
+              <div class="card-body bg-black">
+                <h5 class="card-title text-center text-white">{{name}}</h5>
+                <p class="d-inline-block text-truncate text-center text-white" style="max-width: 250px;">{{biography}}</p>
+                <a href="/band/{{id}}/detail" class="btn btn-primary text-white">Ver más</a>
+              </div>
+            </div>
+        {{/musicalMatch}}
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="d-flex flex-column justify-content-center align-items-center w-100">
+    <div class="d-flex justify-content-start w-100">
+      <h1>Gospel</h1>
+    </div>
+    <div id="Gospel" class="d-flex flex-wrap justify-content-center align-items-center w-100">
+      {{#each bands}}
+        {{#musicalMatch musicalGenre "Gospel"}}
+          <div class="card mx-2 mt-4" style="width: 18rem;">
+              <img src="{{photo}}" class="card-img-fluid" alt="band image" style="height: 200px; object-fit: cover;">
+              <div class="card-body bg-black">
+                <h5 class="card-title text-center text-white">{{name}}</h5>
+                <p class="d-inline-block text-truncate text-center text-white" style="max-width: 250px;">{{biography}}</p>
+                <a href="/band/{{id}}/detail" class="btn btn-primary text-white">Ver más</a>
+              </div>
+            </div>
+        {{/musicalMatch}}
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="d-flex flex-column justify-content-center align-items-center w-100">
+    <div class="d-flex justify-content-start w-100">
+      <h1>Salsa</h1>
+    </div>
+    <div id="Salsa" class="d-flex flex-wrap justify-content-center align-items-center w-100">
+      {{#each bands}}
+        {{#musicalMatch musicalGenre "Salsa"}}
+          <div class="card mx-2 mt-4" style="width: 18rem;">
+              <img src="{{photo}}" class="card-img-fluid" alt="band image" style="height: 200px; object-fit: cover;">
+              <div class="card-body bg-black">
+                <h5 class="card-title text-center text-white">{{name}}</h5>
+                <p class="d-inline-block text-truncate text-center text-white" style="max-width: 250px;">{{biography}}</p>
+                <a href="/band/{{id}}/detail" class="btn btn-primary text-white">Ver más</a>
+              </div>
+            </div>
+        {{/musicalMatch}}
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="d-flex flex-column justify-content-center align-items-center w-100">
+    <div class="d-flex justify-content-start w-100">
+      <h1>Reggaeton</h1>
+    </div>
+    <div id="Reggaeton" class="d-flex flex-wrap justify-content-center align-items-center w-100">
+      {{#each bands}}
+        {{#musicalMatch musicalGenre "Reggaeton"}}
+          <div class="card mx-2 mt-4" style="width: 18rem;">
+              <img src="{{photo}}" class="card-img-fluid" alt="band image" style="height: 200px; object-fit: cover;">
+              <div class="card-body bg-black">
+                <h5 class="card-title text-center text-white">{{name}}</h5>
+                <p class="d-inline-block text-truncate text-center text-white" style="max-width: 250px;">{{biography}}</p>
+                <a href="/band/{{id}}/detail" class="btn btn-primary text-white">Ver más</a>
+              </div>
+            </div>
+        {{/musicalMatch}}
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="d-flex flex-column justify-content-center align-items-center w-100">
+    <div class="d-flex justify-content-start w-100">
+      <h1>Alternativa</h1>
+    </div>
+    <div id="Alternativa" class="d-flex flex-wrap justify-content-center align-items-center w-100">
+      {{#each bands}}
+        {{#musicalMatch musicalGenre "Alternativa"}}
+          <div class="card mx-2 mt-4" style="width: 18rem;">
+              <img src="{{photo}}" class="card-img-fluid" alt="band image" style="height: 200px; object-fit: cover;">
+              <div class="card-body bg-black">
+                <h5 class="card-title text-center text-white">{{name}}</h5>
+                <p class="d-inline-block text-truncate text-center text-white" style="max-width: 250px;">{{biography}}</p>
+                <a href="/band/{{id}}/detail" class="btn btn-primary text-white">Ver más</a>
+              </div>
+            </div>
+        {{/musicalMatch}}
+      {{/each}}
+    </div>
+  </div>
 </section>
 
-
-<h1>Pop</h1>
-<section id="Pop" class="d-flex flex-wrap justify-content-center align-content-center align-items-center">
-  {{#each bands}}
-    {{#musicalMatch musicalGenre "Pop"}}
-      <div class="card my-3 me-4" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="{{photo}}" class="img-fluid h-100 rounded-start" alt="band image">
-          </div>
-          <div class="col-md-8 text-bg-dark">
-            <div class="card-body">
-              <h5 class="card-title">{{name}}</h5>
-              <p class="card-text">{{biography}}</p>
-              <a href="/band/{{id}}/detail" class="btn btn-primary">Ver más</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    {{/musicalMatch}}
-  {{/each}}
-</section>
-
-
-<h1>Indie</h1>
-<section id="Indie" class="d-flex flex-wrap justify-content-center align-items-center">
-  {{#each bands}}
-    {{#musicalMatch musicalGenre "Indie"}}
-      <div class="card my-3 me-4" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="{{photo}}" class="img-fluid h-100 rounded-start" alt="band image">
-          </div>
-          <div class="col-md-8 text-bg-dark">
-            <div class="card-body">
-              <h5 class="card-title">{{name}}</h5>
-              <p class="card-text">{{biography}}</p>
-              <a href="/band/{{id}}/detail" class="btn btn-primary">Ver más</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    {{/musicalMatch}}
-  {{/each}}
-</section>
-
-
-<h1>Hip Hop</h1>
-<section id="Hip Hop" class="d-flex flex-wrap justify-content-center align-items-center">
-  {{#each bands}}
-    {{#musicalMatch musicalGenre "Hip Hop"}}
-      <div class="card my-3 me-4" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="{{photo}}" class="img-fluid h-100 rounded-start" alt="band image">
-          </div>
-          <div class="col-md-8 text-bg-dark">
-            <div class="card-body">
-              <h5 class="card-title">{{name}}</h5>
-              <p class="card-text">{{biography}}</p>
-              <a href="/band/{{id}}/detail" class="btn btn-primary">Ver más</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    {{/musicalMatch}}
-  {{/each}}
-</section>
-
-<h1>Jazz</h1>
-<section id="Jazz" class="d-flex flex-wrap justify-content-center align-items-center">
-  {{#each bands}}
-    {{#musicalMatch musicalGenre "Jazz"}}
-      <div class="card my-3 me-4" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="{{photo}}" class="img-fluid h-100 rounded-start" alt="band image">
-          </div>
-          <div class="col-md-8 text-bg-dark">
-            <div class="card-body">
-              <h5 class="card-title">{{name}}</h5>
-              <p class="card-text">{{biography}}</p>
-              <a href="/band/{{id}}/detail" class="btn btn-primary">Ver más</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    {{/musicalMatch}}
-  {{/each}}
-</section>
-
-<h1>Blues</h1>
-<section id="Blues" class="d-flex flex-wrap justify-content-center align-items-center">
-  {{#each bands}}
-    {{#musicalMatch musicalGenre "Blues"}}
-      <div class="card my-3 me-4" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="{{photo}}" class="img-fluid h-100 rounded-start" alt="band image">
-          </div>
-          <div class="col-md-8 text-bg-dark">
-            <div class="card-body">
-              <h5 class="card-title">{{name}}</h5>
-              <p class="card-text">{{biography}}</p>
-              <a href="/band/{{id}}/detail" class="btn btn-primary">Ver más</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    {{/musicalMatch}}
-  {{/each}}
-</section>
-
-<h1>Reggae</h1>
-<section id="Reggae" class="d-flex flex-wrap justify-content-center align-items-center">
-  {{#each bands}}
-    {{#musicalMatch musicalGenre "Reggae"}}
-      <div class="card my-3 me-4" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="{{photo}}" class="img-fluid h-100 rounded-start" alt="band image">
-          </div>
-          <div class="col-md-8 text-bg-dark">
-            <div class="card-body">
-              <h5 class="card-title">{{name}}</h5>
-              <p class="card-text">{{biography}}</p>
-              <a href="/band/{{id}}/detail" class="btn btn-primary">Ver más</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    {{/musicalMatch}}
-  {{/each}}
-</section>
-
-<h1>R&B</h1>
-<section id="R&B" class="d-flex flex-wrap justify-content-center align-items-center">
-  {{#each bands}}
-    {{#musicalMatch musicalGenre "R&B"}}
-      <div class="card my-3 me-4" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="{{photo}}" class="img-fluid h-100 rounded-start" alt="band image">
-          </div>
-          <div class="col-md-8 text-bg-dark">
-            <div class="card-body">
-              <h5 class="card-title">{{name}}</h5>
-              <p class="card-text">{{biography}}</p>
-              <a href="/band/{{id}}/detail" class="btn btn-primary">Ver más</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    {{/musicalMatch}}
-  {{/each}}
-</section>
-
-<h1>Country</h1>
-<section id="Country" class="d-flex flex-wrap justify-content-center align-items-center">
-  {{#each bands}}
-    {{#musicalMatch musicalGenre "Country"}}
-      <div class="card my-3 me-4" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="{{photo}}" class="img-fluid h-100 rounded-start" alt="band image">
-          </div>
-          <div class="col-md-8 text-bg-dark">
-            <div class="card-body">
-              <h5 class="card-title">{{name}}</h5>
-              <p class="card-text">{{biography}}</p>
-              <a href="/band/{{id}}/detail" class="btn btn-primary">Ver más</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    {{/musicalMatch}}
-  {{/each}}
-</section>
-
-<h2>Electrónica</h2>
-<section id="Electrónica" class="d-flex flex-wrap justify-content-center align-items-center">
-  {{#each bands}}
-    {{#musicalMatch musicalGenre "Electrónica"}}
-      <div class="card my-3 me-4" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="{{photo}}" class="img-fluid h-100 rounded-start" alt="band image">
-          </div>
-          <div class="col-md-8 text-bg-dark">
-            <div class="card-body">
-              <h5 class="card-title">{{name}}</h5>
-              <p class="card-text">{{biography}}</p>
-              <a href="/band/{{id}}/detail" class="btn btn-primary">Ver más</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    {{/musicalMatch}}
-  {{/each}}
-</section>
-
-<h2>Folk</h2>
-<section id="Folk" class="d-flex flex-wrap justify-content-center align-items-center">
-  {{#each bands}}
-    {{#musicalMatch musicalGenre "Folk"}}
-      <div class="card my-3 me-4" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="{{photo}}" class="img-fluid h-100 rounded-start" alt="band image">
-          </div>
-          <div class="col-md-8 text-bg-dark">
-            <div class="card-body">
-              <h5 class="card-title">{{name}}</h5>
-              <p class="card-text">{{biography}}</p>
-              <a href="/band/{{id}}/detail" class="btn btn-primary">Ver más</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    {{/musicalMatch}}
-  {{/each}}
-</section>
-
-<h2>Metal</h2>
-<section id="Metal" class="d-flex flex-wrap justify-content-center align-items-center">
-  {{#each bands}}
-    {{#musicalMatch musicalGenre "Metal"}}
-      <div class="card my-3 me-4" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="{{photo}}" class="img-fluid h-100 rounded-start" alt="band image">
-          </div>
-          <div class="col-md-8 text-bg-dark">
-            <div class="card-body">
-              <h5 class="card-title">{{name}}</h5>
-              <p class="card-text">{{biography}}</p>
-              <a href="/band/{{id}}/detail" class="btn btn-primary">Ver más</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    {{/musicalMatch}}
-  {{/each}}
-</section>
-
-<h2>Punk</h2>
-<section id="Punk" class="d-flex flex-wrap justify-content-center align-items-center">
-  {{#each bands}}
-    {{#musicalMatch musicalGenre "Punk"}}
-      <div class="card my-3 me-4" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="{{photo}}" class="img-fluid h-100 rounded-start" alt="band image">
-          </div>
-          <div class="col-md-8 text-bg-dark">
-            <div class="card-body">
-              <h5 class="card-title">{{name}}</h5>
-              <p class="card-text">{{biography}}</p>
-              <a href="/band/{{id}}/detail" class="btn btn-primary">Ver más</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    {{/musicalMatch}}
-  {{/each}}
-</section>
-
-<h2>Clásica</h2>
-<section id="Clásica" class="d-flex flex-wrap justify-content-center align-items-center">
-  {{#each bands}}
-    {{#musicalMatch musicalGenre "Clásica"}}
-      <div class="card my-3 me-4" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="{{photo}}" class="img-fluid h-100 rounded-start" alt="band image">
-          </div>
-          <div class="col-md-8 text-bg-dark">
-            <div class="card-body">
-              <h5 class="card-title">{{name}}</h5>
-              <p class="card-text">{{biography}}</p>
-              <a href="/band/{{id}}/detail" class="btn btn-primary">Ver más</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    {{/musicalMatch}}
-  {{/each}}
-</section>
-
-<h2>Soul</h2>
-<section id="Soul" class="d-flex flex-wrap justify-content-center align-items-center">
-  {{#each bands}}
-    {{#musicalMatch musicalGenre "Soul"}}
-      <div class="card my-3 me-4" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="{{photo}}" class="img-fluid h-100 rounded-start" alt="band image">
-          </div>
-          <div class="col-md-8 text-bg-dark">
-            <div class="card-body">
-              <h5 class="card-title">{{name}}</h5>
-              <p class="card-text">{{biography}}</p>
-              <a href="/band/{{id}}/detail" class="btn btn-primary">Ver más</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    {{/musicalMatch}}
-  {{/each}}
-</section>
-
-<h2>Funk</h2>
-<section id="Funk" class="d-flex flex-wrap justify-content-center align-items-center">
-  {{#each bands}}
-    {{#musicalMatch musicalGenre "Funk"}}
-      <div class="card my-3 me-4" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="{{photo}}" class="img-fluid h-100 rounded-start" alt="band image">
-          </div>
-          <div class="col-md-8 text-bg-dark">
-            <div class="card-body">
-              <h5 class="card-title">{{name}}</h5>
-              <p class="card-text">{{biography}}</p>
-              <a href="/band/{{id}}/detail" class="btn btn-primary">Ver más</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    {{/musicalMatch}}
-  {{/each}}
-</section>
-
-<h2>Gospel</h2>
-<section id="Gospel" class="d-flex flex-wrap justify-content-center align-items-center">
-  {{#each bands}}
-    {{#musicalMatch musicalGenre "Gospel"}}
-      <div class="card my-3 me-4" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="{{photo}}" class="img-fluid h-100 rounded-start" alt="band image">
-          </div>
-          <div class="col-md-8 text-bg-dark">
-            <div class="card-body">
-              <h5 class="card-title">{{name}}</h5>
-              <p class="card-text">{{biography}}</p>
-              <a href="/band/{{id}}/detail" class="btn btn-primary">Ver más</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    {{/musicalMatch}}
-  {{/each}}
-</section>
-
-<h2>Salsa</h2>
-<section id="Salsa" class="d-flex flex-wrap justify-content-center align-items-center">
-  {{#each bands}}
-    {{#musicalMatch musicalGenre "Salsa"}}
-      <div class="card my-3 me-4" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="{{photo}}" class="img-fluid h-100 rounded-start" alt="band image">
-          </div>
-          <div class="col-md-8 text-bg-dark">
-            <div class="card-body">
-              <h5 class="card-title">{{name}}</h5>
-              <p class="card-text">{{biography}}</p>
-              <a href="/band/{{id}}/detail" class="btn btn-primary">Ver más</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    {{/musicalMatch}}
-  {{/each}}
-</section>
-
-<h2>Reggaeton</h2>
-<section id="Reggaeton" class="d-flex flex-wrap justify-content-center align-items-center">
-  {{#each bands}}
-    {{#musicalMatch musicalGenre "Reggaeton"}}
-      <div class="card my-3 me-4" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="{{photo}}" class="img-fluid h-100 rounded-start" alt="band image">
-          </div>
-          <div class="col-md-8 text-bg-dark">
-            <div class="card-body">
-              <h5 class="card-title">{{name}}</h5>
-              <p class="card-text">{{biography}}</p>
-              <a href="/band/{{id}}/detail" class="btn btn-primary">Ver más</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    {{/musicalMatch}}
-  {{/each}}
-</section>
-
-<h2>Alternativa</h2>
-<section id="Alternativa" class="d-flex flex-wrap justify-content-center align-items-center">
-  {{#each bands}}
-    {{#musicalMatch musicalGenre "Alternativa"}}
-      <div class="card my-3 me-4" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="{{photo}}" class="img-fluid h-100 rounded-start" alt="band image">
-          </div>
-          <div class="col-md-8 text-bg-dark">
-            <div class="card-body">
-              <h5 class="card-title">{{name}}</h5>
-              <p class="card-text">{{biography}}</p>
-              <a href="/band/{{id}}/detail" class="btn btn-primary">Ver más</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    {{/musicalMatch}}
-  {{/each}}
+<section class="w-100">
+  <a href="/" class="btn btn-outline-info text-white fs-5 my-5">Volver</a>
 </section>

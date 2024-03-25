@@ -23,17 +23,18 @@
     </div>
   </div>
 
-  
-  {{#theUserIsTheCreator currentUser._id message.post.creator._id}}
-    <div class="row mb-3">
-      <div class="col d-flex justify-content-start align-content-center">
-        <a href="/anunciaTuConcierto/{{message.post._id}}/edit"><i class="btn btn-primary bi bi-pencil mx-3"></i></a>
-        <form action="/anunciaTuConcierto/{{message.post._id}}/delete" method="post" id="deleteForm">
-          <button type="button" class="btn btn-danger" onclick="seguro()"><i class="bi bi-x-lg"></i></button>
-        </form>
+  {{#if currentUser}}
+    {{#theUserIsTheCreator currentUser._id message.post.creator._id}}
+      <div class="row mb-3">
+        <div class="col d-flex justify-content-start align-content-center">
+          <a href="/anunciaTuConcierto/{{message.post._id}}/edit"><i class="btn btn-primary bi bi-pencil mx-3"></i></a>
+          <form action="/anunciaTuConcierto/{{message.post._id}}/delete" method="post" id="deleteForm">
+            <button type="button" class="btn btn-danger" onclick="seguro()"><i class="bi bi-x-lg"></i></button>
+          </form>
+        </div>
       </div>
-    </div>
-  {{/theUserIsTheCreator}}
+    {{/theUserIsTheCreator}}
+  {{/if}}  
 </section>
 
 <form action="/message/{{message._id}}/edit" method="post" class="markdown-form mt-5">

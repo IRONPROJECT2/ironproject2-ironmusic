@@ -12,7 +12,8 @@ module.exports.index = (req, res, next) => {
     Band.find().sort({ rating: -1 }).limit(10).populate("members").exec(),
     Atc.find().sort({ date: 1 }).limit(6).exec()
   ])
-  .then(([bands,rating, concerts]) => {
+  .then(([bands, rating, concerts]) => {
+    console.debug(rating)
     res.render("index", { bands, rating, concerts, list });
   })
   .catch((error) => {

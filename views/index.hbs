@@ -180,26 +180,26 @@
 
   
   {{!-- PROXIMOS EVENTOS --}}
-<section class="text-center my-5"> 
-  <h2>PRÓXIMOS CONCIERTOS</h2>
-</section>
-<section class="container text-center my-5">
-  <div class="d-flex flex-wrap justify-content-center align-items-center mb-3">
-    {{#each concerts}}
-      <div class="card shadow-lg m-3" style="width: 18rem;">
-        <a href="/anunciatuconcierto/{{id}}/details" class="text-decoration-none text-dark">
-          <img src="{{photo}}" class="card-img-top" alt="artist" style="height: 160px;">
-          <div class="text-center d-flex flex-column h-100">
-            <h5 class="card-title bold mt-1">{{name}}</h5>
-            <p class="d-inline-block">{{descriptionGenre}}</p>
-            <p class="d-inline-block">{{location}}</p>
-            <p class="d-inline-block">{{formatDate date}}</p>
-          </div>
-        </a>
-      </div>
-    {{/each}}
-  </div>
-</section>
+  <section class="text-center my-5"> 
+    <h2>PRÓXIMOS CONCIERTOS</h2>
+  </section>
+  <section class="container text-center my-5">
+    <div class="d-flex flex-wrap justify-content-center align-items-center mb-3">
+      {{#each concerts}}
+        <div class="card shadow-lg m-3" style="width: 18rem;">
+          <a href="/anunciatuconcierto/{{id}}/details" class="text-decoration-none text-dark">
+            <img src="{{photo}}" class="card-img-top " alt="artist" >
+            <div class="text-center d-flex flex-column h-100">
+              <h5 class="card-title bold mt-1">{{name}}</h5>
+              <p class="d-inline-block">{{descriptionGenre}}</p>
+              <p class="d-inline-block">{{location}}</p>
+              <p class="d-inline-block">{{formatDate date}}</p>
+            </div>
+          </a>
+        </div>
+      {{/each}}
+    </div>
+  </section>
 
 </main>
 

@@ -47,12 +47,14 @@
           <td>
             <div class="d-flex justify-content-center align-content-center align-items-center">
               <a href="/formarBanda/{{id}}/details" class="btn btn-secondary"><i class="bi bi-zoom-in"></i></a>
-              {{#theUserIsTheCreator ../currentUser._id creator._id}}
-                <a href="/formarBanda/{{id}}/edit" class="btn btn-primary ms-2"><i class="bi bi-pencil"></i></a>
-                <form action="/formarBanda/{{id}}/delete" method="post" id="deleteForm">
-                  <button type="button" class="btn btn-danger ms-2" onclick="seguro()"><i class="bi bi-x-lg"></i></button>
-                </form>
-              {{/theUserIsTheCreator}}
+              {{#if currentUser}}
+                {{#theUserIsTheCreator ../currentUser._id creator._id}}
+                  <a href="/formarBanda/{{id}}/edit" class="btn btn-primary ms-2"><i class="bi bi-pencil"></i></a>
+                  <form action="/formarBanda/{{id}}/delete" method="post" id="deleteForm">
+                    <button type="button" class="btn btn-danger ms-2" onclick="seguro()"><i class="bi bi-x-lg"></i></button>
+                  </form>
+                {{/theUserIsTheCreator}}
+              {{/if}}
             </div>
           </td>
         </tr>

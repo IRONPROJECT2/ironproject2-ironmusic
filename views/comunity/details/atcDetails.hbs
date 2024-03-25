@@ -22,28 +22,20 @@
     </div>
   </div>
 
-  
-  {{#theUserIsTheCreator currentUser._id postBand.creator._id}}
-    <div class="row mb-3">
-      <div class="col d-flex justify-content-start align-content-center">
-        <a href="/anunciaTuConcierto/{{postBand._id}}/edit"><i class="btn btn-primary bi bi-pencil mx-3"></i></a>
-        <form action="/anunciaTuConcierto/{{postBand._id}}/delete" method="post" id="deleteForm">
-          <button type="button" class="btn btn-danger" onclick="seguro()"><i class="bi bi-x-lg"></i></button>
-        </form>
+  {{#if currentUser}}
+    {{#theUserIsTheCreator currentUser._id postBand.creator._id}}
+      <div class="row mb-3">
+        <div class="col d-flex justify-content-start align-content-center">
+          <a href="/anunciaTuConcierto/{{postBand._id}}/edit"><i class="btn btn-primary bi bi-pencil mx-3"></i></a>
+          <form action="/anunciaTuConcierto/{{postBand._id}}/delete" method="post" id="deleteForm">
+            <button type="button" class="btn btn-danger" onclick="seguro()"><i class="bi bi-x-lg"></i></button>
+          </form>
+        </div>
       </div>
-    </div>
-  {{/theUserIsTheCreator}}
+    {{/theUserIsTheCreator}}
+  {{/if}}
 </section>
   
-
-  {{!-- {{#each postBand}}
-    {{#theUserIsTheCreator ../currentUser._id creator}}
-      <a href="/anunciatuconcierto/{{_id}}/edit">Editar</a>
-      <form action="/anunciatuconcierto/{{_id}}/delete" method="post" id="deleteForm">
-        <button type="button" class="btn btn-primary btn-block mb-4">Eliminar</button>
-      </form>
-    {{/theUserIsTheCreator}}
-  {{/each}} --}}
 
 <section>
   <h5 class="text-center mt-5">COMENTARIOS DE LOS USUARIOS</h5>
@@ -60,14 +52,16 @@
         <li class="list-group-item text-bg-dark mt-1">
           <div class="d-flex justify-content-between align-items-center">
             <p>Mensaje: {{text}}</p>
-            {{#theUserIsTheCreator ../currentUser._id owner._id}}
-              <div class="d-flex justify-content-center align-content-center">            
-                <a href="/message/{{id}}/edit"><i class="btn btn-primary bi bi-pencil mx-3"></i></a>
-                <form action="/message/{{_id}}/delete" method="post" id="deleteFormMessage">
-                  <button type="button" class="btn btn-danger" onclick="seguroMessage()"><i class="bi bi-x-lg"></i></button>
-                </form>
-              </div>
-            {{/theUserIsTheCreator}}
+            {{#if currentUser}}
+              {{#theUserIsTheCreator ../currentUser._id owner._id}}
+                <div class="d-flex justify-content-center align-content-center">            
+                  <a href="/message/{{id}}/edit"><i class="btn btn-primary bi bi-pencil mx-3"></i></a>
+                  <form action="/message/{{_id}}/delete" method="post" id="deleteFormMessage">
+                    <button type="button" class="btn btn-danger" onclick="seguroMessage()"><i class="bi bi-x-lg"></i></button>
+                  </form>
+                </div>
+              {{/theUserIsTheCreator}}
+            {{/if}}
           </div>
         </li>
       </ul>
@@ -75,20 +69,21 @@
   {{/each}}
 </section>
 
+{{#if currentUser}}
+  <form action="/message/{{postBand.id}}/message" method="post" class="markdown-form mt-5">
+    <input type="hidden" name="postType" value="Anunciatuconcierto">
+    <input type="hidden" name="post" value="{{postBand.id}}">
 
-<form action="/message/{{postBand.id}}/message" method="post" class="markdown-form mt-5">
-  <input type="hidden" name="postType" value="Anunciatuconcierto">
-  <input type="hidden" name="post" value="{{postBand.id}}">
+    <div class="mb-1 {{#if errors.description }}is-invalid{{/if}}">
+      <textarea name="text" id="description-md" class="{{#if errors.description }}is-invalid{{/if}}"></textarea>
+      {{#if errors.description }}<div class="invalid-feedback">{{errors.description}}</div>{{/if}}
+    </div>
 
-  <div class="mb-1 {{#if errors.description }}is-invalid{{/if}}">
-    <textarea name="text" id="description-md" class="{{#if errors.description }}is-invalid{{/if}}"></textarea>
-    {{#if errors.description }}<div class="invalid-feedback">{{errors.description}}</div>{{/if}}
-  </div>
-
-  <div class="form-actions mt-2">
-    <button type="submit" class="btn btn-outline-primary text-white fs-5">Enviar</button>
-  </div>
-</form>
+    <div class="form-actions mt-2">
+      <button type="submit" class="btn btn-outline-primary text-white fs-5">Enviar</button>
+    </div>
+  </form>
+{{/if}}
 
 <a href="/anunciatuconcierto" class="btn btn-outline-info text-white fs-5 my-5">Volver</a>
 
