@@ -178,6 +178,8 @@ module.exports.acceptNewMember = (req, res, next) => {
 module.exports.removeNewMember = (req, res, next) => {
   const userId = req.params.id;
   const bandId = req.query.bandId;
+  console.debug(userId)
+  console.debug(bandId)
   
   Band.findByIdAndUpdate(bandId, { $pull: { pendingMembers: userId} })
     .then(() => res.redirect("/profile"))

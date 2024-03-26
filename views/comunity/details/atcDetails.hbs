@@ -18,7 +18,9 @@
 
   <div class="row my-2">
     <div class="col text-center">  
-      <h4 class="card-title">{{postBand.descriptionGenre}}</h4>  
+      <h4 class="card-title">{{postBand.descriptionGenre}}</h4>
+      <p class="mb-0">{{formatDate postBand.date}}</p>
+      <p>En {{postBand.location}}</p>  
     </div>
   </div>
 
@@ -35,7 +37,10 @@
     {{/theUserIsTheCreator}}
   {{/if}}
 </section>
-  
+
+<div class="my-4 d-flex justify-content-center w-100">
+  <a href="https://proyect2.fly.dev/" class="btn btn-success text-decoration-none">Compra tus entradas!</a>
+</div>
 
 <section>
   <h5 class="text-center mt-5">COMENTARIOS DE LOS USUARIOS</h5>
