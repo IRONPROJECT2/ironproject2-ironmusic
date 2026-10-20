@@ -1,34 +1,34 @@
 # Ironmusic (IronHack second project)
-Ironmusic es el proyecto final del modulo 2 del bootcamp de programación web de Ironhack, está realizado por Marta Bravo y Lucas Fajersztejn.
-Ironmusic es un blog para músicos y bandas. Nuestro propósito ha sido crear un lugar de encuentro entre músicos, donde estos puedan contactar con otras bandas y unirse a ellas; publicar diferentes ofertas en busca de músicos, promocionar un concierto o buscar otras bandas para organizar un festival (bandjam).
+Ironmusic is the final project for Module 2 of the Ironhack web development bootcamp, created by Marta Bravo and Lucas Fajersztejn. Ironmusic is a blog for musicians and bands. Our goal was to create a meeting place for musicians, where they can connect with other bands and join them; post various job listings seeking musicians; promote a concert; or find other bands to organize a festival (bandjam).
 
+## Challenges of this project:
 
-## Retos de este proyecto:
+- Integration of multiple APIs and Node.js modules: Proper integration and management of various APIs and Node.js modules.
 
-- Integración de múltiples APIs y módulos de Node.js: La integración y gestión adecuada de varias APIs y módulos de Node.js.
+- Secure and persistent user session management: Correctly implement and configure user session management using express-session and connect-mongo to ensure the security and persistence of session data in the MongoDB database.
 
-- Gestión de sesiones de usuario de forma segura y persistente: Implementar y configurar correctamente la gestión de sesiones de usuario utilizando express-session y connect-mongo para garantizar la seguridad y persistencia de los datos de sesión en la base de datos MongoDB.
+- MongoDB database modeling and operations with Mongoose: Properly designing data models and performing both query and CRUD (create, read, update, delete) operations on the MongoDB database using Mongoose in an efficient and structured manner.
 
-- Modelado y operaciones de base de datos MongoDB con Mongoose: Diseñar adecuadamente los modelos de datos y realizar operaciones tanto de busqueda como CRUD (crear, leer, actualizar, eliminar) en la base de datos MongoDB utilizando Mongoose de manera eficiente y estructurada.
+- HTTP error handling and server debugging: Ensure proper handling of HTTP errors using http-errors and facilitate server debugging by using Morgan to log HTTP requests and trace potential issues in the execution flow.
 
-- Manejo de errores HTTP y depuración del servidor: Asegurar un manejo adecuado de errores HTTP utilizando http-errors y facilitar la depuración del servidor utilizando Morgan para registrar solicitudes HTTP y rastrear posibles problemas en el flujo de ejecución.
+- Implementation of Advanced Features: Developing advanced features—such as creating a ranking of the top 10 bands based on user votes—may have been a technical challenge requiring careful design and efficient implementation.
 
-- Implementación de funcionalidades avanzadas: Desarrollar funcionalidades avanzadas como la creación de un ranking de las mejores 10 bandas según el voto de los usuarios podría haber sido un desafío técnico que requería un diseño cuidadoso y una implementación eficiente.
+## Features
+- Log in / Sign up: Users can log in if they have an account or sign up on the website if they don’t
+- Create a band: Once logged in, users can go to the “Create Band” form and create one; users who belong to a band then join it and must be accepted by the administrator (the user who created the band)
+- Join a band / manage members: Once a band is created, it will appear in the list of bands. If another user views the band’s details, they have the option to join it. If they click “Join,” the administrator must go to their profile to accept or reject the request
+- Search: In the center of the navigation bar, there is a search bar that can be used to search for users, bands, and posts.
+- Post (Bandjam, Form a Band, and Announce Your Concert): In the community section, users can post in:
+    - Bandjam: A space to find other bands to organize festivals or jam sessions.
+    - Form a Band: a space to find a band or musicians for a band
+    - Announce Your Concert: a space to promote a show (if the date is coming up soon, it will appear in the index)
+- Send a message: Users can comment on any of the posts.
+- Ranking: In each band's details page, users can rate the band on a scale of 1 to 5 stars; an average will be calculated based on all votes and displayed in the index ranking.
+- Index: This section consists of a ranking showing the 10 highest-rated bands, the 5 most recently added bands to the website, a section for music news, an invitation to post in the community, and finally, a space to promote the 6 upcoming shows closest to the current date.
 
-## Functionalities
-- Iniciar sesión / registrarse: El usuario puede iniciar sesión en el caso de tener una cuenta o si no registrarse en la web
-- Crear una banda: Una vez iniciada la sesión el usuario puede ir al formulario de crear banda y crear una, posteriormente los usuarios que pertenecen a una banda se unen a esta y deberán ser aceptados por el administrador (el usuario que creo la banda)
-- Unirse a una banda / tener control sobre sus integrantes: Una vez creada la banda esta aparecerá en la lista de bandas y si algún otro usuario entra a ver los detalles de esa banda tiene la opción de unirse a está, en el caso de que clickeé en unirse a ella, el administrador deberá ir a su perfíl para aceptar o rechazar la solicitud
-- Buscar: en el centro del nav hay un buscador el cuál puede usarse para buscar usuarios, bandas, y posts
-- Realizar un post (Bandjam, Formar Banda y Anuncia Tu Concierto): En la sección de comunidad el usuario puede hacer un post en:
-    - Bandjam: un espacio para buscar otras bandas para organizar festivales o jams
-    - Formar Banda: un espacio para buscar banda o músicos para una banda
-    - Anuncia Tu Concierto: un espacio para promocionar un show (si la fecha está próxima saldrá en el index)
-- Enviar un mensaje: el usuario puede comentar en cualquiera de los posteos.
-- Ranking: en los detalles de cada banda los usuarios pueden votar en un ranking de estrellas del 1 al 5, donde se generará una media con todos los votos y se mostrará en el ranking del index.
-- Index: se compone de un ranking en el que se muestran las 10 bandas mejores puntuadas, las 5 últimas bandas añadidas a la web, un apartado para noticias sobre música, una invitación para hacer un posteo en comunity y por último un espacio para promocionar los 6 shows más próximos a la fecha actual.
+## link
 
-## Demostración
+https://ironproject2-ironmusic.fly.dev/
 
 ## Screenshots
 
