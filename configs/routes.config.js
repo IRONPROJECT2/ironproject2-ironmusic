@@ -10,6 +10,7 @@ const router = express.Router();
 
 //user
 router.get("/reglog", user.reglog);
+router.get("/login",secure.isAuthenticated, user.reglog);
 router.post("/register", user.doRegister);
 router.post("/login", user.doLogin);
 router.get("/logout", user.logout);
@@ -23,8 +24,8 @@ router.get("/user/:id/removeMember", secure.isAuthenticated, user.removeMember);
 router.post("/search", user.search);
 
 //Band
-router.get("/createBand", band.create);
-router.post("/createBand", band.doCreate);
+router.get("/createBand", secure.isAuthenticated, band.create);
+router.post("/createBand", secure.isAuthenticated, band.doCreate);
 router.get("/bands", band.listBands);
 router.get("/band/:id/detail", band.details);
 router.post("/joinBand/:id", secure.isAuthenticated, band.joinBand);
