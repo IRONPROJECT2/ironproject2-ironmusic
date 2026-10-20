@@ -32,6 +32,18 @@ https://ironproject2-ironmusic.fly.dev/
 
 ## Screenshots
 
+Band Detail
+
+![Band Detail](https://i.postimg.cc/yxQZS02G/Band.png)
+
+error validation
+
+![error validation](https://i.postimg.cc/nrcmz3S7/errorvalidation.png)
+
+Use of sweetalert2
+
+![Uso de sweetalert2](https://i.postimg.cc/3RhmM8gt/Estas-Seguro.png)
+
 Error 404
 
 ![Error 404](https://i.postimg.cc/pVq87tyB/404.png)
@@ -39,18 +51,6 @@ Error 404
 Error 500
 
 ![Error 505](https://i.postimg.cc/gJKRmCsm/Error-500.png)
-
-error validation
-
-![error validation](https://i.postimg.cc/nrcmz3S7/errorvalidation.png)
-
-Uso de sweetalert2
-
-![Uso de sweetalert2](https://i.postimg.cc/3RhmM8gt/Estas-Seguro.png)
-
-Band Detail
-
-![Band Detail](https://i.postimg.cc/yxQZS02G/Band.png)
 
 
 ### Thank you for reading this far. This was the IronHack second project.
