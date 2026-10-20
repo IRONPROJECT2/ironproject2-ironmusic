@@ -74,9 +74,11 @@
           <p>
             <a href="/bands" class="text-reset">Unirme a banda</a>
           </p>
-          <p>
-            <a href="/createBand" class="text-reset">Crear una banda</a>
-          </p>
+          {{#if currentUser}}
+            <p>
+              <a href="/createBand" class="text-reset">Crear una banda</a>
+            </p>
+          {{/if}}
         </div>
         
 
