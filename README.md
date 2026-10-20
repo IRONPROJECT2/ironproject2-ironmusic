@@ -1,4 +1,4 @@
-# Ironmusic (IronHack second project)
+# Ironmusic
 Ironmusic is the final project for Module 2 of the Ironhack web development bootcamp, created by Marta Bravo and Lucas Fajersztejn. Ironmusic is a blog for musicians and bands. Our goal was to create a meeting place for musicians, where they can connect with other bands and join them; post various job listings seeking musicians; promote a concert; or find other bands to organize a festival (bandjam).
 
 ## Challenges of this project:
