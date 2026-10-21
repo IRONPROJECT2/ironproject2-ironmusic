@@ -1,9 +1,5 @@
-const User = require("../models/user.model");
 const Band = require("../models/band.model");
 const Atc = require("../models/anunciatuconcierto.model")
-const mongoose = require('mongoose');
-const createError = require("http-errors");
-const Rating = require("../models/rating.model");
 
 module.exports.index = (req, res, next) => {
   const list = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]; 
