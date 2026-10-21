@@ -5,10 +5,14 @@ module.exports.index = (req, res, next) => {
   const list = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]; 
   Promise.all([
     Band.find().sort({ created: -1 }).limit(5).exec(),
-    Band.find().sort({ rating: -1 }).limit(10).populate("members").exec(),
+    Band.find().sort({ rating: -1 }).limit(10).populate("members").lean().exec(),
     Atc.find().sort({ date: 1 }).limit(6).exec()
   ])
   .then(([bands, rating, concerts]) => {
+    rating = rating.map((band, index) => {
+      band.position = index + 1;
+      return band;
+    });
     res.render("index", { bands, rating, concerts, list });
   })
   .catch((error) => {
