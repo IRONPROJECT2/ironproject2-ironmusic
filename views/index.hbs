@@ -15,31 +15,32 @@
       </thead>
       <tbody>
         {{#each rating}}
-        <tr>
-            <th scope="row">
-              <p class="fs-5">{{@index}}</p>
-            </th>
-          
-          <td>
-            <div class="d-flex justify-content-center align-items-center">
-              <a href="/band/{{id}}/detail" class="d-flex justify-content-center align-items-center text-decoration-none text-white">
-                <img src="{{photo}}" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
-                <div class="ms-3">
-                  <p class="text-uppercase mb-1 fs-5">{{name}}</p>
-                </div>
-              </a>
-            </div>
-          </td>
-          <td class="fs-5">{{musicalGenre}}</td>
-          <td>
-            <ul class="list-unstyled d-flex flex-column justify-content-center align-content-center align-items-center">
-              {{#each members}}
-                <li class="fs-5">{{this.name}}</li>
-              {{/each}}
-            </ul>
-          </td>
-          {{/each}}
-        </tr>   
+          <tr>
+              <th scope="row">
+                <p class="fs-5">{{position}}</p>
+              </th>
+            
+            <td>
+              <div class="d-flex justify-content-center align-items-center">
+                <a href="/band/{{_id}}/detail" class="d-flex justify-content-center align-items-center text-decoration-none text-white">
+                  <img src="{{photo}}" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
+                  <div class="ms-3">
+                    <p class="text-uppercase mb-1 fs-5">{{name}}</p>
+                  </div>
+                </a>
+              </div>
+            </td>
+            <td class="fs-5">{{musicalGenre}}</td>
+            <td>
+              <ul class="list-unstyled d-flex flex-column justify-content-center align-content-center align-items-center">
+                {{#each members}}
+                  <li class="fs-5">{{this.name}}</li>
+                {{/each}}
+              </ul>
+            </td>
+          </tr> 
+        {{/each}}
+  
         
       </tbody>
     </table>
