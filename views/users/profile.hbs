@@ -66,10 +66,16 @@
                     <div class="d-flex justify-content-between">
                       <li class="text-decoration-none">{{this.name}}</li>
                       {{#thisIsTheUser ../../currentUser this}}
-                        <a href="/user/{{this.id}}/removeMember?bandId={{../_id}}"><i class="fas fa-user-times" style="color: red;"></i></a>
+                        <form action="/user/{{this.id}}/removeMember" method="post">
+                          <input type="hidden" name="bandId" value="{{../_id}}">
+                          <button type="submit"><i class="fas fa-user-times" style="color: red;"></i></button>
+                        </form>
                       {{else}}
                         {{#isAdministratorInTheBand ../administrator ../../currentUser}}
-                          <a href="/user/{{this.id}}/removeMember?bandId={{../_id}}"><i class="fas fa-user-times" style="color: red;"></i></a>
+                          <form action="/user/{{this.id}}/removeMember" method="post">
+                            <input type="hidden" name="bandId" value="{{../_id}}">
+                            <button type="submit"><i class="fas fa-user-times" style="color: red;"></i></button>
+                          </form>
                         {{/isAdministratorInTheBand}}
                       {{/thisIsTheUser}}
                     </div>

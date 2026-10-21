@@ -10,7 +10,7 @@ const router = express.Router();
 
 //user
 router.get("/reglog", user.reglog);
-router.get("/login",secure.isAuthenticated, user.reglog);
+router.get("/login", user.reglog);
 router.post("/register", user.doRegister);
 router.post("/login", user.doLogin);
 router.get("/logout", user.logout);
@@ -20,7 +20,7 @@ router.post("/user/:id/edit", secure.isAuthenticated, user.doEdit);
 router.post("/user/:id/delete", secure.isAuthenticated, user.delete);
 router.post("/pendingMembers/:id/accept", secure.isAuthenticated, user.acceptNewMember);
 router.post("/pendingMembers/:id/decline", secure.isAuthenticated, user.removeNewMember);
-router.get("/user/:id/removeMember", secure.isAuthenticated, user.removeMember); //Ruta get para eliminar a un miembro de la banda
+router.post("/user/:id/removeMember", secure.isAuthenticated, user.removeMember);
 router.post("/search", user.search);
 
 //Band

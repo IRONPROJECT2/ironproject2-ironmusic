@@ -188,7 +188,7 @@ module.exports.removeNewMember = (req, res, next) => {
 
 module.exports.removeMember = (req, res, next) => {
   const userId = req.params.id;
-  const bandId = req.query.bandId;
+  const bandId = req.body.bandId;
 
   Band.findByIdAndUpdate(bandId, { $pull: { members: userId } })
     .then(() => res.redirect("/profile"))
